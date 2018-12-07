@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Richard Wolf</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="./libs/ionic/css/ionic.min.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <script src="./libs/jquery.min.js"></script>
+    <script src="./libs/ionic/js/ionic.bundle.min.js"></script>
+</head>
+
+<body ng-controller="myCtrl">
+    <!-- 第一页 -->
+    <div class="index" ng-show="showWeb==0">
+        <div class="bg">
+            <div class="logo">
+                <img src="./imgs/logo.png" alt="" width="100%">
+            </div>
+            <div class="img">
+                <img src="./imgs/1_bg.png" alt="" width="100%">
+            </div>
+            <div class="wenzi">
+                <img src="./imgs/1_wenzi.png" alt="" width="100%">
+            </div>
+            <div class="zhaochagif">
+                <img src="./imgs/zhaocha.gif" alt="" width="100%">
+            </div>
+            <div class="start" ng-click="choiceWeb(1,'btn_s1_1')" on-hold="touchHoldFun('btn_s1_1')">
+                <img src="./imgs/btn_s1.png" alt="" width="100%">
+            </div>
+            <!--  <div class="more" ng-click="choiceWeb(1)">
+                <img src="./imgs/btn_m.png" alt="" width="100%">
+            </div> -->
+        </div>
+    </div>
+
+    <!-- 第二页 -->
+    <div class="detail" ng-show="showWeb==1">
+        <div class="bg">
+            <div class="logo">
+                <img src="./imgs/logo.png" alt="" width="100%">
+            </div>
+            <div class="img">
+                <img src="./imgs/2_img.png" alt="" width="100%">
+            </div>
+            <div class="wenzi">
+                <img src="./imgs/2_zi.png" alt="" width="100%">
+            </div>
+
+
+            <div class="start" ng-click="choiceWeb(2,'start_1')"  on-hold="touchHoldFun('start_1')">
+                <img src="./imgs/start.png" alt="" width="100%">
+            </div>
+
+            <div class="footer">
+                <img src="./imgs/footer.png" alt="" width="100%">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 第三页 -->
+    <div class="content" ng-show="showWeb==2">
+        <div class="bg">
+            <div class="logo">
+                <img src="./imgs/logo.png" alt="" width="100%">
+            </div>
+            <!-- 倒计时 -->
+            <div class="interval" ng-show="showWeb==2">
+                <p id="pgv">还剩 <span>{{time}}S</span></p>
+                <div class="progress">
+                    <progress max="30" value="30"></progress>
+                </div>
+            </div>
+            <div class="game">
+                <div class="first" onclick="touchWrong(event,'.first')">
+                    <img ng-src="{{picJson.url0}}" alt="" height="100%">
+                    <div class="right" ng-click="touchRight()">
+                        <!-- <img src="./imgs/right.png" alt="100%" width="100%"> -->
+                    </div>
+
+                </div>
+                <div class="second" onclick="touchWrong(event,'.second')">
+                    <img ng-src="{{picJson.url1}}" alt="" height="100%">
+                    <div class="right right1" ng-click="touchRight()">
+                        <!-- <img src="./imgs/right.png" alt="100%" width="100%"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer ">
+                <img src="./imgs/footer.png " alt=" " width="100% ">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 第四页 -->
+    <div class="balance " ng-show="showWeb==3">
+        <div class="bg ">
+            <div class="logo ">
+                <img src="./imgs/logo.png " alt=" " width="100% ">
+            </div>
+            <div class="img ">
+                <img src="./imgs/3_img.png " alt=" " width="100% ">
+            </div>
+            <div class="wenzi" ng-show="showWeb==3">
+                <img src="./imgs/3_zi.gif " alt=" " height="100% ">
+            </div>
+            <!-- <div class="wenzi2 ">
+                <img src="./imgs/4_zi.png " alt=" " width="100% " height="100% ">
+            </div> -->
+
+            <div class="word ">
+                <p>
+                    您已闯过<span>{{mark}}</span>关，赶紧提交分数吧。有机会赢取惊喜好礼哦！再次挑战点击再玩一次，相信你能行！
+                </p>
+
+            </div>
+
+            <div class="submit " ng-click="choiceWeb(4,'btn_end_1') " on-hold="touchHoldFun('btn_end_1')">
+                <img src="./imgs/btn_end.png " alt=" " width="100% ">
+            </div>
+            <div class="start " ng-click="choiceWeb(2,'btn_again_1') " on-hold="touchHoldFun('btn_again_1')">
+                <img src="./imgs/btn_again.png " alt=" " width="100% ">
+            </div>
+        </div>
+    </div>
+    <!-- 第四页 -->
+    <div class="balance " ng-show="showWeb==5">
+        <div class="bg ">
+            <div class="logo ">
+                <img src="./imgs/logo.png " alt=" " width="100% ">
+            </div>
+            <div class="img ">
+                <img src="./imgs/3_img.png " alt=" " width="100% ">
+            </div>
+            <div class="wenzi1 ">
+                <img src="./imgs/3_zi2.gif " alt=" " height="100% ">
+            </div>
+
+            <!-- <div class="wenzi2 ">
+                <img src="./imgs/4_zi.png " alt=" " width="100% " height="100% ">
+            </div> -->
+            <div class="word ">
+                <p>
+                    您已闯过<span>{{mark}}</span>关，赶紧提交分数吧。有机会赢取惊喜好礼哦！再次挑战点击再玩一次，相信你能行！
+                </p>
+
+            </div>
+
+            <div class="submit " ng-click="choiceWeb(4,'btn_end_1') " on-hold="touchHoldFun('btn_end_1')">
+                <img src="./imgs/btn_end.png " alt=" " width="100% ">
+            </div>
+            <div class="start " ng-click="choiceWeb(2,'btn_again_1') " on-hold="touchHoldFun('btn_again_1')">
+                <img src="./imgs/btn_again.png " alt=" " width="100% ">
+            </div>
+        </div>
+    </div>
+    <div class="info " ng-show="showWeb==4">
+        <div class="bg ">
+            <div class="logo ">
+                <img src="./imgs/logo.png " alt=" " width="100% ">
+            </div>
+            <div class="img ">
+                <img src="./imgs/4_img.png " alt=" " width="100% " height="100% ">
+            </div>
+            <!-- <div class="wenzi ">
+                <img src="./imgs/4_zi.png " alt=" " width="100% " height="100% ">
+            </div> -->
+            <div class="userInfo ">
+                <input type="text" ng-model="user.name " placeholder="请填写姓名： ">
+                <input type="number" ng-model="user.age " placeholder="请填写年龄： ">
+                <input type="text" ng-model="user.city " placeholder="请填写地区： ">
+                <input type="text" ng-model="user.company " placeholder="请填写公司名称： ">
+                <input type="number" ng-model="user.tel " placeholder="请填写手机号码： ">
+                <input type="text" ng-model="user.dec " placeholder="请描述Richard Wolf： ">
+            </div>
+            <div class="submit " ng-click="postInfo()">
+                <img src="./imgs/btn_true.png " alt=" " width="100% ">
+            </div>
+            <div class="start " ng-click="choiceWeb(0,'btn_back_1') " on-hold="touchHoldFun('btn_back_1')">
+                <img src="./imgs/btn_back.png " alt=" " width="100% ">
+            </div>
+        </div>
+    </div>
+    <div class="AllSubmit" ng-show="isShowSubmit">
+        <div class="submitImg">
+            <img src="./imgs/submit.png" alt="" width="100%">
+        </div>
+    </div>
+    <div class="AllSubmit" ng-show="isShowSubmitfalse">
+        <div class="submitImg">
+            <img src="./imgs/submitfalse.png" alt="" width="100%">
+        </div>
+    </div>
+    <audio src="./audio/error.mp3" id="videoError">
+    </audio>
+    <audio src="./audio/true.mp3" id="videoTrue">
+    </audio>
+    <audio src="./audio/bg.mp3" id="videoBg" autoplay loop>
+    </audio>
+</body>
+
+<script src="./app/app.js "></script>
+
+
+
+</html>

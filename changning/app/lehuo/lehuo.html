@@ -1,0 +1,201 @@
+<div class="activelist lehuo">
+    <!-- 搜索 -->
+    <div class="choiceTop">
+        <div class="busi" ng-click='goBusiness()'>
+            <img src="./imgs/shoplist/busi.png" height="100%">
+        </div>
+        <form>
+            <label>
+            <i><img src="./imgs/shoplist/fdj.png" height="100%;">&nbsp;</i>
+            <input type="search" placeholder="&nbsp;&nbsp;点击搜索" ng-model="keyword" id="keyword">
+          </label>
+        </form>
+        <div class="map" ng-click='goMap()'>
+            <img src="./imgs/shoplist/map.png" height="100%">
+        </div>
+    </div>
+    <!-- banner/ -->
+    <div class="swiper-container banner1">
+        <div class="swiper-wrapper ">
+            <div class="swiper-slide" onClick="goActiveInfo(4)">
+                <img src="./imgs/lehuo/banner1.jpg" alt="" width="100%">
+            </div>
+            <div class="swiper-slide" onClick="goActiveInfo(4)">
+                <img src="./imgs/lehuo/banner2.jpg" alt="" width="100%">
+            </div>
+            <div class="swiper-slide" onClick="goActiveInfo(4)">
+                <img src="./imgs/lehuo/banner3.png" alt="" width="100%">
+            </div>
+            <div class="swiper-slide" onClick="goActiveInfo(4)">
+                <img src="./imgs/lehuo/banner4.jpg" alt="" width="100%">
+            </div>
+            <div class="swiper-slide" onClick="goActiveInfo(4)">
+                <img src="./imgs/lehuo/banner5.jpg" alt="" width="100%">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- nav -->
+    <ul class="lh_nav">
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav1.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav2.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav4.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav3.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav9.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav6.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav11.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav8.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav7.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav12.png" alt="" width="100%">
+        </li>
+        <li ng-click="goAcitveList()" ng-show="navBol">
+            <img src="./imgs/lehuo/nav13.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav5.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav15.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav16.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav17.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav18.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav19.png" alt="" width="100%">
+        </li>
+        <li ng-show="navBol" ng-click="goAcitveList()">
+            <img src="./imgs/lehuo/nav20.png" alt="" width="100%">
+        </li>
+
+        <li ng-click="shoiceNavbol()" ng-show="!navBol">
+            <img src="./imgs/lehuo/nav10.png" alt="" width="100%">
+        </li>
+        <li ng-click="shoiceNavbol()" ng-show="navBol">
+            <img src="./imgs/lehuo/nav14.png" alt="" width="100%">
+        </li>
+    </ul>
+
+    <!-- 文教设施 -->
+    <div class="lehuo_teach">
+        <div class="swiper-container teach_banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" onClick="goActiveInfo(3)">
+                    <img src="./imgs/lehuo/teach1.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" onClick="goActiveInfo(3)">
+                    <img src="./imgs/lehuo/teach2.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" onClick="goActiveInfo(3)">
+                    <img src="./imgs/lehuo/teach1.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" onClick="goActiveInfo(3)">
+                    <img src="./imgs/lehuo/teach2.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="more" ng-click="goTeachList()">
+            <img src="./imgs/lehuo/more.png" alt="" width="100%">
+        </div>
+    </div>
+
+    <!-- 场馆 -->
+    <div class="lehuo_space">
+        <div class="swiper-container space_banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-click="goActiveInfo(7)">
+                    <img src="./imgs/lehuo/space1.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goActiveInfo(7)">
+                    <img src="./imgs/lehuo/space2.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goActiveInfo(7)">
+                    <img src="./imgs/lehuo/space3.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goActiveInfo(7)">
+                    <img src="./imgs/lehuo/space4.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="more" ng-click="goSpaceList()">
+            <img src="./imgs/lehuo/more.png" alt="" width="100%">
+        </div>
+    </div>
+
+    <!-- 游戏 -->
+    <div class="lehuo_game">
+        <div class="swiper-container game_banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-click="goGameInfo(1)">
+                    <img src="./imgs/lehuo/game1.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goGameInfo(1)">
+                    <img src="./imgs/lehuo/game2.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goGameInfo(1)">
+                    <img src="./imgs/lehuo/game3.png" alt="" width="100%">
+                </div>
+                <div class="swiper-slide" ng-click="goGameInfo(1)">
+                    <img src="./imgs/lehuo/game4.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="more" ng-click="goGameList()">
+            <img src="./imgs/lehuo/more.png" alt="" width="100%">
+        </div>
+    </div>
+
+</div>
+<div class="lehuo_recommend">
+    <img src="./imgs/lehuo/recommend.png" alt="" width="100%">
+</div>
+<div class="activelist lehuoactivelist">
+    <!-- <div class="bg"></div> -->
+    <div class="title">
+        <ul>
+            <li>热门</li>
+            <li ng-click="openType()" class="altype">类型<span><img src="./imgs/activelist/down.png" alt="" width="100%"></span></li>
+            <li>时间<span><img src="./imgs/activelist/down.png" alt="" width="100%"></span></li>
+        </ul>
+    </div>
+    <!-- 类型 -->
+    <div class="btnlx">
+        <img src="./imgs/activelist/btnlx.png" alt="" width="100%">
+    </div>
+    <div id="test1"></div>
+
+    <!-- 内容 -->
+    <div class="alcontent ">
+        <img onClick="goActiveInfo(5)" src="./imgs/activelist/activelist1.png" alt="" width="100%">
+        <img onClick="goActiveInfo(5)" src="./imgs/activelist/activelist1.png" alt="" width="100%">
+        <img onClick="goActiveInfo(5)" src="./imgs/activelist/activelist1.png" alt="" width="100%">
+        <img src="./imgs/activelist.png" alt="" width="100%">
+        <img src="./imgs/activelist.png" alt="" width="100%">
+    </div>
+</div>

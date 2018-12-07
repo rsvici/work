@@ -1,0 +1,137 @@
+<div class="activeinfo">
+    <div class="all" ng-if="showWeb==1">
+        <img src="./imgs/activeinfo.jpg" alt="" width="100%">
+    </div>
+    <div class="book" ng-if="showWeb==2">
+        <img src="./imgs/activeinfo/book1.jpg" alt="" width="100%">
+        <div class="first">
+            <div class="firstlong">
+                <img src="./imgs/activeinfo/book3.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="second">
+            <div class="secondlong">
+                <img src="./imgs/activeinfo/book2.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="third">
+            <div class="choiceThirdLong1" ng-click="choiceThirdLong(0)">
+
+            </div>
+            <div class="choiceThirdLong2" ng-click="choiceThirdLong(1)">
+
+            </div>
+            <div class="thirdlong1">
+                <img src="./imgs/activeinfo/book5.jpg" alt="" width="100%">
+            </div>
+            <div class="thirdlong2">
+                <img src="./imgs/activeinfo/book4.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+    <div class="bookshop" ng-if="showWeb==3">
+        <img src="./imgs/activeinfo/bookshop1.jpg" alt="" width="100%">
+        <div class="second">
+            <div class="secondlong" ng-click="goActiveInfo(2)">
+                <img src="./imgs/activeinfo/bookshop3.png" alt="" width="200%">
+            </div>
+        </div>
+    </div>
+
+    <div class="video" ng-if="showWeb==4">
+        <img src="./imgs/activeinfo/video1.jpg" alt="" width="100%">
+        <div class="first">
+            <div class="firstlong">
+                <img src="./imgs/activeinfo/video3.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="second">
+            <div class="secondlong">
+                <img src="./imgs/activeinfo/video2.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="third">
+            <div class="thirdlong">
+                <img src="./imgs/activeinfo/video4.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="fouth">
+            <img src="./imgs/activeinfo/videoinfo.png" alt="" width="100%">
+        </div>
+    </div>
+    <div class="concert" ng-if="showWeb==5">
+        <img src="./imgs/activeinfo/concert.jpg" alt="" width="100%">
+    </div>
+    <div class="showing" ng-if="showWeb==6">
+        <img src="./imgs/activeinfo/showing.jpg" alt="" width="100%">
+    </div>
+    <div class="sport" ng-if="showWeb==7">
+        <img src="./imgs/activeinfo/sport1.jpg" alt="" width="100%">
+        <div class="first">
+            <div class="firstlong">
+                <img src="./imgs/activeinfo/sport3.png" alt="" width="100%">
+            </div>
+        </div>
+        <div class="second">
+            <div class="secondlong">
+                <img src="./imgs/activeinfo/sport2.png" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 收藏 -->
+    <div class="shoucang">
+        <div class="nochecked" ng-show="collectNum==1" ng-click="choiceCollectFun(2)">
+            <img src="./imgs/activeinfo/nocheck.png" alt="" width="100%">
+        </div>
+        <div class="checked" ng-show="collectNum==2" ng-click="choiceCollectFun(1)">
+            <img src="./imgs/activeinfo/checked.png" alt="" width="100%">
+        </div>
+    </div>
+
+    <div class="a_nav_t" ng-if="showWeb==3||showWeb==7">
+        <img src="./imgs/activeinfo/second.png" alt="" width="100%">
+        <div class="positionBtn">
+            <div class="left">
+                <img src="./imgs/activeinfo/n1.png" alt="" width="20%">
+            </div>
+            <div class="right">
+                <img src="./imgs/activeinfo/n3.png" alt="" width="20%" ng-show="collectNum==1" ng-click="choiceCollectFun(2)">
+                <img src="./imgs/activeinfo/n4.png" alt="" width="20%" ng-show="collectNum==2" ng-click="choiceCollectFun(1)">
+            </div>
+        </div>
+    </div>
+
+    <div class="a_nav_t  a_nav_s" ng-if="showWeb==4">
+        <img src="./imgs/activeinfo/third.png" alt="" width="100%">
+        <div class="positionBtn">
+            <div class="left">
+                <img src="./imgs/activeinfo/n1.png" alt="" width="33%">
+            </div>
+            <div class="center">
+                <img src="./imgs/activeinfo/n5.png" alt="" width="33%">
+            </div>
+            <div class="right">
+                <img src="./imgs/activeinfo/n3.png" alt="" width="33%" ng-show="collectNum==1" ng-click="choiceCollectFun(2)">
+                <img src="./imgs/activeinfo/n4.png" alt="" width="33%" ng-show="collectNum==2" ng-click="choiceCollectFun(1)">
+            </div>
+        </div>
+    </div>
+
+    <div class="a_nav_t a_nav_s" ng-if="showWeb==5">
+        <img src="./imgs/activeinfo/third.png" alt="" width="100%">
+        <div class="positionBtn">
+            <div class="left">
+                <img src="./imgs/activeinfo/n1.png" alt="" width="33%">
+            </div>
+            <div class="center">
+                <img src="./imgs/activeinfo/n2.png" alt="" width="33%">
+            </div>
+            <div class="right">
+                <img src="./imgs/activeinfo/n3.png" alt="" width="33%" ng-show="collectNum==1" ng-click="choiceCollectFun(2)">
+                <img src="./imgs/activeinfo/n4.png" alt="" width="33%" ng-show="collectNum==2" ng-click="choiceCollectFun(1)">
+            </div>
+        </div>
+    </div>
+</div>

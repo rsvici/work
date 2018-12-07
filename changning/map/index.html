@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>长宁时尚地图</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- <link rel="stylesheet" href="./ionic/css/ionic.min.css"> -->
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js "></script>
+    <script src="./ionic/js/ionic.bundle.min.js "></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body ng-controller="myCtrl">
+    <!-- 背景图片 -->
+
+    <!-- 时尚地图 -->
+    <div class="pinch container ">
+        <div class="newcontainer">
+            <img src="./imgs/background.png" alt="" width="100%">
+            <div class="first">
+                <img src="./imgs/1.png" alt="" width="100%">
+            </div>
+            <div class="second">
+                <img src="./imgs/2.png" alt="" width="100%">
+            </div>
+            <div class="third">
+                <img src="./imgs/3.png" alt="" width="100%">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 百度地图 -->
+    <div id="dituContent">
+    </div>
+
+    <!-- 上方选择商圈 -->
+    <!-- <div class="nav">
+        <div class="nav_show">
+            <div class="left" ng-bind="address" ng-click="openNavHide()">
+            </div>
+            <div class="right">
+                <img src="./imgs/top.png" alt="" width="100%" ng-click="openNavHide()" class="up" ng-show="!isCanDown">
+                <img src="./imgs/down.png" alt="" width="100%" ng-click="closeNavHide()" class="down" ng-show="isCanDown">
+            </div>
+        </div>
+        <div class="nav_hide">
+            <div class="left" ng-click="choiceObjFun(0)" style="color:#75AAB5">临空
+            </div>
+            <div class="left" ng-click="choiceObjFun(1)">新虹桥
+            </div>
+            <div class="left" ng-click="choiceObjFun(2)">中山
+            </div>
+        </div>
+    </div> -->
+
+    <div class="shoplist">
+        <div class="choiceTop">
+            <div class="busi" ng-click='goBusiness()'>
+                <img src="./imgs/busi.png" height="100%">
+            </div>
+            <form>
+                <label>
+                    <i><img src="./imgs/fdj.png" height="100%;">&nbsp;</i>
+                    <input type="search" placeholder="&nbsp;&nbsp;点击搜索" ng-model="keyword" id="keyword">
+                </label>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 下方选择地图 -->
+    <div class="mapchoice">
+        <img src="./imgs/5.png" alt="" width="100%" ng-show="mapchoiceBol" ng-click="mapchoiceFun(0)">
+        <img src="./imgs/4.png" alt="" width="100%" ng-show="!mapchoiceBol" ng-click="mapchoiceFun(1)">
+    </div>
+
+</body>
+<!-- <script src="./js/pinch-zoom.umd.js "></script>
+
+<script type="text/javascript">
+    var el = document.querySelector('div.pinch');
+    new PinchZoom.default(el, {});
+</script> -->
+<script src="https://webapi.amap.com/maps?v=1.4.10&key=466fd4af47506ed3bdce5970ab4cb2a8&plugin=Map3D"></script>
+<script>
+    // 创建地图实例
+    var map = new AMap.Map("dituContent", {
+      viewMode: '3D',
+      pitch: 55,
+      zoom: 17,
+      center: [121.403979, 31.211853],
+      mapStyle: 'amap://styles/normal',
+      buildingAnimation: true,
+      showIndoorMap: true,
+      indoorMap: true,
+    });
+    
+
+    // // 设置光照属性/
+    map.AmbientLight = new AMap.Lights.AmbientLight([1, 1, 1], 0.9);
+    map.DirectionLight = new AMap.Lights.DirectionLight([0, -1, 1], [1, 1, 1], 0.1);
+    // // 创建Object3DLayer图层
+    var object3Dlayer = new AMap.Object3DLayer();
+    map.add(object3Dlayer);
+
+
+    // 设置边界
+    var prism = [];
+
+    function drawBounds() {
+      $.getJSON("map.json", function (resjson) {
+
+        var boundobj = [];
+        for (var i = 0, l = resjson[0].length; i < l; i++) {
+          //生成行政区划polygon
+          var bound = new AMap.LngLat(resjson[0][i].P, resjson[0][i].O);
+          boundobj.push(bound);
+        }
+
+        var height = 1000;
+        var color = 'rgba(100,255,255, 0.7)'; //rgba
+        prism = new AMap.Object3D.Prism({
+          path: boundobj,
+          height: height,
+          color: color,
+        });
+        prism.transparent = true;
+      });
+    }
+    drawBounds();
+
+    // 添加模型
+    map.plugin(["AMap.GltfLoader"], function () {
+      var hqyszx = './gltf/hqyszx.gltf';
+      var paramCity = {
+        position: new AMap.LngLat(121.40396, 31.211692),
+        scale: 18,
+        height: 120,
+        scene: 0
+      };
+      
+      var gltfObj = new AMap.GltfLoader();
+
+      gltfObj.load(hqyszx, function (gltfCity) {
+        gltfCity.setOption(paramCity);
+        gltfCity.rotateX(90);
+        gltfCity.rotateY(0);
+        gltfCity.rotateZ(0);
+        object3Dlayer.add(gltfCity);
+      });
+
+    });
+
+    // 标识点
+    var marker = new AMap.Marker({
+        map: map,
+        icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+        position: [121.40396, 31.211692]
+    });
+    function showInfoM(e){
+        // console.log('['+e.lnglat.getLng()+','+e.lnglat.getLat()+']!');
+        window.location.href="http://www.beerqi.com/changning/#/shopinfo?shopId=2";
+    }
+    marker.on('click', showInfoM);
+
+
+    // 放大缩小事件
+    map.on('zoomend', function (e) {
+      if (map.getZoom() > 16) {
+        object3Dlayer.remove(prism);
+      } else {
+        object3Dlayer.add(prism);
+      }
+    });
+    
+    //点击事件
+    map.on('click', function (ev) {
+      // 触发事件的对象
+      var target = ev.target;
+
+      // 触发事件的地理坐标，AMap.LngLat 类型
+      var lnglat = ev.lnglat;
+
+      // 触发事件的像素坐标，AMap.Pixel 类型
+      var pixel = ev.pixel;
+
+      // 触发事件类型
+      var type = ev.type;
+      // console.log(ev);
+    });
+  </script>
+
+<script src="./js/index.js "></script>
+
+</html>

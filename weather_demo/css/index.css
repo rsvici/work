@@ -1,0 +1,52 @@
+.contaienr {
+  width: 1920px;
+  height: 578px;
+  background-size: cover;
+  overflow: hidden;
+}
+.rain{
+  background-image: url(../img/rain.jpg);
+}
+.index{
+  background-image: url(../img/cloud.jpg);
+}
+.sun{
+  background-image: url(../img/sun.jpg);
+}
+.cloud{
+  background-image: url(../img/04.jpg);
+}
+#canvas {
+  width: 1920px;
+  height: 578px;
+}
+
+.bannner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 578px;
+  overflow: hidden;
+}
+.bannner>div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 578px;
+  display: none;
+}
+.bannner .fourth{
+  display: block;
+}
+.bannner .third .road{
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+}
+.bannner .third .car{
+  position: absolute;
+  bottom: 30px;
+  left: 2000px;
+}

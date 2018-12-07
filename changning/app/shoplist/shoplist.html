@@ -1,0 +1,47 @@
+<div class="shoplist">
+    <div class="choiceTop">
+        <div class="busi" ng-click='goBusiness()'>
+            <img src="./imgs/shoplist/busi.png" height="100%">
+        </div>
+        <form>
+            <label>
+              <i><img src="./imgs/shoplist/fdj.png" height="100%;">&nbsp;</i>
+              <input type="search" placeholder="&nbsp;&nbsp;点击搜索" ng-model="keyword" id="keyword">
+            </label>
+        </form>
+        <div class="map" ng-click='goMap()'>
+            <img src="./imgs/shoplist/map.png" height="100%">
+        </div>
+    </div>
+    <ul class="list" ng-show="businessId==1">
+        <li ng-click="goShopInfo(1)">
+            <img src="./imgs/shoplist/1_4.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(1)">
+            <img src="./imgs/shoplist/1_3.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(1)">
+            <img src="./imgs/shoplist/1_2.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(1)">
+            <img src="./imgs/shoplist/1_1.png" width="100%">
+        </li>
+    </ul>
+    <ul class="list" ng-show="businessId==2">
+        <li ng-click="goShopInfo(2)">
+            <img src="./imgs/shoplist/2_3.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(2)">
+            <img src="./imgs/shoplist/2_2.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(2)">
+            <img src="./imgs/shoplist/2_1.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(2)">
+            <img src="./imgs/shoplist/2_4.png" width="100%">
+        </li>
+        <li ng-click="goShopInfo(2)">
+            <img src="./imgs/shoplist/2_5.png" width="100%">
+        </li>
+    </ul>
+</div>

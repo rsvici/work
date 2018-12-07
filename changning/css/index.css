@@ -1,0 +1,1296 @@
+p,
+h1,
+div,
+li,
+a,
+td,
+th,
+span,
+input {
+    font-family: PingFangSC-Regular, "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+
+
+/* 热门商圈 */
+
+.hotbusiness {
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+.hotbusiness>div {
+    background-color: #fff;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    padding: 10px 6px 0;
+}
+
+.hotbusiness ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hotbusiness ul li {
+    width: 33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+/* 商圈详情 */
+
+.businessinfo .top {
+    height: 6vh;
+    background-color: #F1F1F1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.businessinfo .businessinfo1,
+.businessinfo .businessinfo2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.businessinfo .top img {
+    margin-top: 1.25vh;
+    float: right;
+    margin-right: 2.5vh;
+}
+
+.businessinfo .pic {
+    margin-top: 1.5vh;
+    padding: 0 3vw 2vh;
+}
+
+.businessinfo .title {
+    padding-left: 3vw;
+    height: 7vw;
+}
+
+.businessinfo .word {
+    width: 90%;
+    margin: 1vh auto;
+    font-family: ''
+}
+
+.businessinfo .word p {
+    text-indent: 2rem;
+}
+
+.businessinfo .word p.english {
+    text-indent: 0rem;
+}
+
+.businessinfo .word h1 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    font-weight: 700;
+}
+
+
+/* 商场列表 */
+
+.shoplist {
+    width: 100%;
+}
+
+.shoplist .choiceTop {
+    background-color: #F1F1F1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10000;
+    box-sizing: border-box;
+    height: 11vw;
+    width: 100%;
+    padding: 2vw;
+}
+
+.shoplist .choiceTop label {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 7vw;
+    float: left;
+    text-align: center;
+    padding-left: 10vw;
+    margin-left: 8%;
+    padding-top: 1vw;
+}
+
+.shoplist .choiceTop label i {
+    display: block;
+    height: 4vw;
+    float: left;
+    margin-top: 1vw;
+}
+
+.shoplist .choiceTop label input {
+    float: left;
+    display: block;
+    height: 6vw;
+    padding: 0;
+    line-height: 6vw;
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    color: #666;
+    border: 0;
+    width: 60%;
+}
+
+.shoplist .choiceTop label input::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    padding-top: 0.3vw;
+}
+
+.shoplist .choiceTop .busi {
+    float: left;
+    width: 12%;
+    height: 8vw;
+    /* margin-top: 0.5vw; */
+    text-align: right;
+}
+
+.shoplist .choiceTop .map {
+    float: right;
+    width: 12%;
+    height: 8vw;
+    /* margin-top: 0.5vw; */
+}
+
+.shoplist .list {
+    padding-top: 11vw;
+}
+
+.shoplist .list li {
+    /* border-top: 1.5px solid #E6E6E6; */
+    padding-top: 8px;
+}
+
+.shoplist .list li img {
+    display: block;
+}
+
+
+/* 商场详情 */
+
+.shopinfo .active {
+    padding-bottom: 3vh;
+}
+
+
+/* 活动列表 */
+
+.activelist {
+    width: 100%;
+}
+
+.activelist .choiceTop {
+    background-color: #F1F1F1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    box-sizing: border-box;
+    height: 11vw;
+    width: 100%;
+    padding: 1.5vw 2vw;
+}
+
+.activelist .choiceTop label {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 7vw;
+    float: left;
+    text-align: center;
+    padding-left: 10vw;
+    margin-left: 20vw;
+    padding-top: 1vw;
+}
+
+.activelist .choiceTop label i {
+    display: block;
+    height: 4vw;
+    float: left;
+    margin-top: 1vw;
+}
+
+.activelist .choiceTop label input {
+    display: block;
+    height: 6vw;
+    padding: 0;
+    line-height: 6vw;
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    color: #666;
+    border: 0;
+    float: left;
+    width: 60%;
+}
+
+.activelist .choiceTop label input::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    padding-top: 0.3vw;
+}
+
+.activelist .bg {
+    position: fixed;
+    top: 11vw;
+    left: 0;
+    width: 100%;
+    height: 6.7vw;
+    background-color: #fff;
+}
+
+.activelist .title {
+    position: fixed;
+    top: 11vw;
+    left: 0;
+    width: 100%;
+    height: 10vw;
+    background-image: url('../imgs/activelist/list.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.activelist .title li {
+    width: 32%;
+    display: inline-block;
+    text-align: center;
+    line-height: 7vw;
+    color: #6A6A6A;
+}
+
+.activelist .title li span {
+    width: 10%;
+    display: inline-block;
+    margin-left: 3%;
+}
+
+.activelist .btnlx {
+    position: fixed;
+    top: 17vw;
+    left: 0;
+    display: none;
+}
+
+.activelist .content {
+    width: 100%;
+    padding: 20vw 4vw 5vw;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.activelist .content li {
+    display: block;
+    width: 30%;
+    margin-right: 4.4vw;
+    margin-bottom: 3vw;
+    float: left;
+    height: 30px;
+    height: 47vw;
+}
+
+.activelist .content li p {
+    font-size: 12px;
+}
+
+.activelist .content li:nth-of-type(3n) {
+    margin-right: 0vw;
+}
+
+.activelist .alcontent {
+    padding: 20vw 4vw 0vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.activelist .alcontent img {
+    display: block;
+    width: 100%;
+    padding-bottom: 4vw;
+}
+
+
+/* 活动详情 */
+
+
+/* 活动详情 */
+
+
+/* 活动详情 */
+
+
+/* 活动详情 */
+
+
+/* 活动详情 */
+
+.activeinfo .shoucang {
+    position: absolute;
+    top: 5vw;
+    right: 5vw;
+    width: 10vw;
+}
+
+
+/* 书籍 */
+
+.activeinfo .book .first {
+    position: absolute;
+    top: 49vw;
+    left: 22vw;
+    width: 78vw;
+    overflow: auto;
+}
+
+.activeinfo .book .first .firstlong {
+    width: 90vw;
+}
+
+.activeinfo .book .second {
+    position: absolute;
+    top: 113vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .book .second .secondlong {
+    width: 146vw;
+}
+
+.activeinfo .book .third {
+    position: absolute;
+    top: 287vw;
+    left: 0;
+    width: 100%;
+}
+
+.activeinfo .book .third .choiceThirdLong1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 15vw;
+    z-index: 10;
+}
+
+.activeinfo .book .third .choiceThirdLong2 {
+    position: absolute;
+    top: 0;
+    left: 20vw;
+    width: 22vw;
+    height: 15vw;
+    z-index: 10;
+}
+
+.activeinfo .book .third .thirdlong1,
+.activeinfo .book .third .thirdlong2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* 书店 */
+
+.activeinfo .bookshop .second {
+    position: absolute;
+    top: 129vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .bookshop .second .secondlong {
+    width: 96vw;
+}
+
+
+/* 电影 */
+
+.activeinfo .video .first {
+    position: absolute;
+    top: 67.4vw;
+    left: 22vw;
+    width: 78vw;
+    overflow: auto;
+}
+
+.activeinfo .video .first .firstlong {
+    width: 82vw;
+}
+
+.activeinfo .video .second {
+    position: absolute;
+    top: 136vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .video .second .secondlong {
+    width: 121vw;
+}
+
+.activeinfo .video .third {
+    position: absolute;
+    top: 191vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .video .third .thirdlong {
+    width: 213vw;
+}
+
+.activeinfo .video .fouth {
+    position: absolute;
+    top: 45vw;
+    left: 0vw;
+    width: 100vw;
+    overflow: auto;
+}
+
+
+/* 健身房 */
+
+.activeinfo .sport .first {
+    position: absolute;
+    top: 128vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .sport .first .firstlong {
+    width: 121vw;
+}
+
+.activeinfo .sport .second {
+    position: absolute;
+    top: 182vw;
+    left: 2vw;
+    width: 96vw;
+    overflow: auto;
+}
+
+.activeinfo .sport .second .secondlong {
+    width: 208vw;
+}
+
+
+/* 两栏 */
+
+.activeinfo .a_nav_t {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.activeinfo .a_nav_t .positionBtn {
+    position: absolute;
+    top: 1vw;
+    left: 0;
+    width: 100%;
+}
+
+.activeinfo .a_nav_t .left,
+.activeinfo .a_nav_t .right {
+    text-align: center;
+    float: left;
+    width: 50%;
+    line-height: 10.83vw;
+}
+
+.activeinfo .a_nav_s .left,
+.activeinfo .a_nav_s .right,
+.activeinfo .a_nav_s .center {
+    text-align: center;
+    float: left;
+    width: 33%;
+    line-height: 10.83vw;
+}
+
+
+/* 商户列表 */
+
+.userlist .ucontet {
+    padding-top: 12vw;
+    background-color: #f1f1f1;
+}
+
+.userlist .ucontet li {
+    margin-bottom: 1vw;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+
+/* 矩阵 */
+
+.nine {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.nine .juzhen {
+    padding-top: 11vw;
+}
+
+.nine li {
+    padding-top: 6vw;
+    display: inline-block;
+    width: 20%;
+    margin-left: 3.5vw;
+}
+
+
+/* 热门活动 */
+
+.hotactive .hfirst {
+    width: 100vw;
+    padding-top: 11vw;
+}
+
+.hotactive .hsecond {
+    padding-top: 3vw;
+}
+
+.hotactive .hfirst .htitle {
+    height: 6vw;
+    margin: 3vw;
+}
+
+.hotactive .hfirst .hul {
+    overflow: auto;
+    width: 100%;
+}
+
+.hotactive .hfirst .hul ul {
+    width: 122vw;
+    overflow: hidden;
+}
+
+.hotactive .hfirst .hul li {
+    width: 28vw;
+    float: left;
+    margin-left: 2vw;
+}
+
+
+/* 休闲展示 */
+
+.ardershow {
+    padding: 2vw;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.ardershow ul {
+    overflow: hidden;
+}
+
+.ardershow ul li {
+    width: 32.5%;
+    display: block;
+    float: left;
+    margin-right: 1vw;
+    margin-bottom: 2vw;
+}
+
+.ardershow ul li:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+
+/* 演绎空间 */
+
+.space {
+    padding: 3vw 2vw 2vw;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+
+.space .spaceul {
+    overflow: hidden;
+    padding-top: 17vw;
+}
+
+.space .spaceul li {
+    width: 49%;
+    display: block;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 1.5vw;
+}
+
+.space .spaceul li:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+
+/* 时间设置 */
+
+.activelist #test1 {
+    position: fixed;
+    top: 11vw;
+    right: 0;
+    width: 33vw;
+    height: 5vw;
+    color: transparent;
+    border: 1px solid transparent;
+    z-index: 100;
+    opacity: 0;
+}
+
+.layui-laydate {
+    width: 100vw;
+    left: 0!important;
+}
+
+.layui-laydate .layui-laydate-main {
+    width: 100%;
+}
+
+.layui-laydate .layui-laydate-main table {
+    width: 100%;
+}
+
+.layui-laydate .layui-laydate-main table td {
+    height: 15vw;
+    font-weight: 700;
+    color: #000;
+}
+
+.layui-laydate .layui-laydate-main table td .laydate-day-mark {
+    line-height: 15vw;
+}
+
+.layui-laydate .layui-laydate-main table td:nth-of-type(7n+1) {
+    color: red;
+}
+
+.layui-laydate .layui-laydate-main table td:nth-of-type(7n) {
+    color: red;
+}
+
+.layui-laydate .layui-laydate-main table td.laydate-day-prev,
+.layui-laydate .layui-laydate-main table td.laydate-day-next {
+    color: #999;
+}
+
+
+/* 乐活 */
+
+
+/* 乐活 */
+
+
+/* 乐活 */
+
+
+/* 乐活 */
+
+
+/* 乐活 */
+
+.lehuo {
+    background-color: #f1f1f1;
+    padding-bottom: 4vw;
+}
+
+.lehuo .choiceTop {
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+.lehuo .choiceTop form label {
+    margin-left: 19vw;
+}
+
+.lehuo .choiceTop .busi {
+    float: left;
+    width: 12vw;
+    height: 8vw;
+    /* margin-top: 0.5vw; */
+    text-align: right;
+    display: none;
+}
+
+.lehuo .choiceTop .map {
+    float: right;
+    width: 12%;
+    height: 8vw;
+    display: none;
+    /* margin-top: 0.5vw; */
+}
+
+
+/* 轮播 */
+
+.lehuo .swiper-container {
+    /* margin-top: 11vw; */
+    width: 100vw;
+}
+
+
+/* 按钮 */
+
+.lehuo .lh_nav {
+    width: 100vw;
+    /* height: 38vw; */
+    background-color: #fff;
+    overflow: hidden;
+    padding-bottom: 3vw;
+}
+
+.lehuo .lh_nav li {
+    width: 20%;
+    float: left;
+    height: 18vw;
+    padding: 3vw 3vw 1.5vw;
+    box-sizing: border-box;
+}
+
+
+/* 文教 */
+
+.lehuo .lehuo_teach {
+    width: 100%;
+    height: 45vw;
+    margin-top: 4vw;
+    background-image: url('../imgs/lehuo/teachbg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.lehuo .lehuo_teach .teach_banner {
+    margin-top: 12vw;
+    width: 100%;
+    height: 33vw;
+}
+
+.lehuo .more {
+    position: absolute;
+    right: 5vw;
+    top: 3.6vw;
+    width: 10vw;
+}
+
+
+/* 场馆 */
+
+.lehuo .lehuo_space {
+    width: 100%;
+    height: 60.74vw;
+    margin-top: 4vw;
+    background-image: url('../imgs/lehuo/spacebg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.lehuo .lehuo_space div.space_banner {
+    margin-top: 12vw;
+    width: 100%;
+    height: 48.74vw;
+}
+
+.lehuo .lehuo_space .more {
+    top: 5.25vw;
+}
+
+
+/* 游戏 */
+
+.lehuo .lehuo_game {
+    width: 100%;
+    height: 36.574vw;
+    margin-top: 4vw;
+    background-image: url('../imgs/lehuo/gamebg.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.lehuo .lehuo_game div.game_banner {
+    margin-top: 10vw;
+    width: 100%;
+    height: 26.574vw;
+}
+
+.lehuo .lehuo_game .more {
+    top: 3.4vw;
+}
+
+.lehuoactivelist {
+    position: relative;
+}
+
+.lehuoactivelist .title {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.lehuoactivelist .btnlx {
+    position: absolute;
+    top: 6vw;
+}
+
+.lehuoactivelist #test1 {
+    position: absolute;
+    top: 0;
+}
+
+.lehuoactivelist .alcontent {
+    padding-top: 10vw;
+}
+
+
+/* 场馆更多 */
+
+.spacelist .title {
+    background-image: url('../imgs/spacelist/spa.png');
+    background-position: 50% 35%;
+}
+
+.spacelist .title ul li {
+    width: 49%;
+}
+
+.spacelist .title ul li span {
+    width: 2.5rem;
+    line-height: 4.5vw;
+    border-bottom: 3px solid transparent;
+}
+
+.spacelist .title ul li span.active {
+    border-bottom: 3px solid #000;
+}
+
+
+/* 电竞列表 */
+
+.gamelist {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    padding-top: 2vw;
+    overflow: hidden;
+}
+
+
+/* .gamelist .lehuo_teach {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.gamelist .content {
+    padding-top: 35vw;
+} */
+
+.gamelist .content {
+    padding-top: 4vw;
+}
+
+.gamelist .content a {
+    display: block;
+    margin-bottom: 2vw;
+}
+
+
+/* 文教设施 */
+
+.masonry {
+    -moz-column-count: 2;
+    /* Firefox */
+    -webkit-column-count: 2;
+    /* Safari 和 Chrome */
+    column-count: 2;
+    -moz-column-gap: 2vw;
+    -webkit-column-gap: 2vw;
+    column-gap: 2vw;
+    width: 94vw;
+    margin: 2vw auto;
+}
+
+.masonry .item {
+    -moz-page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    padding-bottom: 2vw;
+}
+
+
+/* 最新推荐 */
+
+.newrecommend {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.newrecommend .title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 31.574vw;
+}
+
+.newrecommend .content {
+    padding-top: 35vw;
+    padding-bottom: 10vw;
+}
+
+.newrecommend .content img {
+    padding: 8vw 3vw 0;
+    box-sizing: border-box;
+}
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+
+/* 我的 */
+
+.my,
+.redeem {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.my .m_first .report {
+    position: absolute;
+    top: 10vw;
+    right: 0vw;
+    width: 22vw;
+}
+
+.my .m_second,
+.my .m_third {
+    margin-top: 5vw;
+}
+
+.my .m_second img,
+.my .m_third img {
+    display: block;
+}
+
+.my .signBox {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.my .signBox .signBoxWord {
+    width: 66%;
+    position: absolute;
+    left: 17%;
+    top: 44vw;
+}
+
+.my .signBox .signBoxWord .signBoxBtn {
+    position: absolute;
+    bottom: 5vw;
+    right: 20vw;
+    width: 26vw;
+}
+
+
+/* 积分 */
+
+.redeem .r_first {
+    padding-top: 1vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.redeem .r_first .zhezhao {
+    width: 30vw;
+    height: 10vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.redeem .r_second {
+    padding-top: 1vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.redeem .r_second li {
+    float: left;
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 2vw 1vw 0;
+}
+
+
+/* 收藏 */
+
+.collect li {
+    position: relative;
+    padding: 4vw 1vw 0;
+}
+
+.collect li .cancel {
+    width: 24%;
+    position: absolute;
+    bottom: 3.8vw;
+    left: 33vw;
+}
+
+.collect .cancelbox {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.collect .cancelbox .canceltitle {
+    width: 66%;
+    position: absolute;
+    left: 17%;
+    top: 44vw;
+}
+
+.collect .cancelbox .canceltitle .cancelBtn {
+    position: absolute;
+    bottom: 5vw;
+    left: 5vw;
+    width: 25vw;
+}
+
+.collect .cancelbox .canceltitle .confirmBtn {
+    position: absolute;
+    bottom: 5vw;
+    right: 5vw;
+    width: 25vw;
+}
+
+
+/* 个人设置/ */
+
+.setting {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.setting .s_first {
+    width: 25%;
+    padding-top: 3vw;
+    margin: 0 auto;
+}
+
+.setting .forminfo {
+    width: 80vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.setting .forminfo input::placeholder {
+    color: #c8c8c8;
+}
+
+.setting .forminfo .f_first {
+    padding-top: 10vw;
+    overflow: hidden;
+}
+
+.setting .forminfo .f_first input.name {
+    display: block;
+    width: 60%;
+    height: 10vw;
+    background-color: #fff;
+    border: 0;
+    border-radius: 1vw;
+    padding-left: 5vw;
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.setting .forminfo .f_first label {
+    display: block;
+    float: left;
+    line-height: 10vw;
+    margin-left: 1vw;
+}
+
+.setting .forminfo .f_first input {
+    display: block;
+    float: left;
+    margin-top: 3vw;
+    line-height: 10vw;
+    background-color: #fff;
+    margin-left: 7vw;
+}
+
+.setting .forminfo .f_second {
+    overflow: hidden;
+    padding-top: 7vw;
+}
+
+.setting .forminfo .f_second input {
+    display: block;
+    width: 100%;
+    height: 10vw;
+    background-color: #fff;
+    border: 0;
+    border-radius: 1vw;
+    padding-left: 5vw;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+.setting .success {
+    margin: 15vw auto;
+    width: 30vw;
+}
+
+
+/* 绑定手机号 */
+
+.bindphone .s_first {
+    font-weight: 700;
+    height: 28vw;
+    line-height: 30vw;
+    font-size: 18px;
+}
+
+.bindphone .forminfo .f_first {
+    padding-top: 7vw;
+}
+
+.bindphone .forminfo .f_first input.name {
+    float: left;
+    width: 58%;
+}
+
+.bindphone .forminfo .f_first .codebox {
+    float: right;
+    height: 10vw;
+}
+
+
+/* 最新消息 */
+
+#sign {
+    padding: 1vw 2vw;
+}
+
+#sign img {
+    display: block;
+    margin-top: 3vw;
+}
+
+
+/* 消息详情 */
+
+#newsinfo {
+    min-height: 100vh;
+    background-color: #F2F1EE;
+}
+
+#newsinfo .videoname {
+    position: absolute;
+    right: 3vw;
+    top: 17vw;
+    width: 22vw;
+}
+
+#newsinfo .menuright1 {
+    position: absolute;
+    right: 3vw;
+    top: 73vw;
+    width: 4vw;
+    padding: 3vw;
+}
+
+#newsinfo .menuright2 {
+    position: absolute;
+    right: 3vw;
+    top: 101vw;
+    width: 4vw;
+    padding: 3vw;
+}
+
+#newsinfo .menuinfo1 {
+    position: absolute;
+    right: 2vw;
+    top: 82vw;
+    width: 29vw;
+}
+
+#newsinfo .menuinfo2 {
+    position: absolute;
+    right: 2vw;
+    top: 110vw;
+    width: 29vw;
+}

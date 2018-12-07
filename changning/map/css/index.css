@@ -1,0 +1,193 @@
+img {
+    display: block;
+}
+
+.pinch-zoom-container {
+    min-height: 100vh!important;
+    /* width: 179.539vh!important; */
+    overflow-x: auto!important;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: auto!important;
+}
+
+.container .newcontainer {
+    height: 100vh;
+    width: 179.539vh;
+    position: relative;
+    overflow-y: hidden;
+}
+
+
+/* dingwei */
+
+.container .newcontainer div {
+    display: none;
+}
+
+.container .first {
+    position: absolute;
+    width: 95vw;
+    bottom: 0vw;
+    left: 0vw;
+}
+
+.container .second {
+    position: absolute;
+    width: 186vw;
+    bottom: 0vw;
+    left: 64vw;
+}
+
+.container .third {
+    position: absolute;
+    width: 103vw;
+    bottom: 0vw;
+    right: 0vw;
+}
+
+div.nav {
+    position: fixed;
+    top: 3vw;
+    left: 3vw;
+    width: 40vw;
+    height: 8vw;
+}
+
+div.nav .nav_show {
+    height: 8vw;
+    overflow: hidden;
+}
+
+div.nav .left {
+    width: 32vw;
+    height: 8vw;
+    line-height: 8vw;
+    float: left;
+    background-color: #fff;
+    padding-left: 3vw;
+    color: #8E8F94;
+    box-sizing: border-box;
+}
+
+div.nav .nav_show .right {
+    width: 8vw;
+    float: left;
+    position: relative;
+}
+
+div.nav .nav_show .right img {
+    position: absolute;
+    top: 0;
+    display: block;
+}
+
+div.nav .nav_hide {
+    display: none;
+}
+
+div.nav .nav_hide .left {
+    width: 40vw;
+    margin-top: 1vw;
+}
+
+.mapchoice {
+    position: fixed;
+    bottom: 4vw;
+    right: 4vw;
+    width: 40vw;
+}
+
+#dituContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
+
+.shoplist .choiceTop {
+    background-color: #F1F1F1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10000;
+    box-sizing: border-box;
+    height: 11vw;
+    width: 100%;
+    padding: 2vw;
+}
+
+.shoplist .choiceTop label {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 7vw;
+    float: left;
+    text-align: center;
+    padding-left: 10vw;
+    margin-left: 5%;
+    padding-top: 1vw;
+}
+
+.shoplist .choiceTop label i {
+    display: block;
+    height: 4vw;
+    float: left;
+    margin-top: 1vw;
+}
+
+.shoplist .choiceTop label input {
+    float: left;
+    display: block;
+    height: 6vw;
+    padding: 0;
+    line-height: 6vw;
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    color: #666;
+    border: 0;
+    width: 60%;
+}
+
+.shoplist .choiceTop label input::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-family: PingFangSC-Regular;
+    padding-top: 0.3vw;
+}
+
+.shoplist .choiceTop .busi {
+    float: left;
+    width: 12%;
+    height: 8vw;
+    margin-left: 3.5vw;
+    text-align: right;
+}
+
+.shoplist .choiceTop .map {
+    float: right;
+    width: 12%;
+    height: 8vw;
+    /* margin-top: 0.5vw; */
+}
+
+/* 高德 */
+.cc {
+    position: absolute;
+    color: #000000;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .amap-logo,
+  .amap-copyright {
+    display: none !important;
+  }

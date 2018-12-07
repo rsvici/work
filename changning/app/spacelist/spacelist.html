@@ -1,0 +1,34 @@
+<div class="activelist spacelist">
+    <div class="choiceTop">
+        <form>
+            <label>
+                  <i><img src="./imgs/shoplist/fdj.png" height="100%;">&nbsp;</i>
+                  <input type="search" placeholder="&nbsp;&nbsp;点击搜索" ng-model="keyword" id="keyword">
+                </label>
+        </form>
+    </div>
+    <div class="bg"></div>
+    <div class="title">
+        <ul>
+            <li ng-click="choiceType(0)"><span class="active">公共</span></li>
+            <li ng-click="choiceType(1)"><span>商业</span></li>
+        </ul>
+    </div>
+
+
+    <!-- 内容 -->
+    <div class="content">
+        <ul>
+            <li ng-click="goActiveInfo(7)">
+                <img src="./imgs/spacelist/space4.png" alt="" width="100%">
+            </li>
+            <li ng-click="goActiveInfo(7)">
+                <img src="./imgs/spacelist/space2.png" alt="" width="100%">
+            </li>
+            <li ng-click="goActiveInfo(7)">
+                <img src="./imgs/spacelist/space3.png" alt="" width="100%">
+            </li>
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>上海数析3D展示</title>
+<style type="text/css">
+
+/* 代码整理：jQuery插件库 */
+html{ height:100%;}
+body{ height:100%;}
+*{ margin:0; padding:0;}
+
+#pageContent {height: 100%;overflow: hidden;position:relative;}
+
+#imgContainer {height: 100%;}
+
+#positionButtonDiv {background: rgb(58, 56, 63);background: rgba(58, 56, 63, 0.8);border: solid 1px #100000;color: #fff;padding: 8px;text-align: left;position: absolute;right:35px;top:35px;}
+
+#positionButtonDiv .positionButtonSpan img {float: right;border: 0;}
+
+.positionMapClass area {cursor: pointer;}
+
+.zoomButton {border: 0;	cursor: pointer;}
+
+.zoomableContainer {}
+
+.watermask{ position:absolute; }
+
+.bottombar2 {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+.bottombar2 a{ display:inline-block; width:40px; height:40px;background-size:40px 40px; margin:0 8%; outline:none;-webkit-tap-highlight-color:transparent}
+.turnbtn{ background:url("turn1.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/turn1.png*/) no-repeat center;background-size:40px 40px;}
+.turnbtn.active{ background:url("turn2.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/turn2.png*/) no-repeat center;background-size:40px 40px;}
+
+.bottombar{ position:absolute; bottom:40px; width:100%; left:0; display:none; text-align:center;background-size:40px 40px;}
+.bottombar a{ display:inline-block; width:40px; height:40px;background-size:40px 40px; margin:0 10px; outline:none;-webkit-tap-highlight-color:transparent}
+.Playbtn{ background:url("BeginLoopPlay.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/BeginLoopPlay.png*/) no-repeat center;background-size:40px 40px;}
+.Playbtn.active{ background:url("StopLoopPlay.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/StopLoopPlay.png*/) no-repeat center;background-size:40px 40px;}
+.ZoomOut{ background:url("ZoomOut.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/ZoomOut.png*/) no-repeat center;background-size:40px 40px;}
+.ZoomIn{ background:url("ZoomIn.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/ZoomIn.png*/) no-repeat center;background-size:40px 40px;}
+.qrcode{ background:url("qrcode.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/qrcode.png*/) no-repeat center;background-size:40px 40px;}
+.spinbtn{ background:url("Zoom.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/Zoom.png*/) no-repeat center;background-size:40px 40px;}
+.spinbtn.state2{ background:url("Spin.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/Spin.png*/) no-repeat center;background-size:40px 40px;}
+/*速度调整*/
+.adjustbarbg{ width:220px; padding:0 30px; height:25px; background:url("AdjustTip.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustTip.png*/) no-repeat left center; position:fixed; top:50%; margin-left:-110px; margin-right:-110px; right:0%; transform:rotate(-90deg);-ms-transform:rotate(-90deg); /* Firefox */  -moz-transform:rotate(-90deg); /* Firefox */  -webkit-transform:rotate(-90deg); /* Safari and Chrome */ -o-transform:rotate(-90deg); /* Safari and Chrome */}
+/*.adjustbarbg{ width:220px; padding:0 30px; height:25px; background:url(Res/images/AdjustTip.png) no-repeat left center; position:absolute; bottom:90px; left:50%; margin-left:-140px;}*/
+/*.adjustbar{ height:15px; margin-top:5px; width:220px; background:url(Res/Pic/AdjustBack.png) no-repeat center center;}*/
+input[type=range] {
+	cursor:pointer;
+    -webkit-appearance: none;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+	background:url("AdjustBack.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustBack.png*/) no-repeat right;		
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}    
+input[type=range]::-webkit-slider-runnable-track,input[type=range]::-moz-range-progress{
+    height: 5px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+}
+input[type=range]::-ms-track {
+    height:5px;
+    border-radius: 10px;
+    border-color: transparent; /*去除原有边框*/
+    color: transparent; /*去除轨道内的竖线*/
+}
+input[type=range]::-ms-thumb {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+     background:url("AdjustPoint.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustPoint.png*/) no-repeat center; 
+	border: solid 0.125em rgba(255, 255, 255, 0.5); /*设置边框*/
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -3px; /*使滑块超出轨道部分的偏移量相等*/
+    background:url("AdjustPoint.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustPoint.png*/) no-repeat center;
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(255, 255, 255, 0.5); /*设置边框*/
+}
+#block-range{ width:210px; height:35px;margin-top: -8px;}
+input[type=range]::-ms-fill-lower {
+    /*进度条已填充的部分*/
+    border-radius: 10px;
+    background:rgba(0,0,0,.7);
+}
+
+input[type=range]::-ms-fill-upper {
+    /*进度条未填充的部分*/
+    border-radius: 10px;
+    background:rgba(0,0,0,.7);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background:rgba(0,0,0,.7);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background:rgba(0,0,0,.7);
+}
+/* 二维码弹出层 */
+.marsk{ display:none; position:fixed; left:0; top:0; width:100%; height:100%; z-index:999; background:rgba(0,0,0,.4);}
+.marsk img{ display:block; position:absolute; left:50%; top:50%; margin-left:-100px; margin-top:-100px; width:200px; height:200px;}
+.page img{ max-width:100%; margin:0 auto; display:block;}
+.buyit { display:none; position: fixed;  bottom: 0; z-index: 2;  left: 0; height: 50px; line-height: 50px;  text-align: center;  width: 100%; font-size: 22px;  color: #fff; text-decoration: none;  background-color: #D82228; opacity: 0.8;}
+.next_screen.on {
+display: none;
+animation: goNext 1.5s infinite;
+-webkit-animation: goNext 1.5s infinite;
+animation-name: goNext;
+-webkit-animation-name: goNext;
+animation-duration: 1.5s;
+-webkit-animation-duration: 1.5s;
+animation-timing-function: initial;
+-webkit-animation-timing-function: initial;
+animation-delay: initial;
+-webkit-animation-delay: initial;
+animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
+animation-direction: initial;
+-webkit-animation-direction: initial;
+animation-fill-mode: initial;
+-webkit-animation-fill-mode: initial;
+animation-play-state: initial;
+-webkit-animation-play-state: initial;
+}
+@keyframes goNext{0%{
+transform: translate(0,0) translateZ(0);
+-ms-transform: translate(0,0) translateZ(0);
+-moz-transform: translate(0,0) translateZ(0);
+-webkit-transform: translate(0,0) translateZ(0);
+-o-transform: translate(0,0) translateZ(0);
+opacity:1
+}
+100%{
+transform:translate(0,-10px) translateZ(0);
+transform: translate(0,-10px) translateZ(0);
+-ms-transform: translate(0,-10px) translateZ(0);
+-moz-transform: translate(0,-10px) translateZ(0);
+-webkit-transform: translate(0,-10px) translateZ(0);
+-o-transform: translate(0,-10px) translateZ(0);
+opacity:.1
+}
+}
+.next_screen{ cursor:pointer; display:none}
+
+
+.adjustbarbg2{ width:25px; position:relative; height:220px; background:url("AdjustBack.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustBack.png*/) no-repeat left center;}
+.ui-slider .ui-slider-handle{    left: -.3em; margin-left: 0; margin-bottom: -12.5px;position: absolute;z-index: 2;cursor: default; -ms-touch-action: none; touch-action: none;background:url("AdjustPoint.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustPoint.png*/) no-repeat center; width:25px; height:25px; outline:none}
+.slidewrap{ position:fixed; top:50%; margin-top:-142px; right:2%; height:285px; background:url("AdjustTip.png"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/images/AdjustTip.png*/) no-repeat center;}
+#slider{ top:35px;}
+
+
+</style>
+<link href="smartMenu.css" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/css/smartMenu.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="nprogress.min.css" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/css/nprogress.min.css"/>
+</head>
+<body>
+<div id="pageContent">
+<div id="imgContainer"><img id="imageFullScreen" src=""/> </div>
+<div class="next_screen on" style=" position:absolute; left:0; bottom:0; height:40px; width:100%; background:url(Res/images/more.png) no-repeat center bottom 5px;"></div>
+<div class="bottombar2">
+<a id="Playbtn_mobile" class="Playbtn" href="javascript:;"></a>
+<a id="spinbtn_mobile" class="spinbtn" href="javascript:;"></a>
+<a class="qrcode" href="javascript:;"></a>
+</div>
+<div class="bottombar">
+<a title="Play" id="Playbtn" class="Playbtn" href="javascript:;"></a>
+<a title="Zoom In" id="zoomInButton" class="ZoomOut" href="javascript:;"></a>
+<a title="Zoom Out" id="zoomOutButton" class="ZoomIn" href="javascript:;"></a>
+<a title="Drag & Spin" id="spinbtn" class="spinbtn" href="javascript:;"></a>
+<a title="QR Code" class="qrcode" href="javascript:;"></a>
+</div>
+<img id="watermask_" class="watermask" src=""/>
+</div>
+<div id="wrapper">
+<div id="scroller">
+<div class="page">
+#ImageA
+#ImageB
+#ImageC
+#ImageD
+</div>
+</div>
+<a href="#BuyUrl" class="buyit">#Buy</a>
+</div>
+<div class="slidewrap">
+<div title="Playback Speed" id="slider" class="adjustbarbg2"></div>
+</div>
+<script type="text/javascript" src="jquery.min.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.touchSwipe.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/jquery.touchSwipe.js"></script>
+<script type="text/javascript">
+
+    var os = function () {
+        var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        isAndroid = /(?:Android)/.test(ua),
+        isFireFox = /(?:Firefox)/.test(ua),
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid: isAndroid,
+            isPc: isPc
+        };
+    }();
+
+    if (!os.isPc) {
+        $(".slidewrap").hide();
+        $(".bottombar").hide();
+        $(".bottombar2").show();
+    } else {
+        $(".slidewrap").show();
+        $(".bottombar").show();
+        $(".bottombar2").hide();
+    }
+
+
+</script>
+<script type="text/javascript" src="config.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/config.js"></script>
+<script type="text/javascript" src="player.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/player.js"></script>
+<script type="text/javascript" src="e-smart-zoom-jquery.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/e-smart-zoom-jquery.js"></script>
+<script type="text/javascript" src="rgbaster.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/rgbaster.js"></script>
+<script type="text/javascript" src="jquery-smartMenu.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="nprogress.min.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/nprogress.min.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.min.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="jquery-slider-ui.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/jquery-slider-ui.js"></script>
+<script type="text/javascript" src="iscroll.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/iscroll.js"></script>
+<!--[if lt IE 9]>
+
+    <script src="html5shiv.min.js" tppabs="http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/Res/js/html5shiv.min.js"></script>
+
+<![endif]-->
+<script type="text/javascript">
+
+    NProgress.configure({
+        showSpinner: false, //关闭进度环显示效果
+        trickleRate: 0.1  // 每次步进值
+        // minimum: 0.1 最小进度值
+        // trickle: false  是否关闭自动步进		 
+        // trickleSpeed: 800  步进时间间隔
+    }).start(); //开始进度加载
+
+    Player.init();
+
+    $("#imageFullScreen").attr("src", "Res/" + (Player.isShowBig ? "Big" : "Small") + "/0." + Player.imgExt);
+
+
+
+    if (player_config.isOpenShop) {
+
+        $(".next_screen").show();
+
+        $("#wrapper").show();
+
+
+        $("#pageContent").swipe({
+            swipeUp: function (event, direction, distance, duration, fingerCount) {
+                if ($(event.target).attr("id") == "imageFullScreen")
+                    return;
+                else {
+                    $('#pageContent').animate({ "marginTop": -$(".zoomableContainer").height() }, 300, function () {
+                        $('.buyit').show();
+                    });
+
+                }
+            },
+            threshold: 0
+        });
+
+        $(".next_screen").click(function () {
+            $('#pageContent').animate({ "marginTop": -$(".zoomableContainer").height() }, 300, function () {
+                $('.buyit').show();
+            });
+        });
+
+
+        $(document).scroll(function () {
+
+            if ($(document).scrollTop() > $(".zoomableContainer").height()) {
+
+                $('.buyit').fadeIn();
+            }
+            else {
+                $('.buyit').fadeOut();
+            }
+        });
+
+
+        $('#wrapper').height(document.body.clientHeight);
+        var myScroll = new IScroll('#wrapper');
+        myScroll.on('scrollEnd', function () {
+            if (this.y == 0)
+                $('#pageContent').animate({ "marginTop": 0 }, 300, function () {
+                    $('.buyit').hide();
+                });
+        });
+
+
+        $(".page").mousewheel(function (event, delta, deltaX, deltaY) {
+            if (delta == 1 && ($(document).scrollTop() <= 0))
+                $('#pageContent').animate({ "marginTop": 0 }, 300, function () {
+                    $('.buyit').hide();
+                });
+        });
+
+
+    } else {
+
+        $("#pageContent").swipe({
+            swipeUp: function (event, direction, distance, duration, fingerCount) {
+            },
+            threshold: 0
+        });
+
+
+        $(".next_screen").click(function () {
+        });
+
+        $(document).scroll(function () {
+        });
+
+
+
+
+        $('#wrapper').height(document.body.clientHeight);
+        var myScroll = new IScroll('#wrapper');
+        myScroll.on('scrollEnd', function () {
+        });
+
+
+        $(".page").mousewheel(function (event, delta, deltaX, deltaY) {
+        });
+
+
+        $(".next_screen").hide();
+
+        $("#wrapper").hide();
+
+
+    }
+
+    $(document).ready(function () {
+		
+
+		
+        /*底部按钮*/
+        $("#Playbtn,#Playbtn_mobile").click(function () {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                Player.stopPlayAct();
+            } else {
+                Player.stopPlayAct();
+                $(this).addClass("active");
+                Player.startPlayAct();
+            }
+        });
+
+
+        $('#imageFullScreen').smartZoom({ 'containerClass': 'zoomableContainer' });
+
+
+        $('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+
+
+
+        function zoomButtonClickHandler(e) {
+
+            var scaleToAdd = 0.3;
+            if ($(window).width() <= 500) {
+                scaleToAdd = 0.2;
+            }
+
+            if (e.target.id == 'zoomOutButton')
+
+                scaleToAdd = -scaleToAdd;
+
+            $('#imageFullScreen').smartZoom('zoom', scaleToAdd);
+
+        }
+
+
+
+
+        /* 二维码 弹出*/
+        $(".qrcode").click(function () {
+            $(".marsk").show();
+        });
+        $(".marsk").click(function () {
+            $(this).hide();
+        });
+
+    });
+
+
+    var img = "Res/Small/0." + Player.imgExt;
+
+    RGBaster.colors(img, {
+        success: function (payload) {
+            // payload.dominant是主色，RGB形式表示
+            // payload.secondary是次色，RGB形式表示
+            // payload.palette是调色板，含多个主要颜色，数组
+
+            $("body").css("background-color", payload.dominant);
+
+        }
+    });
+
+
+    var bodyMenuData = [[{ text: "盈商科技www.winbiz.cn.htm"/*tpa=http://sam.winbiz.cn/Htmlfile/Hardware/fadji1/盈商科技www.winbiz.cn*/, func: function () { window.open("http://www.winbiz.cn/"); } }]];
+    $("body").smartMenu(bodyMenuData, {
+        name: "info"
+    });
+
+
+
+        if (os.isPc) {
+            $(document).hover(function () { $(".slidewrap,.bottombar").show(); }, function () { $(".slidewrap,.bottombar").hide(); });
+        }
+
+        $("#imageFullScreen").css("cursor", "url(Res/images/Move.cur),auto");
+
+        /*速度调节*/
+        //$("#block-range").on("input", function () {
+
+        //    Player.playSpeed = Math.abs(parseInt($(this).val()) - 100);
+
+    //});
+
+        $("#slider").slider({
+            orientation: "vertical",
+            range: "min",
+            min: -900,
+            max: 65,
+            value: 4,
+            slide: function (event, ui) {
+                Player.playSpeed = Math.abs(parseInt(ui.value) - 100);
+            }
+        });
+
+
+        /* 旋转/移动 */
+        $("#spinbtn,#spinbtn_mobile").click(function () {
+            if ($(this).hasClass("state2")) {
+                $(this).removeClass("state2");
+                Player.isSpin = true;
+                $("#imageFullScreen").css("cursor", "url(Res/images/Drag.cur),auto");
+            } else {
+                $(this).addClass("state2");
+                Player.isSpin = false;
+                $("#imageFullScreen").css("cursor", "url(Res/images/Move.cur),auto");
+
+            }
+        });
+
+</script>
+<script src="jweixin-1.2.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="weixinshare.js" tppabs="http://sam.winbiz.cn/winbizwebapi/weixinshare.js"></script>
+<div class="marsk">
+<script type="text/javascript">
+        document.write("<img src='http://qr.liantu.com/api.php?&w=500&m=30&text=" + window.location.href + "'/>");
+    </script>
+</div>
+</body>
+</html>

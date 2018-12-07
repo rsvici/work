@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>3d</title>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+
+<body class="pc">
+    <img src="./imgs/bg.jpg" alt="" width="100%">
+    <div class="round">
+        <img src="./imgs/360.png" alt="" width="100%">
+    </div>
+
+    <div id="v3dTest"></div>
+
+    <div class="line1">
+        <img src="./imgs/line1.png" alt="" width="100%">
+    </div>
+    <div class="line2">
+        <img src="./imgs/line2.png" alt="" width="100%">
+    </div>
+</body>
+
+
+<script src="js/3d_control.js" language="JavaScript"></script>
+<script language="JavaScript">
+    console.log($(window).width())
+    $(document).ready(function() {
+        $("#v3dTest").v3dControl({
+            imgLength: 36, //必填
+            width: 800, //插件宽   可填   默认为容器宽  如果不想放大缩小序列图则填写序列图的宽高反之则不填width
+            height: 400, //插件高 可填   默认为容器高  如果不想放大缩小序列图则填写序列图的宽高反之则不填height
+            imgPath: "img/", //图片路径  可填  默认img/
+            imgType: ".png", //图片类型  可填  默认.png
+            isAuto: false //是否自动播放  可填      默认false
+        })
+    })
+</script>
+
+
+</html>

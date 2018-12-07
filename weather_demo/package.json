@@ -1,0 +1,17 @@
+{
+    "main": "rain.html",
+    "name": "index",
+    "description": "index",
+    "version": "0.0.1",
+    "window": {
+        "fullscreen": true,
+        "show": true,
+        "title": "index",
+        "toolbar": false,
+        "width": 1920,
+        "height": 578
+    },
+    "webkit": {
+        "plugin": true
+    }
+}

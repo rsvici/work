@@ -1,0 +1,78 @@
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+
+/* pc */
+
+#v3dTest {
+    position: absolute;
+    top: 520px;
+    left: 410px;
+}
+
+.pc .round {
+    position: absolute;
+    top: 42vw;
+    left: 23.8vw;
+    width: 6vw;
+}
+
+.pc .line1 {
+    position: absolute;
+    top: 27.3vw;
+    left: 9.6vw;
+    width: 6vw;
+}
+
+.pc .line2 {
+    position: absolute;
+    top: 37vw;
+    left: 38vw;
+    width: 9vw;
+}
+
+
+/* mobile */
+
+#myCar {
+    width: 400px;
+    height: 300px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 21vw;
+    left: 1vw;
+}
+
+.mobile .round {
+    position: absolute;
+    top: 77.5vw;
+    left: 44.8vw;
+    width: 9vw;
+}
+
+.mobile .line1 {
+    position: absolute;
+    top: 43vw;
+    left: 18.6vw;
+    width: 10vw;
+}
+
+.mobile .line2 {
+    position: absolute;
+    top: 67vw;
+    left: 70vw;
+    width: 12vw;
+}

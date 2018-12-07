@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.index,
+.content,
+.balance,
+.detail,
+.info {
+    width: 100vw;
+    height: 177.8vw;
+    overflow: hidden;
+}
+
+.bg {
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+/* 第一页 首页 */
+
+.index .bg {
+    background-image: url('../imgs/bg_index.jpg');
+}
+
+.index .bg .start {
+    position: absolute;
+    bottom: 5vw;
+    width: 27.5vw;
+    left: 15vw;
+}
+
+.index .bg .more {
+    position: absolute;
+    bottom: 5vw;
+    width: 27.5vw;
+    right: 15vw;
+}
+
+
+/* 第二页  活动解释说明 */
+
+.detail .bg {
+    background-image: url('../imgs/bg_more.jpg');
+}
+
+.detail .bg .start {
+    position: absolute;
+    top: 77vw;
+    width: 25vw;
+    right: 1vw;
+}
+
+
+/* 第四页  结算分数 */
+
+.balance .bg {
+    background-image: url('../imgs/bg_congratulation.jpg');
+}
+
+.balance .bg .word {
+    position: absolute;
+    top: 98vw;
+    width: 100vw;
+    left: 0vw;
+}
+
+.balance .bg .word p {
+    width: 80%;
+    margin: 0 auto;
+    color: #dcdcdc;
+    line-height: 1.8;
+}
+
+.balance .bg .submit {
+    position: absolute;
+    bottom: 48vw;
+    width: 30vw;
+    left: 12vw;
+}
+
+.balance .bg .start {
+    position: absolute;
+    bottom: 48vw;
+    width: 30vw;
+    right: 12vw;
+}
+
+
+/* 第五页  提交信息 */
+
+.info .bg {
+    background-position: 50% 0%;
+    background-image: url('../imgs/bg_info.jpg');
+}
+
+.info .bg .userInfo {
+    position: absolute;
+    top: 50vw;
+    width: 80vw;
+    left: 10vw;
+}
+
+.info .bg .userInfo input {
+    width: 80vw;
+    height: 7vw;
+    border-radius: 3.5vw;
+    border: 1px solid #85454B;
+    padding: 1vw 5vw;
+    margin-top: 3vw;
+    background-color: transparent;
+    line-height: 7vw;
+    color: #dcdcdc;
+}
+
+.info .bg .userInfo input::placeholder {
+    font-size: 12px;
+    line-height: 7vw;
+    color: #b06E6E;
+}
+
+.info .bg .submit {
+    position: absolute;
+    top: 120vw;
+    width: 30vw;
+    left: 12vw;
+}
+
+.info .bg .start {
+    position: absolute;
+    top: 120vw;
+    width: 30vw;
+    right: 12vw;
+}
+
+
+/* 第三页  活动内容*/
+
+.content .bg {
+    background-image: url('../imgs/bg_game.jpg');
+}
+
+.content .bg .interval {
+    position: absolute;
+    top: 5vh;
+    width: 32vw;
+    left: 5vw;
+}
+
+.progress {
+    width: 32vw;
+    height: 2.089vw;
+    background-image: url('../imgs/time_line.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+progress {
+    margin-top: 0.371vw;
+    margin-left: 0.4vw;
+    width: 31.3vw;
+    height: 1.5vw;
+    background-size: cover;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #fff;
+}
+
+progress::-webkit-progress-value {
+    background-color: #fff;
+    background-image: url('../imgs/time_1.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.content .bg .game {
+    position: absolute;
+    bottom: 2vh;
+    width: 90vw;
+    right: 5vw;
+}
+
+.content .bg .game div {
+    width: 90vw;
+}
+
+.content .bg .second {
+    margin-top: 0.5vh;
+}

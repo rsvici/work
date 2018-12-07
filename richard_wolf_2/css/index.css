@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.index,
+.content,
+.balance,
+.detail,
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* height: 177.8vw; */
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.bg {
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.bg .logo {
+    position: absolute;
+    top: 5vh;
+    right: 0;
+    width: 30vw;
+    z-index: 10;
+}
+
+.bg .footer {
+    position: absolute;
+    bottom: -1vh;
+    right: 0;
+    width: 100%;
+}
+
+
+/* 第一页 首页 */
+
+.index {
+    z-index: 10;
+}
+
+.index .bg .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.index .bg .wenzi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.index .bg .zhaochagif {
+    position: absolute;
+    bottom: 58vw;
+    left: 3vw;
+    width: 50%;
+}
+.index .bg .start {
+    position: absolute;
+    bottom: 5vw;
+    width: 50vw;
+    left: 25vw;
+}
+
+.index .bg .more {
+    position: absolute;
+    bottom: 5vw;
+    width: 27.5vw;
+    right: 15vw;
+}
+
+
+/* 第二页  活动解释说明 */
+
+.detail .bg .img {
+    position: absolute;
+    top: 13vh;
+    left: 0;
+    width: 100%;
+}
+
+.detail .bg .wenzi {
+    position: absolute;
+    top: 48vh;
+    left: 13vw;
+    width: 70%;
+}
+
+.detail .bg .start {
+    position: absolute;
+    bottom: 3vh;
+    width: 50vw;
+    right: 25vw;
+}
+
+
+/* 第四页  结算分数 */
+
+.balance .bg .img {
+    position: absolute;
+    bottom: -1.5vh;
+    left: 0;
+    width: 100%;
+}
+
+.balance .bg .wenzi {
+    position: absolute;
+    top: 10vh;
+    left: 0vw;
+    height: 36vh;
+    width: 100%;
+    text-align: center;
+}
+
+.balance .bg .word {
+    position: absolute;
+    bottom: 49.4vw;
+    width: 84vw;
+    left: 7vw;
+}
+
+.balance .bg .word p {
+    width: 90%;
+    margin: 0 auto;
+    color: #FDFEFD;
+    line-height: 1.8;
+}
+
+.balance .bg .word p span {
+    font-size: 21px;
+    padding: 0 2px;
+}
+
+.balance .bg .submit {
+    position: absolute;
+    bottom: 15vh;
+    width: 40vw;
+    right: 30vw;
+}
+
+.balance .bg .start {
+    position: absolute;
+    bottom: 4vh;
+    width: 40vw;
+    right: 30vw;
+}
+
+.balance .bg .wenzi1 {
+    position: absolute;
+    top: 11vh;
+    left: -8vw;
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+}
+
+.balance .bg .wenzi2 {
+    position: absolute;
+    bottom: 2%;
+    left: 10vw;
+    width: 66%;
+}
+
+
+/* 第五页  提交信息 */
+
+.info .bg {
+    height: 100%;
+}
+
+.info .bg .img {
+    position: absolute;
+    bottom: -3.5vh;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+.info .bg .wenzi {
+    position: absolute;
+    bottom: 2%;
+    left: 10vw;
+    width: 66%;
+}
+
+.info .bg .userInfo {
+    position: absolute;
+    top: 32.5%;
+    width: 80vw;
+    left: 10vw;
+}
+
+.info .bg .userInfo input {
+    width: 80vw;
+    height: 7vw;
+    border-radius: 3.5vw;
+    border: 1px solid #85454B;
+    padding: 1vw 5vw;
+    margin-top: 3vw;
+    background-color: transparent;
+    line-height: 7vw;
+    color: #dcdcdc;
+}
+
+.info .bg .userInfo input::placeholder {
+    font-size: 12px;
+    line-height: 7vw;
+    color: #b06E6E;
+}
+
+
+.info .bg .submit {
+    position: absolute;
+    bottom: 15vh;
+    width: 40vw;
+    right: 30vw;
+}
+
+.info .bg .start {
+    position: absolute;
+    bottom: 4vh;
+    width: 40vw;
+    right: 30vw;
+}
+
+
+/* 第三页  活动内容*/
+
+.content .bg .interval {
+    position: absolute;
+    top: 5vh;
+    width: 32vw;
+    left: 5vw;
+}
+
+.content .bg .interval p {
+    font-weight: 700;
+}
+
+.content .bg .interval p span {
+    color: #8D0022;
+    font-size: 1.2rem;
+}
+
+.progress {
+    width: 32vw;
+    height: 2.089vw;
+    background-image: url('../imgs/time_line.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+progress {
+    margin-top: 0.371vw;
+    margin-left: 0.39vw;
+    width: 31.3vw;
+    height: 1.4vw;
+    background-size: cover;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #fff;
+}
+
+progress::-webkit-progress-value {
+    background-color: #fff;
+    background-image: url('../imgs/time_1.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.content .bg .game {
+    position: absolute;
+    top: 13vh;
+    width: 100vw;
+    height: 85vh;
+}
+
+.content .bg .game .first,
+.content .bg .game .second {
+    height: 42.5vh;
+    position: relative;
+    text-align: center;
+}
+
+.content .bg .game .first img,
+.content .bg .game .second img {
+    max-width: 98vw!important;
+}
+
+.content .bg .game .right {
+    opacity: 0;
+    position: absolute;
+    top: 9vh;
+    right: 2vw;
+    width: 24vw;
+    height: 16vh;
+    background-image: url('../imgs/right.png');
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.content .bg .game .right1 {
+    background-image: url('../imgs/wrong.png');
+}
+
+.content .bg .game .wrong {
+    width: 16vw;
+    transform: translate(-50%, -50%);
+}
+
+.content .bg .second {
+    margin-top: 0.5vh;
+}
+
+.AllSubmit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+}
+
+.AllSubmit .submitImg {
+    width: 50%;
+    line-height: 100vh;
+    margin: auto;
+}

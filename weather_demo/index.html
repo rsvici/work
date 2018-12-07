@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shanghai Metro</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="contaienr index">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="bannner">
+        <div class="fourth">
+            <img src="./img/content/4_4.png" alt="">
+        </div>
+        <div class="second">
+            <img src="./img/content/2.png" alt="">
+        </div>
+        <div class="third">
+            <div class="text">
+                <img src="./img/content/3_4.png" alt="">
+            </div>
+            <div class="car">
+                <img src="./img/content/car4.png" alt="">
+            </div>
+            <div class="road">
+                <img src="./img/content/3_g.png" alt="">
+            </div>
+        </div>
+
+        <div class="first">
+            <video muted autoplay="autoplay" loop>
+                <source src="./video/demo4.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/weatherDrop.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        new Weather({
+            id: 'canvas',
+            weatherType: 'cloud',
+            num: 3
+        });
+        document.onkeydown = function (event) {
+            switch (event.keyCode) {
+                case 49:
+                    window.location.href = 'rain.html';
+                    break;
+                case 50:
+                    window.location.href = 'cloud.html';
+                    break;
+                case 51:
+                    window.location.href = 'sun.html';
+                    break;
+                case 52:
+                    window.location.href = 'index.html';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
