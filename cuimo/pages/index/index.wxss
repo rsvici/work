@@ -1,0 +1,162 @@
+/**index.wxss**/
+#home .swiper {
+  width: 750rpx;
+  height: 340rpx;
+  position: relative;
+}
+
+#home .swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+#home swiper image {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+#home .swiper .left,
+#home .swiper .right {
+  width: 36rpx;
+  height: 72rpx;
+  position: absolute;
+  top: 134rpx;
+}
+
+#home .swiper .left {
+  left: 30rpx;
+}
+
+#home .swiper .right {
+  right: 30rpx;
+}
+
+#home .swiper .left image,
+#home .swiper .right image {
+  width: 36rpx;
+  height: 72rpx;
+}
+
+/* 显示个人信息 */
+#home .userinfo {
+  width: 750rpx;
+  height: 280rpx;
+  padding: 37.5rpx;
+  position: relative;
+}
+
+#home .userinfo image {
+  width: 675rpx;
+  height: 207rpx;
+}
+
+#home .userinfo .loginInfo {
+  position: absolute;
+  width: 750rpx;
+  height: 280rpx;
+  top: 0;
+  left: 0;
+}
+
+#home .userinfo .loginInfo .loginInfoName {
+  position: absolute;
+  top: 87rpx;
+  left: 252rpx;
+  color: #f6f6f6;
+}
+
+#home .userinfo .loginInfo .loginInfoName .loginInfoCheck {
+  font-size: 20rpx;
+  height: 30rpx;
+  color: #725635;
+  background-color: #f6f6f6;
+  border-radius: 15rpx;
+  padding: 5rpx 10rpx;
+}
+
+#home .userinfo .loginInfo .loginInfoShop {
+  position: absolute;
+  top: 150rpx;
+  left: 252rpx;
+  color: #f6f6f6;
+}
+
+/* 没有注册用户 */
+#home .userinfo .nologinInfoName{
+  position: absolute;
+  top: 95rpx;
+  right: 80rpx;
+  color: #f6f6f6;
+  font-size: 24rpx;
+  color: #725635;
+  background-color: #f6f6f6;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+
+
+
+/* 订单信息 */
+.orderInfo {
+  width: 675rpx;
+  height: 182rpx;
+  margin: 0 auto;
+  background-color: #f6f6f6;
+  padding: 5% 8%;
+}
+
+.orderInfo .nav {
+  width: 33.333%;
+  float: left;
+  font-size: 25rpx;
+  color: #725635;
+  text-align: center;
+  position: relative;
+}
+
+.orderInfo .nav image {
+  width: 61rpx;
+}
+
+.orderInfo .nav2 image {
+  width: 73rpx;
+}
+
+.orderInfo .nav3 image {
+  width: 69rpx;
+}
+
+.orderInfo .nav view {
+  position: absolute;
+  top: 90rpx;
+  text-align: center;
+  width: 100%;
+}
+
+/* 第三部分 去下单 */
+.clickBtn {
+  width: 750rpx;
+}
+
+.clickBtn view {
+  width: 675rpx;
+  height: 104rpx;
+  background-color: #f6f6f6;
+  margin: 17rpx auto;
+  line-height: 104rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+}
+
+.clickBtn view.goOrder {
+  color: #c39e7f;
+}
+
+.clickBtn view text {
+  font-size: 20rpx;
+}

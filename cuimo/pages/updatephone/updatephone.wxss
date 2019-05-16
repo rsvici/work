@@ -1,0 +1,53 @@
+#register {
+    padding-top: 40rpx;
+}
+
+.formItem{
+    width: 680rpx;
+    border-bottom: 1px solid #d4d4d4;
+    margin: 35rpx auto;
+    overflow: hidden;
+}
+
+.formItem text,
+.formItem input,
+.formItemInputPlaceholder {
+    font-size: 30rpx;
+    float: left;
+    color: #000;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+
+.tel_input {
+    width: 350rpx;
+    color: #797979;
+    float: left;
+    box-sizing: border-box;
+}
+
+.tel_btn {
+    width: 170rpx;
+    height: 40rpx;
+    background-color: #725635;
+    float: right;
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 40rpx;
+    text-align: center;
+}
+
+.submit {
+    width: 300rpx;
+    text-align: center;
+    background-color: #9B9B9B;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 28rpx;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+}

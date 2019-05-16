@@ -1,0 +1,56 @@
+/**sort.wxss**/
+#home{
+  background-color: #ECEBEB;
+}
+#home .swiper {
+  width: 750rpx;
+  height: 596rpx;
+  position: relative;
+}
+
+#home .swiper swiper {
+  width: 750rpx;
+  height: 596rpx;
+}
+
+#home swiper image {
+  width: 750rpx;
+  height: 596rpx;
+}
+
+#home .swiper .left,
+#home .swiper .right {
+  width: 36rpx;
+  height: 72rpx;
+  position: absolute;
+  top: 234rpx;
+}
+
+#home .swiper .left {
+  left: 30rpx;
+}
+
+#home .swiper .right {
+  right: 30rpx;
+}
+
+#home .swiper .left image,
+#home .swiper .right image {
+  width: 36rpx;
+  height: 72rpx;
+}
+
+/* 详情 */
+
+.detail{
+  padding: 50rpx;
+  font-size: 30rpx;
+}
+.detail .title{
+  width: 100rpx;
+  float: left;
+}
+.detail .value{
+  width: 550rpx;
+  float: left;
+}

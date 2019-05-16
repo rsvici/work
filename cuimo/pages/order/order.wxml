@@ -1,0 +1,44 @@
+<!--order.wxml-->
+<view class="container" id="order">
+  <!-- 订单 -->
+  <view class="orderlist">
+    <view class="goodsinfo">
+      <view class="goodsImg">
+        <image src="../../imgs/order.png"></image>
+      </view>
+      <view class="goodsParames">
+        <view class="title">
+          商品设备
+        </view>
+        <view class="price">
+          价格:{{price}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 购买信息 -->
+    <view class="formItem">
+      <text>购买数量</text><input class="name" name="name" type="number" maxlength="11" placeholder-class="formItemInputPlaceholder"
+        bindinput="nameInput" placeholder="" value="{{goodsNum}}" bindinput="goodsNumInput"></input>
+      <view class="setnum">
+        <view class="span1" bindtap='numDel'>-</view>
+        <view class="span2">{{goodsNum}}</view>
+        <view class="span3" bindtap='numAdd'>+</view>
+      </view>
+    </view>
+
+    <view class="formItem">
+      <text>买家留言</text><textarea auto-height  class="message" name="message" type="text" placeholder-class="formItemInputPlaceholder"
+        placeholder="" bindinput="messageInput"></textarea >
+    </view>
+
+    <view class="allprice">
+      共计{{goodsNum}}件商品 合计金额 : {{allprice}}元
+    </view>
+  </view>
+
+  <!-- footer -->
+  <view class="footertab">
+    提交订单
+  </view>
+</view>

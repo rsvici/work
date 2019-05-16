@@ -1,0 +1,65 @@
+<scroll-view scroll-y="true" class="container" id="register">
+
+
+
+    <view class="formItem">
+        <text>真实姓名 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder" bindinput="nameInput"
+            placeholder=""></input>
+    </view>
+
+
+    <view class="formItem">
+        <text>手机号* : </text><input class="tel_input" name="tel" placeholder="" placeholder-class="formItemInputPlaceholder"
+            type="number" maxlength="11" bindinput="telInput"></input>
+        <view class="tel_btn" bindtap="postMobileNo">{{telBtn}}</view>
+    </view>
+
+    <view class="formItem">
+        <text>验证码 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder" bindinput="nameInput"
+            placeholder=""></input>
+    </view>
+
+    <view class="formItem">
+        <text>姓名 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder" bindinput="nameInput"
+            placeholder=""></input>
+    </view>
+
+    <view class="formItem">
+        <text>商铺名称 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder" bindinput="nameInput"
+            placeholder=""></input>
+    </view>
+
+    <view class="formItem">
+        <text>详细地址 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder" bindinput="nameInput"
+            placeholder=""></input>
+    </view>
+
+    <view class="formItem">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                职务 : {{array[index]}}
+            </view>
+        </picker>
+    </view>
+
+    <view class="formItem formItemaddImg">
+        <view class="addText">
+            营业执照:
+        </view>
+        <!-- 添加图片 -->
+        <view class="addimg">
+            
+            <image src="{{item}}" wx:for="{{tempFilePaths}}" class="newImg" />
+            <image src="../../imgs/addImg.png" mode="widthFix" bindtap="addImg"
+                wx:if="{{!isCanvas}}" />
+        </view>
+    </view>
+
+
+
+    <view class="submit" wx:if="{{!entmobileBol}}">确 认</view>
+    <button class="submit" wx:if="{{entmobileBol}}" style="background-color: #64BDD9;color:#fff;"
+        open-type="getUserInfo" bindgetuserinfo="getUserInfoBTN">
+        确 认
+    </button>
+</scroll-view>

@@ -1,0 +1,31 @@
+<scroll-view scroll-y="true" class="container" id="register">
+
+    <view class="formItem">
+        <text>原手机号* : </text><input class="tel_input" name="tel" placeholder=""
+            placeholder-class="formItemInputPlaceholder" type="number" maxlength="11" bindinput="telInput"></input>
+        <view class="tel_btn" bindtap="postMobileNo">{{telBtn}}</view>
+    </view>
+
+    <view class="formItem">
+        <text>验证码 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder"
+            bindinput="nameInput" placeholder=""></input>
+    </view>
+
+    <view class="formItem">
+        <text>新手机号* : </text><input class="tel_input" name="tel" placeholder=""
+            placeholder-class="formItemInputPlaceholder" type="number" maxlength="11" bindinput="telInput"></input>
+        <view class="tel_btn" bindtap="postMobileNo">{{telBtn}}</view>
+    </view>
+
+    <view class="formItem">
+        <text>验证码 : </text><input class="name" name="name" type="number" placeholder-class="formItemInputPlaceholder"
+            bindinput="nameInput" placeholder=""></input>
+    </view>
+
+
+    <view class="submit" wx:if="{{!entmobileBol}}">确 认</view>
+    <button class="submit" wx:if="{{entmobileBol}}" style="background-color: #64BDD9;color:#fff;"
+        open-type="getUserInfo" bindgetuserinfo="getUserInfoBTN">
+        确 认
+    </button>
+</scroll-view>

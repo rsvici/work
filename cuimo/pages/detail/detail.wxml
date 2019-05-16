@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container" id="home">
+  <!-- banner -->
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="true" current="{{current}}" bindchange="bannerChange">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="left" bindtap="changCurrent" data-current="-">
+      <image src="../../imgs/home/left.png" mode="widthFix"></image>
+    </view>
+    <view class="right" bindtap="changCurrent" data-current="+">
+      <image src="../../imgs/home/right.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="price">
+      <view class="title">价格 : </view>
+      <view class="value">1200</view>
+    </view>
+    <view class="parame">
+      <view class="title">详情 : </view>
+      <view class="value">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur possimus nesciunt quibusdam iste nisi ullam debitis. Dicta ad eius distinctio vitae sunt, cupiditate recusandae repellat necessitatibus, repellendus eligendi adipisci quibusdam!</view>
+    </view>
+
+  </view>
+
+  <!-- footer -->
+  <view class="footertab">
+    我要购买
+  </view>
+</view>

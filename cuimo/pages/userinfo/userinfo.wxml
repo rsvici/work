@@ -1,0 +1,70 @@
+<scroll-view scroll-y="true" class="container" id="userInfo">
+    <!-- 用户信息 -->
+    <view class="userinfo">
+        <view class="login">
+            <image class="loginImg" src="../../imgs/home/login.png" mode="widthFix">
+            </image>
+            <view class="loginInfo">
+                <view class="loginInfoName">
+                    审核通过
+                </view>
+                <view class="loginInfoCheck">
+                    注销店铺
+                </view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="formItem">
+        <view class="iteTitle">姓名 : </view>
+        <view class="itemValue">何某某</view>
+    </view>
+    <view class="formItem">
+        <view class="iteTitle">手机号 : </view>
+        <view class="itemValue">16811111111</view>
+        <view class="fx">
+            <image src="../../imgs/itemNext.png">
+            </image>
+        </view>
+    </view>
+
+    <view class="formItem">
+        <view class="iteTitle">店铺名称 : </view>
+        <view class="itemValue">麦子长宁店</view>
+    </view>
+
+    <view class="formItem">
+        <view class="iteTitle">详细地址 : </view>
+        <view class="itemValue">长宁路777号</view>
+    </view>
+
+
+    <view class="formItem">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                <view class="iteTitle">职务 : </view>
+                <view class="itemValue">{{array[index]}}</view>
+            </view>
+        </picker>
+    </view>
+
+    <view class="formItemaddImg">
+        <view class="addText">
+            营业执照:
+        </view>
+        <!-- 添加图片 -->
+        <view class="addimg">
+            <image src="{{item}}" wx:for="{{tempFilePaths}}" class="newImg" />
+            <image src="../../imgs/addImg.png" mode="widthFix" bindtap="addImg" wx:if="{{!isCanvas}}" />
+        </view>
+    </view>
+
+
+
+    <view class="submit" wx:if="{{!entmobileBol}}">确 认</view>
+    <button class="submit" wx:if="{{entmobileBol}}" style="background-color: #64BDD9;color:#fff;"
+        open-type="getUserInfo" bindgetuserinfo="getUserInfoBTN">
+        确 认
+    </button>
+</scroll-view>

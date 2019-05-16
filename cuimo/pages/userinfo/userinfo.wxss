@@ -1,0 +1,199 @@
+#register {
+    padding-top: 40rpx;
+}
+
+/* 显示个人信息 */
+.userinfo {
+    width: 750rpx;
+    height: 280rpx;
+    padding: 37.5rpx;
+    position: relative;
+}
+
+.userinfo image {
+    width: 675rpx;
+    height: 207rpx;
+}
+
+.userinfo .loginInfo {
+    position: absolute;
+    width: 750rpx;
+    height: 280rpx;
+    top: 0;
+    left: 0;
+}
+
+.userinfo .loginInfo .loginInfoName {
+    position: absolute;
+    top:60rpx;
+    right: 100rpx;
+    color: #f6f6f6;
+    font-size: 32rpx;
+}
+
+.userinfo .loginInfo .loginInfoCheck {
+    position: absolute;
+    bottom:60rpx;
+    right: 100rpx;
+    font-size: 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    color: #f6f6f6;
+    background-color: #9a9a9a;
+    border-radius: 20rpx;
+    padding: 0rpx 20rpx;
+}
+
+
+
+.formItem {
+    height: 50rpx;
+    width: 680rpx;
+    border-bottom: 1px solid #d4d4d4;
+    margin: 35rpx auto;
+    overflow: hidden;
+}
+
+.formItem view{
+    font-size: 34rpx;
+    float: left;
+    color: #000;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.formItem .iteTitle{
+    width: 300rpx;
+}
+.formItem .itemValue{
+    text-align: right;
+    width: 300rpx;
+    color: #666;
+}
+
+.formItem .fx{
+    width:20rpx;
+    margin-left: 30rpx;
+    margin-top: 5rpx;
+}
+.formItem .fx image{
+    width: 20rpx;
+    height: 34rpx;
+}
+
+
+.picker {
+    font-size: 30rpx;
+    color: #000;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+
+
+.tel_input {
+    width: 350rpx;
+    color: #797979;
+    float: left;
+    box-sizing: border-box;
+}
+
+.tel_btn {
+    width: 170rpx;
+    height: 40rpx;
+    background-color: #725635;
+    float: right;
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 40rpx;
+    text-align: center;
+}
+
+
+/* 上传图片 */
+
+/* 添加图片 */
+.formItemaddImg {
+    width: 680rpx;
+    margin: 35rpx auto;
+    overflow: hidden;
+}
+
+.addText {
+    font-size: 30rpx;
+    color: #000;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 140rpx;
+    float: left;
+}
+
+.addimg {
+    float: left;
+    width: 300rpx;
+    background-color: #fff;
+}
+
+.addimg image {
+    width: 281rpx;
+    height: 192rpx;
+}
+
+.addimg .newImg {
+    width: 281rpx;
+    height: 192rpx;
+}
+
+.addimg canvas {
+    width: 281rpx;
+    height: 192rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bindphone_tel .bindInput {
+    width: 100%;
+}
+
+.bindphone_tel .tel_place {
+    font-size: 25rpx;
+    color: #BABABA;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.bindphone_tel .tel_btn {
+    width: 185rpx;
+    height: 70rpx;
+    background-color: #64BEDA;
+    float: right;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.submit {
+    width: 300rpx;
+    text-align: center;
+    background-color: #9B9B9B;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 28rpx;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+}

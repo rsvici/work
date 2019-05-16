@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container" id="home">
+  <!-- banner -->
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="true" current="{{current}}" bindchange="bannerChange">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="left" bindtap="changCurrent" data-current="-">
+      <image src="../../imgs/home/left.png" mode="widthFix"></image>
+    </view>
+    <view class="right" bindtap="changCurrent" data-current="+">
+      <image src="../../imgs/home/right.png" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="goodslist">
+    <view class="item" wx:for="{{goodsList}}">
+      <image src="{{item.url}}" />
+      <view class="name">{{item.name}}</view>
+      <view class="price">
+        <text>￥{{item.price}}</text>
+      </view>
+    </view>
+
+  </view>
+</view>

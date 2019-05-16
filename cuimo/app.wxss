@@ -1,0 +1,25 @@
+/**app.wxss**/
+.container{
+  width: 100%;
+  min-height: 100vh;
+}
+.container view{
+  box-sizing: border-box;
+}
+
+
+
+
+/* 底部 */
+.footertab{
+  width: 100vw;
+  height: 114rpx;
+  background-color: #735636;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  line-height: 114rpx;
+  color:#f7f7f7;
+  font-size: 34rpx;
+  text-align: center;
+}

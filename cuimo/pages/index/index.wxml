@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class="container" id="home">
+  <!-- banner -->
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      circular="true" current="{{current}}" bindchange="bannerChange">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="left" bindtap="changCurrent" data-current="-">
+      <image src="../../imgs/home/left.png" mode="widthFix"></image>
+    </view>
+    <view class="right" bindtap="changCurrent" data-current="+">
+      <image src="../../imgs/home/right.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 用户信息 -->
+  <view class="userinfo">
+    <view class="login" wx:if="{{isLogin}}">
+      <image class="loginImg" src="../../imgs/home/login.png" mode="widthFix">
+      </image>
+      <view class="loginInfo">
+        <view class="loginInfoName">
+          何某某
+          <text class="loginInfoCheck">审核通过</text>
+        </view>
+        <view class="loginInfoShop">
+          上海市麦子长宁店
+        </view>
+      </view>
+    </view>
+    <view class="login nologin" wx:if="{{!isLogin}}">
+      <image class="loginImg" src="../../imgs/home/nologin.png" mode="widthFix">
+      </image>
+      <view class="loginInfo">
+        <view class="loginInfoName">
+          未注册用户
+        </view>
+        <view class="nologinInfoName">
+          注册
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="orderInfo">
+    <view class="nav1 nav">
+      <image src="../../imgs/home/nav1.png" mode="widthFix">
+      </image>
+      <view>订单(2)</view>
+    </view>
+
+    <view class="nav2 nav">
+      <image src="../../imgs/home/nav2.png" mode="widthFix">
+      </image>
+      <view>卡券(2)</view>
+    </view>
+    <view class="nav3 nav">
+      <image src="../../imgs/home/nav3.png" mode="widthFix">
+      </image>
+      <view>积分(2000)</view>
+    </view>
+  </view>
+
+  <!-- 第三部分 -->
+  <view class="clickBtn">
+    <view class="goOrder">
+      我要下单
+    </view>
+    <view class="goStock">
+      我的库存<text>(6)</text>
+    </view>
+    <view class="goDelivetry">
+      我的配送<text>(2)</text>
+    </view>
+
+  </view>
+</view>
