@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.swiper-container {
+    width: 100vw;
+    height: 28vw;
+}
+
+.container {
+    position: relative;
+    width: 98vw;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+#container1 {
+    background-image: url('../imgs/bg1.png');
+}
+
+#container2 {
+    background-image: url('../imgs/bg2.png');
+}
+
+#container3 {
+    background-image: url('../imgs/bg3.png');
+}
+
+#container4 {
+    background-image: url('../imgs/bg4.png');
+}
+
+#container5 {
+    background-image: url('../imgs/bg5.png');
+}
+
+.container ul {
+    position: absolute;
+    top: 0vw;
+    right: 20vw;
+}
+
+.container .word {
+    position: absolute;
+    top: 4vw;
+    left: 10vw;
+    height: 15vw;
+}
+
+
+/* 1 */
+
+#container1 .layer:nth-child(1) {
+    width: 27vw;
+}
+
+#container1 .layer:nth-child(2) {
+    width: 21vw;
+    margin-top: 7.5vw;
+    margin-left: 4vw;
+}
+
+#container1 .layer:nth-child(3) {
+    width: 23vw;
+    margin-top: 8vw;
+    margin-left: 1.5vw;
+}
+
+#container1 .layer:nth-child(4) {
+    width: 7vw;
+    margin-top: 11.5vw;
+    margin-left: 21.5vw;
+}
+
+
+/* 2 */
+
+#container2 ul {
+    top: 1vw;
+    right: 25vw;
+}
+
+#container2 .layer:nth-child(1) {
+    width: 11vw;
+}
+
+#container2 .layer:nth-child(2) {
+    width: 11vw;
+    margin-top: 0vw;
+    margin-left: 2vw;
+}
+
+#container2 .layer:nth-child(3) {
+    width: 21vw;
+    margin-top: -4vw;
+    margin-left: -4.5vw;
+}
+
+#container2 .layer:nth-child(4) {
+    width: 6vw;
+    margin-top: 12.5vw;
+    margin-left: 11vw;
+}
+
+
+/* 3 */
+
+#container3 ul {
+    top: 0vw;
+    right: 35vw;
+}
+
+#container3 .layer:nth-child(1) {
+    margin-top: 6.5vw;
+    width: 6vw;
+}
+
+#container3 .layer:nth-child(2) {
+    width: 22vw;
+    margin-top: -3vw;
+    margin-left: -2.6vw;
+}
+
+#container3 .layer:nth-child(3) {
+    width: 16vw;
+    margin-top: 3.8vw;
+    margin-left: 13vw;
+}
+
+#container3 .layer:nth-child(4) {
+    width: 7vw;
+    margin-top: 13.5vw;
+    margin-left: 14.5vw;
+}
+
+
+/* 4 */
+
+#container4 ul {
+    top: 2vw;
+    right: 33vw;
+}
+
+#container4 .layer:nth-child(1) {
+    width: 8vw;
+}
+
+#container4 .layer:nth-child(2) {
+    width: 9vw;
+    margin-top: 1vw;
+    margin-left: 5.5vw;
+}
+
+#container4 .layer:nth-child(3) {
+    width: 9vw;
+    margin-top: 15vw;
+    margin-left: 10vw;
+}
+
+#container4 .layer:nth-child(4) {
+    width: 12vw;
+    margin-top: -1vw;
+    margin-left: 23vw;
+}
+
+#container4 .layer:nth-child(5) {
+    width: 10vw;
+    margin-top: 9vw;
+    margin-left: 20vw;
+}
+
+#container4 .layer:nth-child(6) {
+    width: 23vw;
+    margin-top: 4vw;
+    margin-left: 4vw;
+}
+
+
+/* 5 */
+
+#container5 ul {
+    top: 0vw;
+    right: 15vw;
+}
+
+#container5 .layer:nth-child(1) {
+    width: 31vw;
+    margin-top: -5vw;
+    margin-left: 0vw;
+}
+
+#container5 .layer:nth-child(2) {
+    width: 26vw;
+    margin-top: -2.3vw;
+    margin-left: 2.5vw;
+}
+
+#container5 .layer:nth-child(3) {
+    width: 22vw;
+    margin-top: 0vw;
+    margin-left: 4.5vw;
+}
+
+#container5 .layer:nth-child(4) {
+    width: 18vw;
+    margin-top: 2vw;
+    margin-left: 6.4vw;
+}
+
+#container5 .layer:nth-child(5) {
+    width: 15.5vw;
+    margin-top: 3.7vw;
+    margin-left: 7.63vw;
+}
+
+#container5 .layer:nth-child(6) {
+    width: 16vw;
+    margin-top: 3.2vw;
+    margin-left: 7.36vw;
+}
+.background {
+    width: 100%;
+    height: 900px;
+    background-image: url('../imgs/bg_1.png');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.background img {
+    position: absolute;
+}
+
+.background .bg,
+.background .f2,
+.background .f1 {
+    bottom: 0px;
+}
+
+.background .cloud {
+    bottom: 10vw;
+}
+
+.background .mengban {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 900px;
+    background-color: #000;
+    opacity: .5;
+}
+
+.background .f2 {
+    right: 0;
+}
+
+.background .logo1 {
+    left: 50%;
+    bottom: 10vw;
+    transform: translate(-50%, 0);
+}
+
+.background .bear {
+    bottom: 7vw;
+    transition: opacity ease-out .3s;
+    z-index: 11;
+    left: -8%;
+    animation-delay: 2s;
+    animation-name: jump;
+    transform-origin: center bottom;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0%, 0%) scale(1, 1);
+    }
+    2% {
+        transform: translate(0%, 0%) scale(1, 1);
+    }
+    6% {
+        transform: translate(200%, 0%) scale(1, 1);
+    }
+    6.2% {
+        transform: translate(200%, 0%) scale(1.08, 0.92);
+    }
+    6.6% {
+        transform: translate(220%, -32%) scale(0.98, 1.02);
+    }
+    6.8% {
+        transform: translate(240%, -40%) scale(1, 1);
+    }
+    7.0% {
+        transform: translate(260%, -32%) scale(1, 1);
+    }
+    7.4% {
+        transform: translate(280%, -10%) scale(1.08, 0.92);
+    }
+    7.6% {
+        transform: translate(280%, -10%) scale(1, 1);
+    }
+    16.4% {
+        transform: translate(550%, -10%) scale(1, 1);
+    }
+    16.8% {
+        transform: translate(550%, -10%) scale(1.08, 0.92);
+    }
+    17.2% {
+        transform: translate(570%, -42%) scale(0.98, 1.02);
+    }
+    17.4% {
+        transform: translate(590%, -50%) scale(1, 1);
+    }
+    17.6% {
+        transform: translate(610%, -42%) scale(1, 1);
+    }
+    18% {
+        transform: translate(630%, -30%) scale(1.08, 0.92);
+    }
+    18.2% {
+        transform: translate(630%, -31%) scale(1, 1);
+    }
+    28% {
+        transform: translate(1000%, -31%) scale(1, 1);
+    }
+    28.4% {
+        transform: translate(1000%, -31%) scale(1.08, 0.92);
+    }
+    28.8% {
+        transform: translate(1020%, -42%) scale(0.98, 1.02);
+    }
+    29% {
+        transform: translate(1040%, -50%) scale(1, 1);
+    }
+    29.6% {
+        transform: translate(1080%, -20%) scale(1, 1);
+    }
+    29.8% {
+        transform: translate(1100%, -10%) scale(1.08, 0.92);
+    }
+    30% {
+        transform: translate(1100%, -10%) scale(1, 1);
+    }
+    37% {
+        transform: translate(1330%, -10%) scale(1, 1);
+    }
+    37.4% {
+        transform: translate(1330%, -10%) scale(1.08, 0.92);
+    }
+    37.8% {
+        transform: translate(1350%, -32%) scale(0.98, 1.02);
+    }
+    38% {
+        transform: translate(1370%, -40%) scale(1, 1);
+    }
+    38.6% {
+        transform: translate(1400%, -32%) scale(1, 1);
+    }
+    38.8% {
+        transform: translate(1410%, -27%) scale(1.08, 0.92);
+    }
+    39% {
+        transform: translate(1410%, -27%) scale(1, 1);
+    }
+    47.5% {
+        transform: translate(1800%, -27%) scale(1, 1);
+    }
+    50% {
+        transform: translate(1900%, -27%) scale(-1, 1);
+    }
+    52.5% {
+        transform: translate(1800%, -27%) scale(-1, 1);
+    }
+    61% {
+        transform: translate(1410%, -27%) scale(-1, 1);
+    }
+    61.2% {
+        transform: translate(1410%, -27%) scale(-1.08, 0.92);
+    }
+    61.4% {
+        transform: translate(1400%, -32%) scale(-1, 1);
+    }
+    62% {
+        transform: translate(1370%, -40%) scale(-1, 1);
+    }
+    62.2% {
+        transform: translate(1350%, -32%) scale(-0.98, 1.02);
+    }
+    62.6% {
+        transform: translate(1330%, -10%) scale(-1.08, 0.92);
+    }
+    63% {
+        transform: translate(1330%, -10%) scale(-1, 1);
+    }
+    70% {
+        transform: translate(1100%, -10%) scale(-1, 1);
+    }
+    70.2% {
+        transform: translate(1100%, -10%) scale(-1.08, 0.92);
+    }
+    70.4% {
+        transform: translate(1080%, -20%) scale(-1, 1);
+    }
+    71% {
+        transform: translate(1040%, -50%) scale(-1, 1);
+    }
+    71.2% {
+        transform: translate(1020%, -42%) scale(-0.98, 1.02);
+    }
+    71.6% {
+        transform: translate(1000%, -31%) scale(-1.08, 0.92);
+    }
+    72% {
+        transform: translate(1000%, -31%) scale(-1, 1);
+    }
+    81.8% {
+        transform: translate(630%, -31%) scale(-1, 1);
+    }
+    82% {
+        transform: translate(630%, -30%) scale(-1.08, 0.92);
+    }
+    82.4% {
+        transform: translate(610%, -42%) scale(-1, 1);
+    }
+    82.6% {
+        transform: translate(590%, -50%) scale(-1, 1);
+    }
+    82.8% {
+        transform: translate(570%, -42%) scale(-0.98, 1.02);
+    }
+    83.2% {
+        transform: translate(550%, -10%) scale(-1.08, 0.92);
+    }
+    83.6% {
+        transform: translate(550%, -10%) scale(-1, 1);
+    }
+    92.4% {
+        transform: translate(280%, -10%) scale(-1, 1);
+    }
+    92.6% {
+        transform: translate(280%, -10%) scale(-1.08, 0.92);
+    }
+    93.0% {
+        transform: translate(260%, -32%) scale(-1, 1);
+    }
+    93.2% {
+        transform: translate(240%, -40%) scale(-1, 1);
+    }
+    93.4% {
+        transform: translate(220%, -32%) scale(-0.98, 1.02);
+    }
+    93.8% {
+        transform: translate(200%, 0%) scale(-1.08, 0.92);
+    }
+    94% {
+        transform: translate(200%, 0%) scale(-1, 1);
+    }
+    98% {
+        transform: translate(0%, 0%) scale(-1, 1);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(-1, 1);
+    }
+}
+
+
+/* 第一种方法 */
+
+#container {
+    width: 400px;
+    height: 300px;
+    margin: 150px auto 0 auto;
+    position: relative;
+}
+
+
+/* 第二种方法 */
+
+.logo {
+    transition: opacity ease-out .3s;
+    z-index: 11;
+    animation-delay: 9s;
+    animation-name: star;
+    transform-origin: center bottom;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes star {
+    0% {
+        transform: translate(-50%, 0%) rotateY(0) scale(1, 1);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-55%, -30%) rotateY(90deg) scale(.9, .9);
+        opacity: .8;
+    }
+    /* 30% {
+        transform: translate(-50%, -30%) scale(0.9, .9);
+        opacity: .9;
+    } */
+    40% {
+        transform: translate(-60%, -60%) rotateY(180deg) scale(.8, .8);
+        opacity: .6;
+    }
+    60% {
+        transform: translate(-65%, -90%) rotateY(270deg) scale(.7, .7);
+        opacity: .4;
+    }
+    /* 70% {
+        transform: translate(-50%, -90%) scale(0.5, .5);
+        opacity: .5;
+    } */
+    80% {
+        transform: translate(-70%, -120%) rotateY(360deg) scale(.6, .6);
+        opacity: .2;
+    }
+    /* 90% {
+        transform: translate(-50%, -120%) scale(0.3, .3);
+        opacity: .2;
+    } */
+    100% {
+        transform: translate(-75%, -150%) rotateY(540deg) scale(.5, .5);
+        opacity: 0;
+    }
+}
+
+
+/* 图标 */
+
+.starimg {
+    z-index: 21;
+    top: 100px;
+    left: 100px;
+    height: 5vw;
+    width: 5vw;
+}
+
+.img4 {
+    position: absolute;
+    top: 15vw;
+    left: 15vw;
+}
+
+.img4 .maplogostar {
+    position: absolute;
+    top: 5vw;
+    left: 0vw;
+}
+
+.starimg {
+    position: absolute;
+}

@@ -1,20 +1,39 @@
 angular.module('shoplistModule', [])
-    .controller('shoplistCtrl', ['$scope', '$state', '$http', '$httpParamSerializer', 'adminUrl', '$interval', '$ionicPopup', '$timeout', '$stateParams', function($scope, $state, $http, $httpParamSerializer, adminUrl, $interval, $ionicPopup, $timeout, $stateParams) {
+    .controller('shoplistCtrl', ['$scope', '$state', '$http', '$httpParamSerializer', 'adminUrl', '$interval', '$ionicPopup', '$timeout', '$stateParams', function ($scope, $state, $http, $httpParamSerializer, adminUrl, $interval, $ionicPopup, $timeout, $stateParams) {
 
-        $scope.businessId = $stateParams.businessId;
+        $scope.businessId = 'xinhongqiao';
+        $scope.shopList = hotBusinessList[$scope.businessId];
+
+        // 获取商圈中的商场
+        $scope.getTradingAreaList = function (type) {
+            $http({
+                url: adminUrl + "tradingArea/list",
+                params: {
+                    type: type,
+                    isShoppingMall: 0
+                },
+                method: 'get'
+            }).then(function (res) {
+                $scope.shopList = res.data.data.parameterType;
+            }, function (error) {
+
+            })
+        }
+        $scope.getTradingAreaList($stateParams.businessId)
 
 
-        $scope.goBusiness = function(num) {
+        $scope.goBusiness = function (num) {
             $state.go('hotbusiness')
         };
 
-        $scope.goShopInfo = function(num) {
-            $state.go('shopinfo', {
-                shopId: num
-            })
+
+        $scope.goShopInfo = function (shopItem) {
+            shopVal = shopItem;
+            $state.go('shopinfo')
         };
 
-        $scope.goMap = function() {
+        $scope.goMap = function () {
             window.location.href = './map/'
         }
+
     }]);

@@ -23,7 +23,7 @@
   line-height: 70rpx;
   height: 70rpx;
   font-size: 30rpx;
-  font-weight: 600;
+  font-weight: 500;
   border: 5rpx solid transparent;
 }
 

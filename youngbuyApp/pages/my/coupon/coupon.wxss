@@ -1,0 +1,9 @@
+/**coupon.wxss**/
+.coupon {
+  background-color: #F8F8F8;
+  padding: 0 25rpx;
+}
+
+.coupon image {
+  width: 100%;
+}

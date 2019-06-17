@@ -1,10 +1,11 @@
 // 本服务用于封装请求
 // 返回的是一个promisepromise
 // get
+var url='';
 var requestGet = function(newUrl, newData) {
     var promise = new Promise(function(resolve, reject) {
         wx.request({
-            url: 'https://www.appsun.com.cn/CLMAP/' + newUrl,
+            url: url + newUrl,
             data: newData,
             header: {
                 'content-type': 'application/json' // 默认值
@@ -20,7 +21,7 @@ var requestGet = function(newUrl, newData) {
 var requestPost = function(newUrl, newData) {
     var promise = new Promise(function(resolve, reject) {
         wx.request({
-            url: 'https://www.appsun.com.cn/CLMAP/' + newUrl,
+            url: url + newUrl,
             data: newData,
             method: 'POST',
             header: {

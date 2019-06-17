@@ -40,16 +40,17 @@
 
 .userinfo_box_image image {
   position: absolute;
-  top: 15rpx;
-  left: 15rpx;
-  width: 120rpx;
-  height: 120rpx;
+  display: block;
+  top: 5rpx;
+  left: 5.5rpx;
+  width: 140rpx;
+  height: 140rpx;
   border-radius: 50%;
 }
 
 .userinfo_box_text {
   position: absolute;
-  top: 90rpx;
+  top: 80rpx;
   width: 100%;
   text-align: center;
   font-size: 30rpx;
@@ -57,9 +58,9 @@
 
 .userinfo_card {
   position: absolute;
-  top: 140rpx;
-  left: 75rpx;
-  width: 550rpx;
+  top: 130rpx;
+  left: 80rpx;
+  width: 540rpx;
 }
 
 .userinfo_card image {
@@ -68,48 +69,57 @@
 
 /* 订单列表 */
 .orderlist {
-  padding:4% 4%;
-  margin-top: 105rpx;
+  padding: 4% 4%;
+  margin-top: 90rpx;
   margin-left: 25rpx;
   width: 700rpx;
   height: 170rpx;
   border-radius: 15rpx;
   box-shadow: 0 10rpx 25rpx 0rpx #bbb;
 }
-.orderlist_item{
+
+.orderlist_item {
   width: 20%;
   float: left;
   text-align: center;
 }
-.orderlist_item image{
+
+.orderlist_item image {
   width: 60%;
 }
-.orderlist_item view{
+
+.orderlist_item view {
   font-size: 22rpx;
 }
+
 /* nav */
-.mynav{
+.mynav {
   margin: 30rpx 0;
   width: 100%;
   text-align: center;
 }
-.mynav_item{
+
+.mynav_item {
   margin: 30rpx 0;
   width: 20%;
   float: left;
   text-align: center;
 }
-.mynav_item image{
-  width: 50%;
+
+.mynav_item image {
+  width: 40%;
 }
-.mynav_item view{
+
+.mynav_item view {
   font-size: 22rpx;
 }
-.mycoupon{
+
+.mycoupon {
   width: 650rpx;
   margin: 0 auto;
   text-align: center;
 }
-.mycoupon image{
+
+.mycoupon image {
   width: 100%;
 }

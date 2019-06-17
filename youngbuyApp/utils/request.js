@@ -42,6 +42,7 @@ var requestPost = function (newUrl, newData) {
         title: '提交中',
         mask: true
     });
+    
     var promise = new Promise(function (resolve, reject) {
         wx.request({
             url: url + newUrl,

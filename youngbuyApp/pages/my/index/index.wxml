@@ -84,7 +84,7 @@
         足迹
       </view>
     </view>
-    <view class="mynav_item">
+    <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/coupon/coupon">
       <image src="/images/my/mynav4.png" mode="widthFix">
       </image>
       <view>

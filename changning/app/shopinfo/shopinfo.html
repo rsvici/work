@@ -1,10 +1,26 @@
 <div class="shopinfo">
-    <img src="./imgs/shopinfo/1.jpg" alt="" width="100%" ng-show="shopId==1">
-    <img src="./imgs/shopinfo/2.jpg" alt="" width="100%" ng-show="shopId==2">
-    <div class="adress" ng-click="goAdress(1)">
-        <img src="./imgs/shopinfo/adress.jpg" alt="" width="100%">
+    <!-- <div class="name" ng-if="shopInfo.isShowName">
+        {{shopInfo.name}}
     </div>
-    <div class="active" ng-click="goActivelist(1)">
-        <img src="./imgs/shopinfo/active.jpg" alt="" width="100%">
+    <div class="shopInfoItem" ng-repeat="item in shopInfo.detail">
+        <div class="s_title" ng-if="item.type=='title'">
+            {{item.content}}
+        </div>
+        <div class="s_text" ng-if="item.type=='text'">
+            {{item.content}}
+        </div>
+        <div class="s_img" ng-if="item.type=='img'">
+            <img ng-src="{{item.content}}" alt="" width="96%">
+        </div>
+    </div> -->
+    <div class="shopInfoItem" ng-bind-html="shopInfo.content">
+
+    </div>
+
+    <div class="active" ng-click="goActivelist()" >
+        <img src="./image/active.png" alt="" width="100%">
+    </div>
+    <div class="shopinfoposition"  ng-click="goMap()">
+        <img src="./image/position.png" alt="" width="100%">
     </div>
 </div>

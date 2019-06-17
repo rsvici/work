@@ -1,9 +1,9 @@
 <?php
 	header("Access-Control-Allow-Origin:*");
   header("Content-type: text/html; charset=utf-8");
-$db_lk=@mysql_connect('bdm257698100.my3w.com:3306','bdm257698100','Shitou0124');
+$db_lk=@mysql_connect('qdm167117430.my3w.com:3306','qdm167117430','Shsx2017');
 if($db_lk){
-        if(mysql_select_db('bdm257698100_db')){
+        if(mysql_select_db('qdm167117430_db')){
                 $newUser['user_name'] = $_POST['name'];
                 $newUser['user_age'] = $_POST['age'];
                 $newUser['user_tel'] = $_POST['tel'];

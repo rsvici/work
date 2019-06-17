@@ -520,7 +520,7 @@
         // 选择页面
         $scope.choiceWeb = function (showWebNum,imgUrl) {
             $('.index .start img').attr("src",'./imgs/btn_s1.png')
-            $('.detail .start img').attr("src",'./imgs/start.png')
+            $('.detail .start img').attr("src",'./imgs/btn_s1.png')
             $('.balance .submit img').attr("src",'./imgs/btn_end.png')
             $('.balance .start img').attr("src",'./imgs/btn_again.png')
             $('.info .start img').attr("src",'./imgs/btn_back.png')
@@ -700,10 +700,11 @@
             mark: $scope.mark
         }
         $scope.postInfo = function () {
+            $scope.user.mark= $scope.mark;
             $('.info .submit img').attr("src",'./imgs/btn_true_1.png');
             if ($scope.user.name && $scope.user.tel) {
                 $http({
-                    url: 'http://www.rvici.com/richard_wolf_admin/new.php',
+                    url: 'http://appsun.cn/new.php',
                     method: "POST",
                     data: $httpParamSerializer($scope.user),
                     headers: {

@@ -1,0 +1,75 @@
+<!-- detail.wxml -->
+<view class="container detail">
+  <!-- 商品图 -->
+  <view class="detail_first_banner">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true"
+      bindchange="bannerChange">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <view class="detail_first_banner_item_img" style="background-image: url({{item}})">
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 商品规格图 -->
+  <view class="detail_second_banner">
+    <swiper circular="true" current="{{current}}" display-multiple-items="7.5" bindchange="bannerChange">
+      <block wx:for="{{bannerUrls}}">
+        <swiper-item>
+          <view class="detail_second_banner_item_img" style="background-image: url({{item.url}})">
+          </view>
+          <view class="detail_second_banner_item_title">
+            {{item.title}}
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 第三部分价格 -->
+  <view class="detail_third">
+    <view class="detail_third_left">
+      <view class="detail_third_left_price">
+        ￥100.00-￥159.00
+      </view>
+      <view class="detail_third_left_pricedesc">
+        跨境免税/贸易进口 | 来源地
+      </view>
+    </view>
+    <view class="detail_third_right">
+      <view class="detail_third_right_goodsnum">
+        <view class="detail_third_right_goodsnum_add" bindtap="addGoodsNum">
+          <image src="/images/goods/add.png">
+          </image>
+        </view>
+        <view class="detail_third_right_goodsnum_num">
+          {{goodsNum}}
+        </view>
+        <view class="detail_third_right_goodsnum_minus" bindtap="minusGoodsNum">
+          <image src="/images/goods/minus.png">
+          </image>
+        </view>
+      </view>
+      <view class="detail_third_right_dec">
+        包邮<text>(特定地区除外)</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 第四部分 选项框 -->
+  <view class="detail_fourth">
+    <view class="detail_fourth_left">
+
+    </view>
+    <view class="detail_fourth_right">
+      <picker bindchange="bindPickerChange" value="{{pickerIndex}}" range="{{productDate}}">
+        <view class="detail_fourth_right_picker_text"><text>生产日期 </text>{{productDate[pickerIndex]}}</view>
+        <view class="detail_fourth_right_picker_down"><image src="/images/goods/down.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+</view>

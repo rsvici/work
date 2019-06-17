@@ -4,7 +4,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
         $ionicConfigProvider.platform.android.tabs.style('standard');
         $ionicConfigProvider.platform.android.tabs.position('bottom');
     })
-    .value('adminUrl', 'http://www.appsun.com.cn')
+    .value('adminUrl', 'https://www.appsun.com.cn/CLMAP/')
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     //去掉！
@@ -15,7 +15,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
     $stateProvider
     // 热门商圈
         .state("hotbusiness", {
-            url: "/hotbusiness",
+            url: "/hotbusiness?south&west",
             views: {
                 "view": {
                     templateUrl: "./app/hotbusiness/hotbusiness.html",
@@ -45,7 +45,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
         })
         // 商场详情
         .state("shopinfo", {
-            url: "/shopinfo?shopId",
+            url: "/shopinfo?shopItemId",
             views: {
                 "view": {
                     templateUrl: "./app/shopinfo/shopinfo.html",
@@ -285,3 +285,5 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             }
         });
 });
+
+var shopVal=[];

@@ -22,7 +22,7 @@ input {
     background-color: #fff;
     margin-bottom: 25px;
     box-sizing: border-box;
-    padding: 10px 6px 0;
+    padding: 10px 6px 6px;
 }
 
 .hotbusiness ul {
@@ -31,11 +31,107 @@ input {
 }
 
 .hotbusiness ul li {
-    width: 33%;
+    width: 31%;
+    height: 30vw;
     float: left;
-    box-sizing: border-box;
-    padding: 5px;
+    margin: 1%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+.hotbusiness ul li img {
+    display: block;
+    
+}
+
+.hotbusiness ul li p {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: #fff;
+    font-size: 11px;
+    background-color: #000;
+    opacity: 0.57;
+    width: 90%;
+    overflow: hidden;
+    display: block;
+    line-height: 20px;
+    padding: 0 7px;
+    white-space: normal nowrap;
+}
+
+/* 图片运动 */
+
+.hotbusiness .imgsport {
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('../image/business3.jpg');
+    background-size: 140%;
+    background-position: 0 0;
+}
+
+.hotbusiness .nav2 .imgsport {
+    background-image: url('../image/business2.jpg');
+    background-position: 50% 50%;
+    background-size: 130%;
+}
+
+.hotbusiness .nav3 .imgsport {
+    background-image: url('../image/business1.jpg');
+    background-position: 40% 40%;
+    background-size: 130%;
+    position: relative;
+}
+
+.hotbusiness .imgsport .imgsportbg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 63, 0, 0.5);
+}
+
+.hotbusiness .nav2 .imgsportbg {
+    background-color: rgba(0, 54, 77, .5);
+}
+
+.hotbusiness .nav3 .imgsportbg {
+    background-color: rgba(0, 77, 76, 0.5);
+}
+
+.hotbusiness .nav1 {
+    background-color: rgba(116, 104, 51, 0.1);
+}
+
+.hotbusiness .nav2 {
+    background-color: rgba(0, 54, 77, .1);
+}
+
+.hotbusiness .nav3 {
+    padding: 10px 6px 10px;
+    background-color: rgba(14,44, 43, .1);
+}
+
+.hotbusiness .nav3 p {
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: #fff;
+    font-size: 15px;
+    opacity: .9;
+}
+
+.hotbusiness .imgsport .imgsportword {
+    height: 21vw;
+    text-align: center;
+    padding-top: 11vw;
+}
+
+
+
+
+
 
 
 /* 商圈详情 */
@@ -63,7 +159,7 @@ input {
 }
 
 .businessinfo .pic {
-    margin-top: 1.5vh;
+    margin-top:7vh;
     padding: 0 3vw 2vh;
 }
 
@@ -171,21 +267,107 @@ input {
 }
 
 .shoplist .list li {
-    /* border-top: 1.5px solid #E6E6E6; */
-    padding-top: 8px;
+    border-top: 1.5px solid #E6E6E6;
+    padding: 10px 8px;
+    display: block;
+    overflow: hidden;
 }
 
-.shoplist .list li img {
-    display: block;
+.shoplist .list li .left {
+    float: left;
+    width: 20vw;
+    height: 20vw;
+    overflow: hidden;
+    border-radius: 50%;
 }
+
+.shoplist .list li .right {
+    float: left;
+    width: 64vw;
+    margin-left: 4vw;
+    padding-top: 6px;
+}
+
+.shoplist .list li .right .first {
+    font-size: 16px;
+}
+
+.shoplist .list li .right .second {
+    font-size: 12px;
+    margin-top: -12px;
+}
+
+.shoplist .list li .right div {
+    line-height: 43px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.shoplist .list li .right .second img {
+    height: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.shoplist .list li .next {
+    float: left;
+    margin-left: 2vw;
+    width: 2.5vw;
+    line-height: 20vw;
+}
+
 
 
 /* 商场详情 */
+.shopinfo .name {
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.shopinfo .s_text,
+.shopinfo .s_title {
+    letter-spacing: 1px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 28px;
+}
+                      
+.shopinfo .s_title {
+    font-size: 16px;
+    font-weight: 700;
+}
 
 .shopinfo .active {
+    padding-top: 3vh;
     padding-bottom: 3vh;
 }
 
+.shopinfo .shopInfoItem {
+    /* text-align: center; */
+    margin-top: 10px;
+}
+.shopinfo .shopInfoItem  img{
+    max-width: 100%;
+}
+.shopinfo .shopInfoItem p>span>font{
+    padding: 5px 10px;
+    display: inline-block;
+}
+.shopinfo .shopinfoposition{
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 70%;
+    width: 40px;
+}
 
 /* 活动列表 */
 
@@ -557,13 +739,41 @@ input {
     padding-top: 11vw;
 }
 
-.nine li {
-    padding-top: 6vw;
-    display: inline-block;
-    width: 20%;
-    margin-left: 3.5vw;
+.nine {
+    padding-top: 2vw;
+
 }
 
+.nine li {
+    padding-top: 3vw;
+    float: left;
+    width: 22vw;
+    margin-left: 2.4vw;
+    text-align: center;
+}
+
+.nine li a {
+    text-align: center;
+    display: block;
+}
+
+.nine li img {
+    border-radius: 50%;
+    height: 16vw;
+    width: 16vw;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.nine li a div {
+    color: #A5A5A5;
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    display: block;
+    overflow: hidden;
+    padding: 0 3px;
+}
 
 /* 热门活动 */
 
@@ -668,7 +878,7 @@ input {
 
 .layui-laydate {
     width: 100vw;
-    left: 0!important;
+    left: 0 !important;
 }
 
 .layui-laydate .layui-laydate-main {

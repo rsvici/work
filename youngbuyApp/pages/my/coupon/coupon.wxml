@@ -1,0 +1,6 @@
+<!--coupon.wxml-->
+<view class="container coupon">
+  <image  src="/images/coupon.png" mode="widthFix" >
+    
+  </image>
+</view>

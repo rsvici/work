@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>扬万跨境商城</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+    }
+
+    .title .nav {
+      position: absolute;
+      top: 1.5vw;
+      left: 14vw;
+    }
+
+    .title .nav li {
+      display: inline-block;
+      padding: 0 1vw;
+      font-size: 0.5vw;
+      color: #878787;
+      cursor: pointer;
+    }
+
+    .title .logo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 5vw;
+      height: 5vw;
+      transform: translateX(-50%);
+    }
+
+    .title .my {
+      position: absolute;
+      top: 0;
+      right: 18vw;
+      width: 3vw;
+      height: 5vw;
+    }
+
+    .container img {
+      display: none;
+    }
+
+    .contentCLick {
+      position: absolute;
+      top: 14vw;
+      left: 10%;
+      width: 80%;
+      height: 76%;
+      display: none;
+      cursor: pointer;
+    }
+
+    .orderCLick {
+      position: absolute;
+      top: 74vw;
+      left: 15%;
+      width: 31%;
+      height: 7%;
+      display: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">
+    <img src="./image/title.png" alt="" width="100%;">
+    <div class="nav">
+      <ul>
+        <li onclick="choiceWeb('0')">首页</li>
+        <li onclick="choiceWeb('3')">护肤</li>
+        <li>彩妆</li>
+        <li>运动</li>
+        <li>母婴用品</li>
+        <li onclick="choiceWeb('1')">活动</li>
+      </ul>
+    </div>
+    <div class="logo" onclick="choiceWeb('0')"></div>
+    <div class="my" onclick="choiceWeb('2')"></div>
+  </div>
+  <div class="container">
+    <img src="./image/index.jpg" alt="" width="100%;" style="display:block">
+    <img src="./image/active.jpg" alt="" width="100%;">
+    <img src="./image/my.jpg" alt="" width="100%;">
+    <img src="./image/type.jpg" alt="" width="100%;">
+    <img src="./image/detail.jpg" alt="" width="100%;">
+    <img src="./image/order.jpg" alt="" width="100%;">
+  </div>
+
+  <div class="contentCLick" onclick="choiceWeb('4')"></div>
+  <div class="orderCLick"  onclick="choiceWeb('5')"></div>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+  $('.nav ul li').eq(0).css({
+    color: '#000',
+    'font-weight': '700'
+  });
+  $('.nav ul li').click(function () {
+    $(this).css({
+      color: '#000',
+      'font-weight': '700'
+    }).siblings('li').css({
+      color: '#878787',
+      'font-weight': '0'
+    })
+    console.log($(this));
+  })
+
+  function choiceWeb(nubWeb) {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    $('.container img').eq(nubWeb).css({
+      display: 'block'
+    }).siblings('img').css({
+      display: 'none'
+    })
+    if (nubWeb == 3) {
+      $('.contentCLick').css({
+        display: 'block'
+      })
+      $('.orderCLick').css({
+        display: 'none'
+      })
+    } else if (nubWeb == 4) {
+      $('.orderCLick').css({
+        display: 'block'
+      })
+      $('.contentCLick').css({
+        display: 'none'
+      })
+    } else {
+      $('.contentCLick').css({
+        display: 'none'
+      })
+      $('.orderCLick').css({
+        display: 'none'
+      })
+    }
+
+  }
+</script>
+
+</html>

@@ -1,0 +1,134 @@
+<!-- index.wxml -->
+<view class="container home">
+  <!-- 第一部分 -->
+  <view class="home_first">
+    <!-- 标题头部搜索 -->
+    <view class="home_first_title">
+      <view class="home_first_title_sort">
+        <image src="/images/home/sort.png"></image>
+      </view>
+      <view class="home_first_title_search">
+        <image src="/images/home/search.png"></image>
+      </view>
+      <view class="home_first_title_camera">
+        <image src="/images/home/camera.png"></image>
+      </view>
+      <view class="home_first_title_news">
+        <image src="/images/home/news.png"></image>
+      </view>
+    </view>
+    <view class="home_first_banner">
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true"
+        current="{{current}}" bindchange="bannerChange">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 第二部分 -->
+  <!-- 第二部分 -->
+  <!-- 第二部分 -->
+  <view class="home_second">
+    <!-- 限时抢购 -->
+    <view class="home_second_left">
+      <view class="home_second_left_title">限时抢购</view>
+      <view class="home_second_left_time">
+        <text>{{countdown.h}}</text> : <text>{{countdown.m}}</text> : <text>{{countdown.s}}</text>
+      </view>
+      <view class="home_second_left_timeImg">
+        <swiper autoplay="" interval="5000" duration="1000" circular="" display-multiple-items="2">
+          <block wx:for="{{scalesImgUrls}}">
+            <swiper-item>
+              <view class="home_second_left_timeImg_item">
+                <view class="home_second_left_timeImg_img" style="background-image: url({{item}})">
+                </view>
+                <view class="home_second_left_timeImg_title">
+                  科尔文克雷恩(calvin klein)
+                </view>
+                <view class="home_second_left_timeImg_price">
+                  <text class="home_second_left_timeImg_price_1">￥190.00 </text><text
+                    class="home_second_left_timeImg__2">￥239.00 </text>
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="home_second_right">
+      <image src="/images/home/tapleft.png" mode="widthFix">
+      </image>
+    </view>
+  </view>
+
+  <!-- 第三部分 拼团 -->
+  <!-- 第三部分 拼团 -->
+  <view class="home_third">
+    <view class="home_third_title">
+      <image src="/images/home/pt.png" mode="widthFix">
+      </image>
+    </view>
+    <view class="home_third_box">
+      <view class="home_third_box_item" wx:for="{{newsImgUrls}}">
+        <view class="home_third_box_item_img" style="background-image: url({{item}})">
+        </view>
+        <view class="home_third_box_left">
+          <view class="home_third_box_item_name">
+            阿布纳abnr德国婴儿童安全座椅测试测试
+          </view>
+          <view class="home_third_box_item_type">
+            颜色 : 01#粉色3.5克
+          </view>
+          <view class="home_third_box_item_team">
+            3人团 <text> 已有23609人参团</text>
+          </view>
+          <view class="home_third_box_item_price">
+            <text class="home_second_left_timeImg_price_1">￥190.00 </text><text
+              class="home_second_left_timeImg__2">￥239.00 </text>
+          </view>
+        </view>
+        <view class="home_third_box_right">
+          <view class="home_third_box_right_remanent">
+            剩余时间
+          </view>
+          <view class="home_third_box_right_time">
+            <text>{{countdown.h}}</text> : <text>{{countdown.m}}</text> : <text>{{countdown.s}}</text>
+          </view>
+          <view class="home_third_box_right_btn">
+            立即拼团
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 第四部分 预售 -->
+  <!-- 第四部分 预售 -->
+  <view class="home_fourth">
+    <view class="home_fourth_name">
+      预售
+    </view>
+    <swiper autoplay="" interval="5000" duration="1000" circular="" display-multiple-items="3.2">
+      <block wx:for="{{scalesImgUrls}}">
+        <swiper-item>
+          <view class="home_fourth_item">
+            <view class="home_fourth_item_img">
+              <view class="home_fourth_item_img_img"  style="background-image: url({{item}})"></view>
+            </view>
+            <view class="home_fourth_item_title">
+              科尔文克雷恩(calvin klein)ceshi ceshi 
+            </view>
+            <view class="home_fourth_item_price">
+              ￥239.00
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+</view>
