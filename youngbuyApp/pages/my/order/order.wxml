@@ -1,0 +1,257 @@
+<!--order.wxml-->
+<view class="container order">
+  <view class="ordernav">
+    <view class="ordernav_item" data-current="0" bindtap="swichNav">
+      <text class="{{currentTab==0?'active':''}}">待付款</text>
+    </view>
+    <view class="ordernav_item" data-current="1" bindtap="swichNav">
+      <text class="{{currentTab==1?'active':''}}">待发货</text>
+    </view>
+    <view class="ordernav_item" data-current="2" bindtap="swichNav">
+      <text class="{{currentTab==2?'active':''}}">待收货</text>
+    </view>
+    <view class="ordernav_item" data-current="3" bindtap="swichNav">
+      <text class="{{currentTab==3?'active':''}}">待评价</text>
+    </view>
+    <view class="ordernav_item" data-current="4" bindtap="swichNav">
+      <text class="{{currentTab==4?'active':''}}">退换货</text>
+    </view>
+  </view>
+  <view class="ordertab">
+    <!-- 待付款 -->
+    <view class="ordertab_list" wx:if="{{currentTab==0}}">
+      <view class="ordertab_list_item">
+        <!-- 第一曾 -->
+        <view class="ordertab_list_item_first">
+          <view class="ordertab_list_item_first_left">
+            订单号: 12345678901112
+          </view>
+          <view class="ordertab_list_item_first_right">
+            2019.01.12
+          </view>
+        </view>
+        <!-- 第二层 -->
+        <view class="ordertab_list_item_second">
+          <view class="ordertab_list_item_second_left">
+            居家美妆
+          </view>
+          <view class="ordertab_list_item_second_right" style="color:#F6AB2E;">
+            等待付款
+          </view>
+        </view>
+        <!-- 第三层 -->
+        <view class="ordertab_list_item_third">
+          <view class="ordertab_list_item_third_left">
+            <image src="" mode="widthFix">
+            </image>
+          </view>
+          <view class="ordertab_list_item_third_right">
+            <view class="ordertab_list_item_third_right_name">
+              Dior 迪奥粉漾魅惑变色唇膏测试测试
+            </view>
+            <view class="ordertab_list_item_third_right_specs">
+              颜色: 01#粉色3.5克
+            </view>
+            <view class="ordertab_list_item_third_right_allprice">
+              <view class="ordertab_list_item_third_right_allprice_price">
+                ￥250.00
+              </view>
+              <view class="ordertab_list_item_third_right_allprice_num">
+                x1
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <view class="ordertab_list_item_fourth">
+          共1件商品 运费: 使用免邮券 实付: <text>￥262.00</text>
+        </view>
+        <view class="ordertab_list_item_fifth">
+          <view class="ordertab_list_item_fifth_btn active">
+            前往支付
+          </view>
+          <view class="ordertab_list_item_fifth_btn">
+            取消订单
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+    <!-- 代发货 -->
+    <view class="ordertab_list" wx:if="{{currentTab==1}}">
+      <view class="ordertab_list_item">
+        <!-- 第一曾 -->
+        <view class="ordertab_list_item_first">
+          <view class="ordertab_list_item_first_left">
+            订单号: 12345678901112
+          </view>
+          <view class="ordertab_list_item_first_right">
+            2019.01.12
+          </view>
+        </view>
+        <!-- 第二层 -->
+        <view class="ordertab_list_item_second">
+          <view class="ordertab_list_item_second_left">
+            居家美妆
+          </view>
+          <view class="ordertab_list_item_second_right">
+            买家已付款
+          </view>
+        </view>
+        <!-- 第三层 -->
+        <view class="ordertab_list_item_third">
+          <view class="ordertab_list_item_third_left">
+            <image src="" mode="widthFix">
+            </image>
+          </view>
+          <view class="ordertab_list_item_third_right">
+            <view class="ordertab_list_item_third_right_name">
+              Dior 迪奥粉漾魅惑变色唇膏测试测试
+            </view>
+            <view class="ordertab_list_item_third_right_specs">
+              颜色: 01#粉色3.5克
+            </view>
+            <view class="ordertab_list_item_third_right_allprice">
+              <view class="ordertab_list_item_third_right_allprice_price">
+                ￥250.00
+              </view>
+              <view class="ordertab_list_item_third_right_allprice_num">
+                x1
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <view class="ordertab_list_item_fourth">
+          共1件商品 运费: 使用免邮券 实付: <text>￥262.00</text>
+        </view>
+        <view class="ordertab_list_item_fifth">
+          <view class="ordertab_list_item_fifth_btn active">
+            提醒发货
+          </view>
+          <view class="ordertab_list_item_fifth_btn">
+            查看物流
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 待收货 -->
+    <view class="ordertab_list" wx:if="{{currentTab==2}}">
+      <view class="ordertab_list_item">
+        <!-- 第一曾 -->
+        <view class="ordertab_list_item_first">
+          <view class="ordertab_list_item_first_left">
+            订单号: 12345678901112
+          </view>
+          <view class="ordertab_list_item_first_right">
+            2019.01.12
+          </view>
+        </view>
+        <!-- 第二层 -->
+        <view class="ordertab_list_item_second">
+          <view class="ordertab_list_item_second_left">
+            居家美妆
+          </view>
+          <view class="ordertab_list_item_second_right">
+            卖家已发货
+          </view>
+        </view>
+        <!-- 第三层 -->
+        <view class="ordertab_list_item_third">
+          <view class="ordertab_list_item_third_left">
+            <image src="" mode="widthFix">
+            </image>
+          </view>
+          <view class="ordertab_list_item_third_right">
+            <view class="ordertab_list_item_third_right_name">
+              Dior 迪奥粉漾魅惑变色唇膏测试测试
+            </view>
+            <view class="ordertab_list_item_third_right_specs">
+              颜色: 01#粉色3.5克
+            </view>
+            <view class="ordertab_list_item_third_right_allprice">
+              <view class="ordertab_list_item_third_right_allprice_price">
+                ￥250.00
+              </view>
+              <view class="ordertab_list_item_third_right_allprice_num">
+                x1
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <view class="ordertab_list_item_fourth">
+          共1件商品 运费: 使用免邮券 实付: <text>￥262.00</text>
+        </view>
+        <view class="ordertab_list_item_fifth">
+          <view class="ordertab_list_item_fifth_btn active">
+            确认收货
+          </view>
+          <view class="ordertab_list_item_fifth_btn">
+            查看物流
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 待评价 -->
+    <view class="ordertab_list" wx:if="{{currentTab==3}}">
+      <view class="ordertab_list_item">
+        <!-- 第一曾 -->
+        <view class="ordertab_list_item_first">
+          <view class="ordertab_list_item_first_left">
+            订单号: 12345678901112
+          </view>
+          <view class="ordertab_list_item_first_right">
+            2019.01.12
+          </view>
+        </view>
+        <!-- 第二层 -->
+        <view class="ordertab_list_item_second">
+          <view class="ordertab_list_item_second_left">
+            居家美妆
+          </view>
+          <view class="ordertab_list_item_second_right">
+            已确定收获
+          </view>
+        </view>
+        <!-- 第三层 -->
+        <view class="ordertab_list_item_third">
+          <view class="ordertab_list_item_third_left">
+            <image src="" mode="widthFix">
+            </image>
+          </view>
+          <view class="ordertab_list_item_third_right">
+            <view class="ordertab_list_item_third_right_name">
+              Dior 迪奥粉漾魅惑变色唇膏测试测试
+            </view>
+            <view class="ordertab_list_item_third_right_specs">
+              颜色: 01#粉色3.5克
+            </view>
+            <view class="ordertab_list_item_third_right_allprice">
+              <view class="ordertab_list_item_third_right_allprice_price">
+                ￥250.00
+              </view>
+              <view class="ordertab_list_item_third_right_allprice_num">
+                x1
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <view class="ordertab_list_item_fourth">
+          共1件商品 运费: 使用免邮券 实付: <text>￥262.00</text>
+        </view>
+        <view class="ordertab_list_item_fifth">
+          <view class="ordertab_list_item_fifth_btn active">
+            评价
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 退换货 -->
+    <view class="ordertab_list" wx:if="{{currentTab==4}}">
+      退换货
+    </view>
+  </view>
+</view>

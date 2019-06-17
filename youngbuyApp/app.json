@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/my/index/index",
+    "pages/my/footmark/footmark",
+    "pages/my/like/like",
+    "pages/my/news/news",
+    "pages/my/order/order",
+    "pages/home/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "YoungBuy",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "selectedColor": "#575757",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/home/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home1.png"
+      },
+      {
+        "pagePath": "pages/my/index/index",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

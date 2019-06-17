@@ -1,0 +1,75 @@
+<!--news.wxml-->
+<view class="container news">
+  <view class="news_list">
+
+    <view class="news_list_item">
+      <!-- 第一层 -->
+      <view class="news_list_item_first">
+        <view class="news_list_item_first_point">
+        </view>
+        <view class="news_list_item_first_tab">
+          公告
+        </view>
+        <view class="news_list_item_first_time">
+          2019.04.12 12:56:45
+        </view>
+      </view>
+
+      <!-- 第二层 -->
+      <view class="news_list_item_second">
+        <view class="news_list_item_second_title">
+          优惠券过期提醒
+        </view>
+        <view class="news_list_item_second_content">
+          亲爱的小伙伴快去购买商品吧~~~~~~~~~~~~~快去购买商品吧!
+        </view>
+      </view>
+
+      <!-- 第三层 -->
+      <view class="news_list_item_third">
+        <view class="news_list_item_third_left">
+          查看详情
+        </view>
+        <view class="news_list_item_third_right">
+          <image src="/images/down.png" mode="widthFix">
+          </image>
+        </view>
+      </view>
+    </view>
+
+    <view class="news_list_item">
+      <!-- 第一层 -->
+      <view class="news_list_item_first">
+        <view class="news_list_item_first_point">
+        </view>
+        <view class="news_list_item_first_tab" style="background-color:#FF7992">
+          活动
+        </view>
+        <view class="news_list_item_first_time">
+          2019.04.12 12:56:45
+        </view>
+      </view>
+
+      <!-- 第二层 -->
+      <view class="news_list_item_second">
+        <view class="news_list_item_second_title">
+          XXXX反季优惠大促销
+        </view>
+        <view class="news_list_item_second_content">
+          亲爱的小伙伴快去购买商品吧~~~~~~~~~~~~~快去购买商品吧!
+        </view>
+      </view>
+
+      <!-- 第三层 -->
+      <view class="news_list_item_third">
+        <view class="news_list_item_third_left">
+          查看详情
+        </view>
+        <view class="news_list_item_third_right">
+          <image src="/images/down.png" mode="widthFix">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

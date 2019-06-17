@@ -1,0 +1,120 @@
+/**like.wxss**/
+.like {
+  background-color: #F8F8F8;
+  padding-top: 5rpx;
+}
+
+.like_item {
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 25rpx;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* zuo */
+.like_item_left {
+  position: relative;
+  float: left;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  background-color: #F8F8F8;
+}
+
+.like_item_left>image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.like_item_left_nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.like_item_left_nav1 {
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+}
+
+.like_item_left_nav.ms image {
+  width: 110rpx;
+  display: block;
+}
+
+.like_item_left_nav.pt image {
+  width: 50rpx;
+  display: block;
+}
+
+.like_item_left_nav1.ys image {
+  width: 70rpx;
+  display: block;
+}
+
+
+/* you */
+.like_item_right {
+  width: 500rpx;
+  height: 150rpx;
+  float: right;
+  padding: 10rpx 10rpx 10rpx 0;
+}
+
+.like_item_right_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.like_item_right_specs {
+  font-size: 25rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.like_item_right_price {
+  color: #FE1717;
+}
+
+/* 按钮 */
+.like_item_btn {
+  position: absolute;
+  bottom: 25rpx;
+  right: 25rpx;
+  width: 200rpx;
+  height: 60rpx;
+  /* background-color: #FE1717; */
+}
+
+.like_item_btn_look {
+  border: 1px solid #5C5C5C;
+  height: 55rpx;
+  line-height: 55rpx;
+  float: right;
+  margin-left: 30rpx;
+  padding: 0 25rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+
+.like_item_btn_look.active {
+  border: 1px solid #FE1717;
+  color: #FE1717
+}
+
+.like_item_btn_shopcar {
+  position: absolute;
+  bottom: 0rpx;
+  right: 155rpx;
+  width: 50rpx;
+}
+
+.like_item_btn_shopcar image {
+  width: 50rpx;
+}

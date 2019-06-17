@@ -1,0 +1,115 @@
+/**my.wxss**/
+.mybg {
+  width: 750rpx;
+}
+
+.mybg image {
+  width: 750rpx;
+}
+
+/* 个人信息 */
+.userinfo {
+  position: absolute;
+  top: 200rpx;
+  left: 25rpx;
+  width: 700rpx;
+  height: 315rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.userinfo_box_round {
+  position: absolute;
+  top: -75rpx;
+  width: 150rpx;
+  height: 150rpx;
+  left: 275rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.userinfo_box_image {
+  position: absolute;
+  top: -75rpx;
+  width: 150rpx;
+  height: 150rpx;
+  left: 275rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.userinfo_box_image image {
+  position: absolute;
+  top: 15rpx;
+  left: 15rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.userinfo_box_text {
+  position: absolute;
+  top: 90rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.userinfo_card {
+  position: absolute;
+  top: 140rpx;
+  left: 75rpx;
+  width: 550rpx;
+}
+
+.userinfo_card image {
+  width: 550rpx;
+}
+
+/* 订单列表 */
+.orderlist {
+  padding:4% 4%;
+  margin-top: 105rpx;
+  margin-left: 25rpx;
+  width: 700rpx;
+  height: 170rpx;
+  border-radius: 15rpx;
+  box-shadow: 0 10rpx 25rpx 0rpx #bbb;
+}
+.orderlist_item{
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.orderlist_item image{
+  width: 60%;
+}
+.orderlist_item view{
+  font-size: 22rpx;
+}
+/* nav */
+.mynav{
+  margin: 30rpx 0;
+  width: 100%;
+  text-align: center;
+}
+.mynav_item{
+  margin: 30rpx 0;
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.mynav_item image{
+  width: 50%;
+}
+.mynav_item view{
+  font-size: 22rpx;
+}
+.mycoupon{
+  width: 650rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.mycoupon image{
+  width: 100%;
+}
