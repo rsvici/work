@@ -1,0 +1,122 @@
+<!-- pay.wxml -->
+<view class="container pay">
+  <!-- 店铺列表 -->
+  <view class="pay_shoplist">
+    <view class="pay_shoplist_shopitem" wx:for="{{payInfo.storeCartList}}">
+      <view class="pay_shoplist_shopitem_shopname">
+        <image src="/images/shop.png"></image>
+        {{item.store_name}}
+      </view>
+      <!-- 商品列表 -->
+      <view class="pay_shoplist_shopitem_goodslist">
+        <view class="pay_shoplist_shopitem_goodslist_goodsitem" wx:for="{{item.cartList}}" wx:for-item="goodsitem">
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_left" style="background-image:url('{{goodsitem.goods.original_img}}') "></view>
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
+              {{goodsitem.goods_name}}
+            </view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1">
+              {{goodsitem.goods.goods_type}}
+            </view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first">
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_price">
+                ￥{{goodsitem.goods_price}}
+              </view>
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_num">
+                数量 : {{goodsitem.goods_num}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 地址信息 -->
+  <view class="pay_address" bindtap="navigateToNewApp" data-url="/pages/my/addresslist/addresslist">
+    <view class="hasPayAddress" wx:if="{{!addressInfo}}">
+      <view class="hasPayAddress_left">
+        <image src="/images/dizhi.png"></image>
+      </view>
+      <view class="hasPayAddress_right">添加收货地址</view>
+    </view>
+    <view class="nohasPayAddress" wx:if="{{addressInfo}}">
+      <view class="nohasPayAddress_first">
+        <view class="nohasPayAddress_first_left">
+          <view class="hasPayAddress_left">
+            <image src="/images/dizhi.png"></image>
+          </view>
+          <view class="hasPayAddress_right">{{addressInfo.consignee}}</view>
+        </view>
+        <view class="nohasPayAddress_first_right">{{addressInfo.mobile}}</view>
+      </view>
+      <view class="nohasPayAddress_second clamp1">
+        {{addressInfo.province_name}}{{addressInfo.city_name}}{{addressInfo.district_name}}{{addressInfo.twon_name}}{{addressInfo.address}}
+      </view>
+    </view>
+    <view class="pay_right">
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+  <!-- 身份信息 -->
+  <view class="pay_status" bindtap="navigateToNewApp" data-url="/pages/my/identitylist/identitylist">
+    支付身份证信息
+    <text class="color_blue">请与支付账号一致</text>
+    <view class="pay_right">
+      <image src="/images/right.png"></image>
+    </view>
+    <view class="pay_status_name">
+      {{identityInfo.real_name}}
+    </view>
+  </view>
+  <!-- 优惠券 -->
+  <view class="pay_coupon">
+    使用优惠券
+    <view class="pay_right">
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+  <!-- 结算信息 -->
+  <view class="pay_priceinfo">
+    <view class="pay_priceinfo_title">结算信息</view>
+    <!-- 商品总额 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">商品总额</view>
+      <view class="pay_priceinfo_value color_red">￥{{countPrice.goods_price}}</view>
+    </view>
+    <!-- 税费 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        税费
+        <image src="/images/question.png"></image>
+      </view>
+      <view class="pay_priceinfo_value color_red">￥0.00</view>
+    </view>
+    <!-- 优惠券 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">优惠券</view>
+      <view class="pay_priceinfo_value">无</view>
+    </view>
+    <!-- 运费 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        运费
+        <image src="/images/question.png"></image>
+      </view>
+      <view class="pay_priceinfo_value color_blue">免邮券</view>
+    </view>
+  </view>
+  <!-- 提交订单 -->
+  <view class="submitpay">
+    <view class="submitpay_left">
+      <view class="submitpay_left_first">
+        提交订单则表示您同意
+        <text class="color_blue">《用户购买协议》</text>
+      </view>
+      <view class="submitpay_left_second">
+        合计 :
+        <text class="color_red">¥ {{countPrice.order_amount}}</text>
+      </view>
+    </view>
+    <view class="submitpay_right" bindtap="payOrder">提交订单</view>
+  </view>
+</view>

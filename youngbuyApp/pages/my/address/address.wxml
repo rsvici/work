@@ -1,0 +1,36 @@
+<!-- address.wxml -->
+<view class="container address">
+  <view class="address_formItem">
+    <text>所在地区</text>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="name">
+      <view class="picker" style='font-size:24rpx'>
+        <view class="choiceaddress clamp1" wx:if="{{choiceaddress}}">
+          {{multiArray[0][multiIndex[0]].name}}-{{multiArray[1][multiIndex[1]].name}}-{{multiArray[2][multiIndex[2]].name}}-{{multiArray[3][multiIndex[3]].name}}
+        </view>
+        <view class="choiceaddress" wx:if="{{!choiceaddress}}" bindtap="choiceaddressFun">
+          {{addressInfo}}
+        </view>
+        <view class="address_formItem_right">
+          <image src="/images/right0.png"></image>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="address_formItem">
+    <text>详细地址</text>
+    <input class="name" name="address" type="text" value="{{form.address}}" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="address" placeholder="请输入详细地址"></input>
+  </view>
+  <view class="address_formItem">
+    <text>邮政编码</text>
+    <input class="name" name="name" type="number" value="{{form.zipcode}}" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="zipcode" placeholder="请输入邮政编码"></input>
+  </view>
+  <view class="address_formItem martop28">
+    <text>收件人姓名</text>
+    <input class="name" name="consignee" type="text" value="{{form.consignee}}" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="consignee" placeholder="请输入收件人姓名"></input>
+  </view>
+  <view class="address_formItem">
+    <text>手机号码 +86</text>
+    <input class="name" name="mobile" type="number" value="{{form.mobile}}" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="mobile" placeholder="请输入手机号码"></input>
+  </view>
+  <view class="addressSuccess" bindtap="addressSuccess">完 成</view>
+</view>

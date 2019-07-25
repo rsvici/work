@@ -291,5 +291,36 @@ map.plugin(['AMap.GltfLoader'], function () {
     object3Dlayer.add(gltfCity)
   })
 
+  // 中山公园
+  var urlzsgy = './gltf/zsgy.gltf'
+  var positionzsgy = {
+    position: new AMap.LngLat(121.418388, 31.221646),
+    scale: 118,
+    height: 0,
+    scene: 0
+  }
+  gltfObj.load(urlzsgy, function (gltfCity) {
+    gltfCity.setOption(positionzsgy)
+    gltfCity.rotateX(90)
+    gltfCity.rotateY(0)
+    gltfCity.rotateZ(0)
+    object3Dlayer.add(gltfCity)
+  })
+
+  // 缤谷广场
+  var urlbggc = './gltf/bggc.gltf'
+  var positionbggc = {
+    position: new AMap.LngLat(121.387616, 31.214272),
+    scale: 140,
+    height: 0,
+    scene: 0
+  }
+  gltfObj.load(urlbggc, function (gltfCity) {
+    gltfCity.setOption(positionbggc)
+    gltfCity.rotateX(90)
+    gltfCity.rotateY(0)
+    gltfCity.rotateZ(14)
+    object3Dlayer.add(gltfCity)
+  })
 
 })

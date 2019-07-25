@@ -1,0 +1,215 @@
+<!-- shopcar -->
+<wxs module="filters" src="../../../utils/filter.wxs"></wxs>
+<view class="shopcar">
+  <view class="pay_shoplist">
+    <view class="pay_shoplist_shopitem" wx:for="{{carts}}">
+      <view class="pay_shoplist_shopitem_shopname">
+        <image src="/images/shop.png"></image>
+        {{item.store_name}}
+      </view>
+      <!-- 商品列表 -->
+      <view class="pay_shoplist_shopitem_goodslist ">
+        <view
+          class="pay_shoplist_shopitem_goodslist_goodsitem touch-item  {{goodsitem.isTouchMove ? 'touch-move-active' : ''}}"
+          wx:for="{{item.cartList}}" wx:for-item="goodsitem" wx:for-index="gooodsindex" data-index="{{index}}"
+          data-goodsindex="{{gooodsindex}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_content">
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_check">
+              <image class="item-select" bindtap="switchSelect" data-index="{{index}}"
+                data-gooodsindex="{{gooodsindex}}"
+                src="{{goodsitem.selected?'/images/cartcheck.png':'/images/cartnocheck.png'}}" />
+            </view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_left"
+              style="background-image:url('{{goodsitem.original_img}}') "></view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
+                {{goodsitem.goods_name}}
+              </view>
+              <!-- <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_typeall" bindtap="isSpecstype">
+                <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1">
+                  {{goodsitem.type}}
+                </view>
+                <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type1">
+                  <image src="/images/down1.png">
+                  </image>
+                </view>
+              </view> -->
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first">
+                <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_price">
+                  ￥{{goodsitem.goods_price}}
+                </view>
+                <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_num">
+                  <view class="detail_third_right_goodsnum">
+                    <view class="detail_third_right_goodsnum_add" bindtap="addGoodsNum" data-index="{{index}}"
+                      data-gooodsindex="{{gooodsindex}}">
+                      <image src="/images/add.png"></image>
+                    </view>
+                    <view class="detail_third_right_goodsnum_num">
+                      {{goodsitem.goods_num}}
+                    </view>
+                    <view class="detail_third_right_goodsnum_minus" bindtap="minusGoodsNum" data-index="{{index}}"
+                      data-gooodsindex="{{gooodsindex}}">
+                      <image src="/images/minus.png"></image>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="del" catchtap="deleteCart" data-id="{{goodsitem.id}}" data-goodsindex="{{gooodsindex}}"
+            data-index="{{index}}">
+            删除
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 第四部分 like -->
+  <view class="home_fourth">
+    <view class="home_fourth_title">
+      <image src="/images/like.png"></image>
+    </view>
+    <view class="home_fourth_box">
+      <view class="like_item">
+        <view class="like_item_left">
+          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
+          <view class="like_item_left_nav ms">
+            <image src="/images/ms.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="like_item_right">
+          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
+          <view class="like_item_right_price">￥250.00</view>
+          <view class="like_item_right_specs">
+            <image src="/images/shop.png"></image>
+            可爱多优品库
+          </view>
+        </view>
+        <view class="like_item_btn">
+          <view class="like_item_btn_shopcar">
+            <image src="/images/shopcar1.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+      <view class="like_item">
+        <view class="like_item_left">
+          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
+          <view class="like_item_left_nav pt">
+            <image src="/images/pt.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="like_item_right">
+          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
+          <view class="like_item_right_price">￥250.00</view>
+          <view class="like_item_right_specs">
+            <image src="/images/shop.png"></image>
+            可爱多优品库
+          </view>
+        </view>
+        <view class="like_item_btn">
+          <view class="like_item_btn_shopcar">
+            <image src="/images/shopcar1.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+      <view class="like_item">
+        <view class="like_item_left">
+          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
+          <view class="like_item_left_nav1 ys">
+            <image src="/images/ys.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="like_item_right">
+          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
+          <view class="like_item_right_price">￥250.00</view>
+          <view class="like_item_right_specs">
+            <image src="/images/shop.png"></image>
+            可爱多优品库
+          </view>
+        </view>
+        <view class="like_item_btn">
+          <view class="like_item_btn_shopcar">
+            <image src="/images/shopcar1.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 去结算 -->
+<view class="submitpay">
+  <view class="shopcar_check">
+    <image class="item-allselect" bindtap="allSelect"
+      src="{{isAllSelect?'/images/cartcheck.png':'/images/cartnocheck.png'}}" />
+    <text class="small_text"> 全选</text>
+  </view>
+  <view class="submitpay_left">
+    <view class="submitpay_left_first">
+      优惠:
+      <text class="color_red">¥0.00</text>
+    </view>
+    <view class="submitpay_left_second">
+      合计:
+      <text class="color_red">¥{{filters.toFix(totalMoney)}}</text>
+    </view>
+  </view>
+  <view class="submitpay_right" bindtap="toBuy">去结算({{totalNum}})</view>
+</view>
+
+<!-- 选择规格 -->
+<view class="specstype" wx:if="{{isSpecstypeShow}}">
+  <view class="specstype_first">
+    <view class="specstype_first_goods">
+      <view class="pay_shoplist_shopitem_goodslist_goodsitem_left"
+        style="background-image:url('http://www.appsun.com.cn/www/yb/home/goods.png') "></view>
+      <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
+        <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first">
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_price">
+            ￥159.00{{goodsitem.price}}
+          </view>
+        </view>
+        <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1 specstype_first_type">
+          颜色 : Chili 秀智色
+        </view>
+        <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1 specstype_first_type">
+          生产日期 : 2018.12.22
+        </view>
+      </view>
+    </view>
+    <view class="specstype_first_color">
+      <view class="specstype_first_color_title">
+        颜色
+      </view>
+      <view class="specstype_first_color_type">
+        <view class="active">devoted to chili 泫雅色</view>
+        <view>新款脏橘色</view>
+        <view>哑光橙红</view>
+        <view>Chili 秀智色/小辣椒色</view>
+        <view>奶油亮橘</view>
+        <view>番茄红</view>
+      </view>
+    </view>
+    <view class="specstype_first_color">
+      <view class="specstype_first_color_title">
+        生产日期
+      </view>
+      <view class="specstype_first_color_type">
+        <view class="active">2018.01.25</view>
+        <view>2018.02.26</view>
+        <view>2018.04.21</view>
+        <view>2018.05.27</view>
+        <view>2018.07.28</view>
+        <view>2018.01.22</view>
+      </view>
+    </view>
+  </view>
+  <!-- 关闭 -->
+  <view class="specstype_close" bindtap="isSpecstype">
+    <image src="/images/close.png"></image>
+  </view>
+  <view class="specstype_second">
+    确定
+  </view>
+
+
+</view>

@@ -1,16 +1,32 @@
 {
   "pages": [
-    "pages/goods/detail/detail",
+    "pages/home/index/index",
+    "pages/goods/shopcar/shopcar",
+
+
+    "pages/goods/paydetail/paydetail",
+    "pages/goods/order/order",
+    "pages/my/addresslist/addresslist",
+    "pages/my/address/address",
+
+
+
+    "pages/my/identitylist/identitylist",
+    "pages/my/identity/identity",
+    "pages/goods/pay/pay",
 
     "pages/home/active/active",
-    "pages/home/index/index",
-    
+
+    "pages/goods/detail/detail",
+
+    "pages/my/bindphone/bindphone",
+    "pages/my/login/login",
+
     "pages/my/index/index",
     "pages/my/coupon/coupon",
     "pages/my/footmark/footmark",
     "pages/my/like/like",
     "pages/my/news/news",
-    "pages/my/order/order",
     "pages/logs/logs"
   ],
   "window": {
@@ -34,6 +50,11 @@
         "text": "活动",
         "iconPath": "/images/active.png",
         "selectedIconPath": "/images/active1.png"
+      },{
+        "pagePath": "pages/goods/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "/images/cart.png",
+        "selectedIconPath": "/images/cart1.png"
       },
       {
         "pagePath": "pages/my/index/index",

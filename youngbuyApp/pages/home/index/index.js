@@ -1,7 +1,9 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var request = require('../../../utils/request.js'); //require请求
+var until = require('../../../utils/util.js'); //require请求
+var tips = require('../../../utils/tip.js'); //require请求
 Page({
   data: {
     imgUrls: [
@@ -22,8 +24,7 @@ Page({
     advanceImgUrls: [
       'http://www.appsun.com.cn/www/yb/home/ys1.png',
       'http://www.appsun.com.cn/www/yb/home/ys2.png',
-    ]
-    ,
+    ],
     newsImgUrls: [
       'http://www.appsun.com.cn/www/yb/home/new1.png',
       'http://www.appsun.com.cn/www/yb/home/new2.png',
@@ -32,77 +33,104 @@ Page({
       'http://www.appsun.com.cn/www/yb/home/new2.png',
       'http://www.appsun.com.cn/www/yb/home/new3.png',
     ],
-    endDate2: '2019-06-04 11:41:00',
-    countdown:{},
+    endDate2: '2019-07-26 11:41:00', //模拟截至时间
+    countdown: { //初始时间
+      h: '00',
+      m: '00',
+      s: '00',
+    },
+    goodsList: [], //商品列表
   },
-  countTime() {
-    var that = this;
-    var date = new Date();
-    var now = date.getTime();
-    var endDate = new Date(that.data.endDate2);//设置截止时间
-    var end = endDate.getTime();
-    var leftTime = end - now; //时间差                              
-    var d, h, m, s;
-    if (leftTime >= 0) {
-      // d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
-      h = Math.floor(leftTime / 1000 / 60 / 60 % 24);
-      m = Math.floor(leftTime / 1000 / 60 % 60);
-      s = Math.floor(leftTime / 1000 % 60);
-      s = s < 10 ? "0" + s : s
-      m = m < 10 ? "0" + m : m
-      h = h < 10 ? "0" + h : h
+
+  postGoodsList(token) { //获取商品列表
+    console.log(token);
+    var that = this,
+      postUrl = `/api/goods/goodsList`,
+      postData = {},
+      token;
+    request.requestPost(postUrl, postData, token).then(function (response) {
       that.setData({
-        countdown:{
-          h,m,s
-        }
+        goodsList: response.data.result
       })
-      //递归每秒调用countTime方法，显示动态时间效果
-      setTimeout(that.countTime, 1000);
+    }, function (error) {
+      console.log(error);
+    });
+  },
+  // 去详情
+  goDetail(e) {
+    var goodsid = e.currentTarget.dataset.goodsid;
+    if (app.globalData.tokenInfo.result.is_register) {
+      wx.navigateTo({
+        url: `/pages/goods/detail/detail?goodsid=${goodsid}`,
+      })
     } else {
-      
-      that.setData({
-        countdown:{
-          h:'00',m:'00',s:'00'
-        }
+      console.log(tips);
+      tips.success('请登录', 1000).then(function (param) {
+        wx.navigateTo({
+          url: '/pages/my/login/login',
+        })
       })
     }
-   
+  },
+  //加入购物车
+  joinCart(e) {
+    var goodsid = e.currentTarget.dataset.goodsid;
+    if (app.globalData.tokenInfo.result.is_register) {
+      var that = this,
+        postUrl = `/api/goods/addCart`,
+        postData = {
+          goods_id: goodsid,
+          goods_num: 1,
+          form: 1
+        },
+        token = app.globalData.tokenInfo.result.token;
+      request.requestPost(postUrl, postData, token).then(function (response) {
+        console.log(response)
+        wx.showToast({
+          title: response.data.message,
+          icon: 'none'
+        })
+
+      }, function (error) {
+        console.log(error);
+      });
+
+
+    } else {
+      tips.success('请登录', 1000).then(function (param) {
+        wx.navigateTo({
+          url: '/pages/my/login/login',
+        })
+      })
+    }
   },
   onLoad: function () {
-    this.countTime();
-  //   if (app.globalData.userInfo) {
-  //     this.setData({
-  //       userInfo: app.globalData.userInfo,
-  //       hasUserInfo: true
-  //     })
-  //   } else if (this.data.canIUse) {
-  //     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-  //     // 所以此处加入 callback 以防止这种情况
-  //     app.userInfoReadyCallback = res => {
-  //       this.setData({
-  //         userInfo: res.userInfo,
-  //         hasUserInfo: true
-  //       })
-  //     }
-  //   } else {
-  //     // 在没有 open-type=getUserInfo 版本的兼容处理
-  //     wx.getUserInfo({
-  //       success: res => {
-  //         app.globalData.userInfo = res.userInfo
-  //         this.setData({
-  //           userInfo: res.userInfo,
-  //           hasUserInfo: true
-  //         })
-  //       }
-  //     })
-  //   }
-  // },
-  // getUserInfo: function (e) {
-  //   console.log(e)
-  //   app.globalData.userInfo = e.detail.userInfo
-  //   this.setData({
-  //     userInfo: e.detail.userInfo,
-  //     hasUserInfo: true
-  //   })
+    var that = this;
+    if (app.globalData.tokenInfo) {
+      console.log(app.globalData.tokenInfo)
+      this.postGoodsList(app.globalData.tokenInfo.result.token);
+    } else {
+      app.tokenReadyCallback = res => {
+        console.log(res);
+        this.postGoodsList(res.data.result.token);
+      }
+    }
+
+
+    //递归每秒调用countTime方法，显示动态时间效果
+    setInterval(function () {
+      var countdown = until.countTime(that.data.endDate2)
+      that.setData({
+        countdown
+      })
+    }, 1000);
+  },
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   }
 })

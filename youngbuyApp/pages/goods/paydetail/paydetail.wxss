@@ -1,0 +1,360 @@
+/**pay.wxss**/
+.pay {
+  background-color: #F8F8F8;
+  padding-top: 1rpx;
+}
+
+/* 地址信息 */
+.pay_address {
+  width: 750rpx;
+  height: 165rpx;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  margin: 10rpx 0;
+}
+
+/* 未登录 */
+.hasPayAddress {
+  padding-left: 250rpx;
+  padding-top: 65rpx;
+}
+
+.hasPayAddress_left {
+  width: 26rpx;
+  height: 35rpx;
+  float: left;
+}
+
+.hasPayAddress_left image {
+  width: 100%;
+  height: 100%;
+}
+
+.hasPayAddress_right {
+  float: left;
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 44rpx;
+}
+
+.pay_right {
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15rpx;
+  height: 26rpx;
+}
+
+.pay_right image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 登录 */
+.nohasPayAddress {
+  padding: 30rpx;
+}
+
+.nohasPayAddress_first {
+  overflow: hidden;
+}
+
+.nohasPayAddress_first_left {
+  float: left;
+}
+
+.nohasPayAddress_first_right {
+  float: right;
+  font-size: 31rpx;
+  margin-right: 60rpx;
+}
+
+.nohasPayAddress_second {
+  width: 90%;
+  font-size: 26rpx;
+  color: #707070;
+  line-height: 90rpx;
+}
+
+/* 商户商品信息 */
+.pay_shoplist {
+  width: 750rpx;
+  margin: 0 auto 10rpx;
+  padding-top: 1rpx;
+}
+
+.pay_shoplist_shopitem {
+  background-color: #fff;
+  border-radius: 7rpx;
+}
+
+.pay_shoplist_shopitem_shopname {
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 65rpx;
+  line-height: 65rpx;
+  color: rgba(90, 90, 90, 1);
+  border-bottom: 1rpx solid #A3A3A3;
+}
+
+.pay_shoplist_shopitem_shopname image {
+  display: inline-block;
+  width: 28rpx;
+  height: 25.5rpx;
+  vertical-align: -1rpx;
+}
+
+.pay_shoplist_shopitem_goodslist {
+  padding: 0 20rpx;
+  padding: 33rpx 0 33rpx 35rpx;
+  width: 100%;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_left {
+  float: left;
+  width: 183rpx;
+  height: 179rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-color: #F5F5F5;
+  border-radius: 7rpx;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right {
+  width: 400rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_title {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_type {
+  font-size: 27rpx;
+  font-weight: 400;
+  color: #5A5A5A;
+  height: 60rpx;
+  line-height: 50rpx;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_first {
+  overflow: hidden;
+  width: 100%;
+  height: 50rpx;
+  margin-top: 10rpx;
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_first_price {
+  float: left;
+  width: 40%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(255, 0, 0, 1);
+}
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_first_num {
+  float: right;
+  width: 40%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 27rpx;
+  font-weight: 400;
+  color: rgba(90, 90, 90, 1);
+  text-align: right;
+}
+
+.pay_remark {
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+
+.pay_remark_title {
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 65rpx;
+  line-height: 65rpx;
+  color: rgba(90, 90, 90, 1);
+}
+
+.pay_remark_text {
+  margin: 0 30rpx;
+  padding: 20rpx 10rpx 50rpx;
+  color: rgba(90, 90, 90, 1);
+  border: 1rpx solid rgba(0, 0, 0, 1);
+  border-radius: 5rpx;
+}
+
+.pay_remark_text textarea {
+  width: 100%;
+  font-size: 25rpx;
+}
+
+.pay_remark_tip {
+  height: 50rpx;
+  font-size: 24rpx;
+  color: rgba(255, 0, 0, 1);
+  line-height: 50rpx;
+  margin-left: 30rpx;
+}
+
+/* 身份信息 优惠券 */
+.pay_status,
+.pay_coupon {
+  position: relative;
+  padding-left: 40rpx;
+  margin-top: 2rpx;
+  width: 750rpx;
+  height: 106rpx;
+  line-height: 70rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1rpx 0px 0px rgba(0, 0, 0, 0.02);
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.pay_status text {
+  font-size: 25rpx;
+}
+
+.pay_status_name {
+  position: absolute;
+  top: 10rpx;
+  right: 40rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 50rpx;
+}
+.pay_status_name1 {
+  position: absolute;
+  top: 50rpx;
+  right: 40rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 50rpx;
+}
+/* 结算信息 */
+.pay_priceinfo {
+  margin-top: 10rpx;
+  width: 750rpx;
+  height: 360rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1rpx 0px 0px rgba(0, 0, 0, 0.02);
+  color: #333333;
+  padding: 20rpx 40rpx;
+  margin-bottom: 105rpx;
+}
+
+.pay_priceinfo_title {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+}
+
+.pay_priceinfo_all {
+  margin-left: 5%;
+  width: 93%;
+  overflow: hidden;
+}
+
+.pay_priceinfo_name {
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  font-size: 28rpx;
+  text-align: right;
+  width: 450rpx;
+}
+
+.pay_priceinfo_name image {
+  margin-right: 8rpx;
+  height: 28rpx;
+  width: 28rpx;
+  vertical-align: -4rpx;
+}
+
+.pay_priceinfo_value {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: right;
+  text-align: right;
+  font-size: 25rpx;
+}
+
+/* 提交订单 */
+.submitpay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 105rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20rpx 2rpx rgba(8, 8, 8, 0.1);
+}
+
+.submitpay_left {
+  width: 500rpx;
+  float: left;
+  text-align: right;
+}
+
+.submitpay_left_first {
+  font-size: 21rpx;
+  color: rgba(0, 0, 0, 1);
+  height: 50rpx;
+  line-height: 60rpx;
+}
+
+.submitpay_left_second {
+  font-size: 31rpx;
+  color: rgba(0, 0, 0, 1);
+  height: 50rpx;
+  line-height: 40rpx;
+}
+
+.submitpay_right {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+  margin-top: 20rpx;
+  border-radius: 30rpx;
+  font-size: 29rpx;
+  text-align: center;
+}
+.submitpay_right1 {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 30rpx;
+  border-radius: 30rpx;
+  background-color: red;
+  font-size: 29rpx;
+  color: #fff;
+  text-align: center;
+}

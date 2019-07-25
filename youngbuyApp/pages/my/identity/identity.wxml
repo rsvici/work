@@ -1,0 +1,41 @@
+<!-- address.wxml -->
+<view class="container address">
+  <view class="address_formItem">
+    <text><text class="color_red">*</text> 身份证姓名</text>
+    <input class="name" type="text" value="{{form.real_name}}" name="real_name" bindinput="changeInput"
+      data-name="real_name" placeholder-class="formItemInputPlaceholder" placeholder=""></input>
+  </view>
+  <view class="address_formItem">
+    <text><text class="color_red">*</text> 身份证号</text>
+    <input class="name" type="text" value="{{form.id_card}}" name="id_card" bindinput="changeInput" data-name="id_card"
+      placeholder-class="formItemInputPlaceholder" placeholder=""></input>
+  </view>
+  <view class="address_formItem">
+    <text><text class="color_red">*</text> 手机号码</text>
+    <input class="name" type="number" value="{{form.mobile}}" name="mobile" bindinput="changeInput" data-name="mobile"
+      placeholder-class="formItemInputPlaceholder" placeholder=""></input>
+  </view>
+  <view class="identity_tip">
+    身份证姓名身份证号手机号必填
+  </view>
+
+  <view class="identityaddImg">
+    <view class="addText">身份证信息</view>
+    <!-- 添加图片 -->
+    <view class="addimg">
+      <image src="{{form.front_img}}" wx:if="{{form.front_img}}" class="newImg" />
+      <image src="/images/zheng.png" mode="widthFix" bindtap="addImg" wx:if="{{!form.front_img}}"  data-type="front_img"/>
+    </view>
+    <view class="addimgText">上传您身份证人像面</view>
+    <!-- 添加图片 -->
+    <view class="addimg">
+      <image src="{{form.back_img}}" wx:if="{{form.back_img}}" class="newImg" />
+      <image src="/images/fan.png" mode="widthFix" bindtap="addImg" wx:if="{{!form.back_img}}"   data-type="back_img"/>
+    </view>
+    <view class="addimgText">上传您身份证国徽面</view>
+  </view>
+
+
+
+  <view class="addressSuccess" bindtap="addressSuccess">完 成</view>
+</view>

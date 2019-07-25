@@ -1,0 +1,13 @@
+<!--login.wxml-->
+<view class="container login">
+    <open-data type="userAvatarUrl" class="login_logo"></open-data>
+    <open-data type="userNickName"  class="login_name"></open-data>
+    <button class="login_wechat" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      使用微信登录
+    </button>
+
+    <button class="login_phone" bindtap="bindPhone">
+      手机号码登录
+    </button>
+
+</view>

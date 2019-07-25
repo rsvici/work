@@ -36,7 +36,7 @@ angular.module('shopinfoModule', [])
             wx.miniProgram.getEnv(function (res) {
                 if (res.miniprogram) {
                     wx.miniProgram.navigateTo({
-                        url: '/pages/active/active?shopId=' + $scope.shopInfo.id
+                        url: '/pages/active/active?tradingAreaId=' + $scope.shopInfo.id
                     });
                 }
             });

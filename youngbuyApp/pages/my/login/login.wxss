@@ -1,0 +1,31 @@
+/**login.wxss**/
+.login {
+  background-color: #F8F8F8;
+  padding: 15rpx 25rpx;
+}
+
+
+
+.login_wechat {
+  display: block;
+  width: 80%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 50rpx auto 0;
+  color: #fff;
+  background-color: #37B83A;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.login_phone {
+  display: block;
+  width: 80%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 50rpx auto 0;
+  color: #fff;
+  background-color: #FF0000;
+  text-align: center;
+  font-size: 30rpx;
+}

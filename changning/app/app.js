@@ -18,7 +18,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/hotbusiness?south&west",
             views: {
                 "view": {
-                    templateUrl: "./app/hotbusiness/hotbusiness.html",
+                    templateUrl: "./app/hotbusiness/hotbusiness.html?v=0628",
                     controller: "hotbusinessCtrl"
                 }
             }
@@ -28,7 +28,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/businessinfo?businessId",
             views: {
                 "view": {
-                    templateUrl: "./app/businessinfo/businessinfo.html",
+                    templateUrl: "./app/businessinfo/businessinfo.html?v=0628",
                     controller: "businessinfoCtrl"
                 }
             }
@@ -38,7 +38,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/shoplist?businessId",
             views: {
                 "view": {
-                    templateUrl: "./app/shoplist/shoplist.html",
+                    templateUrl: "./app/shoplist/shoplist.html?v=0628",
                     controller: "shoplistCtrl"
                 }
             }
@@ -48,7 +48,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/shopinfo?shopItemId",
             views: {
                 "view": {
-                    templateUrl: "./app/shopinfo/shopinfo.html",
+                    templateUrl: "./app/shopinfo/shopinfo.html?v=0628",
                     controller: "shopinfoCtrl"
                 }
             }
@@ -58,7 +58,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/activelist?shopId",
             views: {
                 "view": {
-                    templateUrl: "./app/activelist/activelist.html",
+                    templateUrl: "./app/activelist/activelist.html?v=0628",
                     controller: "activelistCtrl"
                 }
             }
@@ -68,7 +68,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/activeinfo?activeId",
             views: {
                 "view": {
-                    templateUrl: "./app/activeinfo/activeinfo.html",
+                    templateUrl: "./app/activeinfo/activeinfo.html?v=0628",
                     controller: "activeinfoCtrl"
                 }
             }
@@ -78,7 +78,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/activeinfo1?activeId",
             views: {
                 "view": {
-                    templateUrl: "./app/activeinfo1/activeinfo1.html",
+                    templateUrl: "./app/activeinfo1/activeinfo1.html?v=0628",
                     controller: "activeinfo1Ctrl"
                 }
             }
@@ -88,7 +88,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/userlist",
             views: {
                 "view": {
-                    templateUrl: "./app/userlist/userlist.html",
+                    templateUrl: "./app/userlist/userlist.html?v=0628",
                     controller: "userlistCtrl"
                 }
             }
@@ -98,7 +98,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/nine",
             views: {
                 "view": {
-                    templateUrl: "./app/nine/nine.html",
+                    templateUrl: "./app/nine/nine.html?v=0628",
                     controller: "nineCtrl"
                 }
             }
@@ -108,7 +108,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/kxmh",
             views: {
                 "view": {
-                    templateUrl: "./app/kxmh/kxmh.html",
+                    templateUrl: "./app/kxmh/kxmh.html?v=0628",
                     controller: "kxmhCtrl"
                 }
             }
@@ -118,7 +118,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/hotactive",
             views: {
                 "view": {
-                    templateUrl: "./app/hotactive/hotactive.html",
+                    templateUrl: "./app/hotactive/hotactive.html?v=0628",
                     controller: "hotactiveCtrl"
                 }
             }
@@ -128,7 +128,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/ardershow",
             views: {
                 "view": {
-                    templateUrl: "./app/ardershow/ardershow.html",
+                    templateUrl: "./app/ardershow/ardershow.html?v=0628",
                     controller: "ardershowCtrl"
                 }
             }
@@ -138,7 +138,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/space",
             views: {
                 "view": {
-                    templateUrl: "./app/space/space.html",
+                    templateUrl: "./app/space/space.html?v=0628",
                     controller: "spaceCtrl"
                 }
             }
@@ -148,7 +148,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/lehuo",
             views: {
                 "view": {
-                    templateUrl: "./app/lehuo/lehuo.html",
+                    templateUrl: "./app/lehuo/lehuo.html?v=0628",
                     controller: "lehuoCtrl"
                 }
             }
@@ -158,7 +158,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/spacelist",
             views: {
                 "view": {
-                    templateUrl: "./app/spacelist/spacelist.html",
+                    templateUrl: "./app/spacelist/spacelist.html?v=0628",
                     controller: "spacelistCtrl"
                 }
             }
@@ -167,7 +167,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/spaceinfo?spaceId",
             views: {
                 "view": {
-                    templateUrl: "./app/spaceinfo/spaceinfo.html",
+                    templateUrl: "./app/spaceinfo/spaceinfo.html?v=0628",
                     controller: "spaceinfoCtrl"
                 }
             }
@@ -177,7 +177,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/teachlist",
             views: {
                 "view": {
-                    templateUrl: "./app/teachlist/teachlist.html",
+                    templateUrl: "./app/teachlist/teachlist.html?v=0628",
                     controller: "teachlistCtrl"
                 }
             }
@@ -186,7 +186,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/teachinfo?teachId",
             views: {
                 "view": {
-                    templateUrl: "./app/teachinfo/teachinfo.html",
+                    templateUrl: "./app/teachinfo/teachinfo.html?v=0628",
                     controller: "teachinfoCtrl"
                 }
             }
@@ -196,7 +196,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/gamelist",
             views: {
                 "view": {
-                    templateUrl: "./app/gamelist/gamelist.html",
+                    templateUrl: "./app/gamelist/gamelist.html?v=0628",
                     controller: "gamelistCtrl"
                 }
             }
@@ -206,7 +206,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/newrecommend",
             views: {
                 "view": {
-                    templateUrl: "./app/newrecommend/newrecommend.html",
+                    templateUrl: "./app/newrecommend/newrecommend.html?v=0628",
                     controller: "newrecommendCtrl"
                 }
             }
@@ -216,7 +216,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/bindphone",
             views: {
                 "view": {
-                    templateUrl: "./app/my/bindphone/bindphone.html",
+                    templateUrl: "./app/my/bindphone/bindphone.html?v=0628",
                     controller: "bindphoneCtrl"
                 }
             }
@@ -225,7 +225,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/bounsinfo",
             views: {
                 "view": {
-                    templateUrl: "./app/my/bounsinfo/bounsinfo.html",
+                    templateUrl: "./app/my/bounsinfo/bounsinfo.html?v=0628",
                     controller: "bounsinfoCtrl"
                 }
             }
@@ -234,7 +234,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/collect",
             views: {
                 "view": {
-                    templateUrl: "./app/my/collect/collect.html",
+                    templateUrl: "./app/my/collect/collect.html?v=0628",
                     controller: "collectCtrl"
                 }
             }
@@ -243,7 +243,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/my",
             views: {
                 "view": {
-                    templateUrl: "./app/my/index/index.html",
+                    templateUrl: "./app/my/index/index.html?v=0628",
                     controller: "myCtrl"
                 }
             }
@@ -252,7 +252,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/redeem",
             views: {
                 "view": {
-                    templateUrl: "./app/my/redeem/redeem.html",
+                    templateUrl: "./app/my/redeem/redeem.html?v=0628",
                     controller: "redeemCtrl"
                 }
             }
@@ -261,7 +261,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/setting",
             views: {
                 "view": {
-                    templateUrl: "./app/my/setting/setting.html",
+                    templateUrl: "./app/my/setting/setting.html?v=0628",
                     controller: "settingCtrl"
                 }
             }
@@ -270,7 +270,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/sign",
             views: {
                 "view": {
-                    templateUrl: "./app/my/sign/sign.html",
+                    templateUrl: "./app/my/sign/sign.html?v=0628",
                     controller: "signCtrl"
                 }
             }
@@ -279,7 +279,7 @@ angular.module('myApp', ['ionic', 'hotbusinessModule', 'businessinfoModule', 'sh
             url: "/newsinfo",
             views: {
                 "view": {
-                    templateUrl: "./app/my/newsinfo/newsinfo.html",
+                    templateUrl: "./app/my/newsinfo/newsinfo.html?v=0628",
                     controller: "newsinfoCtrl"
                 }
             }

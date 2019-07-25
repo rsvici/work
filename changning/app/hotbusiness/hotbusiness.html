@@ -42,7 +42,7 @@
 
     <!-- 临空 -->
     <div class="nav3">
-        <div class="imgsport" ng-click="goShopInfo(item.id)">
+        <div class="imgsport" ng-repeat="(index,item) in TradingAreaList[2]" ng-click="goShopInfo(item.id)">
             <div class="imgsportbg">
                 <div class="imgsportword">
                     <img src="./image/business1.png" alt="" height="100%">

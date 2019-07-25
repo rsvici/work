@@ -1,0 +1,114 @@
+/**address.wxss**/
+.address {
+  background-color: #F8F8F8;
+  padding: 30rpx 0;
+}
+
+.address_formItem>text,
+.address_formItem input {
+  height: 106rpx;
+  line-height: 106rpx;
+  float: left;
+  color: #000;
+}
+
+.address_formItem input {
+  width: 470rpx;
+  color: #707070;
+}
+
+.address_formItem>text {
+  width: 180rpx;
+  padding-left: 42rpx;
+  font-size: 32rpx;
+  /* text-align-last: justify; */
+}
+
+.identity_tip {
+  margin-top: 2rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 21rpx;
+  font-weight: 400;
+  color: rgba(255, 0, 0, 1);
+  text-align: right;
+  padding-right: 47rpx;
+  background-color: #fff;
+}
+
+
+
+/* 上传图片 */
+
+/* 添加图片 */
+.identityaddImg {
+  border: 0;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.identityaddImg .addText {
+  height:80rpx;
+  line-height:80rpx;
+  color: #000;
+  padding-left: 42rpx;
+  font-size: 32rpx;
+}
+
+.identityaddImg .addimg {
+  margin: 10rpx auto;
+  width: 347rpx;
+  height: 217rpx;
+}
+
+.identityaddImg .addimg image {
+  width: 347rpx;
+  height: 217rpx;
+}
+
+.identityaddImg .addimg .newImg {
+  width: 347rpx;
+  height: 217rpx;
+}
+
+.identityaddImg .addimg canvas {
+  width: 347rpx;
+  height: 217rpx;
+}
+
+.addimgText {
+  text-align: center;
+  height: 100rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(192, 191, 192, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.addressSuccess {
+  width: 665rpx;
+  height: 82rpx;
+  background: #333;
+  border-radius: 14rpx;
+  margin: 57rpx auto;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 82rpx;
+  text-align: center;
+}

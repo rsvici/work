@@ -1,0 +1,86 @@
+/**bingphone.wxss**/
+.bingphone {
+  background: linear-gradient(-54deg, rgba(232, 57, 33, 1), rgba(189, 63, 50, 1));
+  padding: 15rpx 25rpx;
+}
+
+.login_name {
+  color: #fff;
+}
+
+.bingphone_phone,
+.bingphone_code {
+  height: 70rpx;
+  margin: 20rpx auto;
+  width: 450rpx;
+  border-bottom: 2rpx solid #fff;
+  padding: 10rpx;
+}
+
+.bingphone_phone_left {
+  float: left;
+  width: 30rpx;
+  padding-top: 5rpx;
+  height: 50rpx;
+}
+
+.bingphone_phone_left image {
+  width: 26rpx;
+  height: 40rpx;
+}
+
+.bingphone_phone_right,
+.bingphone_code_left {
+  float: left;
+  width: 380rpx;
+  height: 50rpx;
+}
+
+.bingphone_phone_right input,
+.bingphone_code_left input {
+  font-size: 24rpx;
+  color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  min-height: 50rpx;
+  text-align: center;
+}
+
+.formItemInputPlaceholder {
+  font-size: 24rpx;
+  line-height: 50rpx;
+  min-height: 50rpx;
+  color: #fff;
+}
+
+
+.bingphone_code {
+  margin-top: 50rpx;
+}
+
+.bingphone_code_left {
+  width: 260rpx;
+}
+
+.bingphone_code_right {
+  float: right;
+  width: 160rpx;
+  border-left: 2rpx solid #fff;
+  font-size: 24rpx;
+  color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.bingphone_register {
+  margin: 100rpx auto 0;
+  width: 665rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6rpx 15rpx 0px rgba(89, 17, 17, 0.28);
+  border-radius: 14rpx;
+  font-size:32rpx;
+  text-align: center;
+}

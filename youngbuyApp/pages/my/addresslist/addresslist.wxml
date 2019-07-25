@@ -1,0 +1,63 @@
+<!--addresslist.wxml-->
+<view class="container addresslist">
+  <!-- 地址信息 -->
+  <view class="pay_address" wx:for="{{addressList}}">
+    <view class="hasPayAddress" wx:if="{{addressList.length<1}}">
+      <view class="hasPayAddress_left">
+        <image src="/images/dizhi.png">
+        </image>
+      </view>
+      <view class="hasPayAddress_right">
+        暂无收货地址
+      </view>
+    </view>
+
+    <view class="nohasPayAddress" wx:if="{{addressList.length>0}}" bindtap="checkAddress" data-item="{{item}}">
+      <view class="nohasPayAddress_first">
+        <view class="nohasPayAddress_first_left">
+          <view class="hasPayAddress_left">
+            <image src="/images/dizhi.png">
+            </image>
+          </view>
+          <view class="hasPayAddress_right">
+            {{item.consignee}}
+          </view>
+        </view>
+        <view class="nohasPayAddress_first_right">
+          {{item.mobile}}
+        </view>
+      </view>
+      <view class="nohasPayAddress_second clamp1">
+        {{item.province_name}}{{item.city_name}}{{item.district_name}}{{item.twon_name}}{{item.address}}
+      </view>
+    </view>
+
+    <view class="editAddress" wx:if="{{addressList.length>0}}">
+      <view class="editAddress_first" wx:if="{{item.is_default==1}}" >
+        <image src="/images/cartcheck.png">
+        </image> 默认地址
+      </view>
+      <view class="editAddress_first" wx:if="{{item.is_default==0}}" bindtap="setDefaultAddress" data-item="{{item}}">
+        <image src="/images/cartnocheck.png">
+        </image> 默认地址
+      </view>
+
+      <view class="editAddress_first editAddress_third" bindtap="deleteAddress" data-item="{{item}}">
+        <image src="/images/del.png">
+        </image> 删除
+      </view>
+
+      <view class="editAddress_first editAddress_second" bindtap="updateAddress" data-addressid="{{item.address_id}}">
+        <image src="/images/edit.png">
+        </image> 编辑
+      </view>
+
+
+    </view>
+
+
+  </view>
+  <view class="addressSuccess" bindtap="addressAdd">
+    添加新地址
+  </view>
+</view>

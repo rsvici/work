@@ -1,0 +1,69 @@
+/**address.wxss**/
+.address {
+  background-color: #F8F8F8;
+  padding: 30rpx 0;
+}
+
+.addressSuccess {
+  width: 665rpx;
+  height: 82rpx;
+  background: rgba(255, 0, 0, 1);
+  border-radius: 14rpx;
+  margin: 57rpx auto;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 82rpx;
+  text-align: center;
+}
+
+.address_formItem>text,
+.address_formItem input {
+  height: 106rpx;
+  line-height: 106rpx;
+  float: left;
+  color: #000;
+}
+
+.address_formItem input {
+  width: 470rpx;
+  color: #000;
+  font-size: 29rpx;
+}
+
+.address_formItem .formItemInputPlaceholder {
+  color: #bcbcbc;
+}
+
+.address_formItem>text {
+  width: 180rpx;
+  padding-left: 42rpx;
+  font-size: 31rpx;
+  /* text-align-last: justify; */
+}
+
+.address_formItem input,
+.address_formItem picker {
+  padding-left: 0;
+}
+
+.address_formItem>text {
+  width: 220rpx;
+}
+
+.address_formItem {
+  position: relative;
+}
+
+.address_formItem picker,
+.address_formItem .picker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.address_formItem .picker .choiceaddress {
+  width: 90%;
+  height: 100%;
+  padding-left: 260rpx;
+}

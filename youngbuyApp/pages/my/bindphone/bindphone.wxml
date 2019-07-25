@@ -1,0 +1,20 @@
+<!-- bingphone.wxml -->
+<view class="container bingphone">
+  <open-data type="userAvatarUrl" class="login_logo"></open-data>
+  <open-data type="userNickName" class="login_name"></open-data>
+  <view class="bingphone_phone">
+    <view class="bingphone_phone_left">
+      <image src="/images/phone.png"></image>
+    </view>
+    <view class="bingphone_phone_right">
+      <input class="mobile" type="number" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="mobile" value="{{form.mobile}}" placeholder="手机号码" maxlength="11"></input>
+    </view>
+  </view>
+  <view class="bingphone_code">
+    <view class="bingphone_code_left">
+      <input class="mobile" type="number" placeholder-class="formItemInputPlaceholder" bindinput="changeInput" data-name="code" value="{{form.code}}" placeholder="验证码" maxlength="6"></input>
+    </view>
+    <view class="bingphone_code_right" bindtap="postMobileNo">{{telBtn}}</view>
+  </view>
+  <view class="bingphone_register" bindtap="bindMobile">确 认</view>
+</view>

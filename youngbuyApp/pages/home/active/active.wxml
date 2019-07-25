@@ -5,16 +5,16 @@
     <!-- 标题头部搜索 -->
     <view class="home_first_title">
       <view class="home_first_title_sort">
-        <image src="/images/home/sort.png"></image>
+        <image src="/images/sort.png"></image>
       </view>
       <view class="home_first_title_search">
-        <image src="/images/home/search.png"></image>
+        <image src="/images/search.png"></image>
       </view>
       <view class="home_first_title_camera">
-        <image src="/images/home/camera.png"></image>
+        <image src="/images/camera.png"></image>
       </view>
       <view class="home_first_title_news">
-        <image src="/images/home/news.png"></image>
+        <image src="/images/news.png"></image>
       </view>
     </view>
     <view class="home_first_banner">
@@ -59,7 +59,7 @@
       </view>
     </view>
     <view class="home_second_right">
-      <image src="/images/home/tapleft.png" mode="widthFix">
+      <image src="/images/tapleft.png" mode="widthFix">
       </image>
     </view>
   </view>
@@ -68,7 +68,7 @@
   <!-- 第三部分 拼团 -->
   <view class="home_third">
     <view class="home_third_title">
-      <image src="/images/home/pt.png" mode="widthFix">
+      <image src="/images/djpt.png" mode="widthFix">
       </image>
     </view>
     <view class="home_third_box">

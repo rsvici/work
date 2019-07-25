@@ -2,7 +2,7 @@
 <view class="container">
   <!-- 背景 -->
   <view class="mybg">
-    <image src="/images/my/mybg.png" mode="widthFix">
+    <image src="/images/mybg.png" mode="widthFix">
     </image>
   </view>
   <!-- 个人信息 -->
@@ -10,50 +10,51 @@
     <view class="userinfo_box">
       <view class="userinfo_box_round"></view>
       <view class="userinfo_box_image">
-        <image src="/images/my/defaultavatar.png">
-        </image>
+        <!-- <image src="/images/defaultavatar.png">
+        </image> -->
+        <view class="image">
+          <open-data type="userAvatarUrl" class="userinfo_box_image_login_img"></open-data>
+        </view>
       </view>
-      <view class="userinfo_box_text">
-        用户昵称
-      </view>
+      <open-data type="userNickName" class="userinfo_box_text"></open-data>
     </view>
     <view class="userinfo_card">
-      <image class="" src="/images/my/mycard.png" mode="widthFix">
+      <image class="" src="/images/mycard.png" mode="widthFix">
       </image>
     </view>
   </view>
   <!-- 订单信息 -->
   <view class="orderlist">
-    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="my/order/order?orderId=0">
-      <image src="/images/my/order1.png" mode="widthFix">
+    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="goods/order/order?orderId=0">
+      <image src="/images/order1.png" mode="widthFix">
       </image>
       <view>
         待付款
       </view>
     </view>
-    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="my/order/order?orderId=1">
-      <image src="/images/my/order2.png" mode="widthFix">
+    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="goods/order/order?orderId=1">
+      <image src="/images/order2.png" mode="widthFix">
       </image>
       <view>
         待发货
       </view>
     </view>
-    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="my/order/order?orderId=2">
-      <image src="/images/my/order3.png" mode="widthFix">
+    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="goods/order/order?orderId=2">
+      <image src="/images/order3.png" mode="widthFix">
       </image>
       <view>
         待收货
       </view>
     </view>
-    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="my/order/order?orderId=3">
-      <image src="/images/my/order4.png" mode="widthFix">
+    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="goods/order/order?orderId=3">
+      <image src="/images/order4.png" mode="widthFix">
       </image>
       <view>
         待评价
       </view>
     </view>
-    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="my/order/order?orderId=4">
-      <image src="/images/my/order5.png" mode="widthFix">
+    <view class="orderlist_item" bindtap="navigateToNewApp" data-url="goods/order/order?orderId=4">
+      <image src="/images/order5.png" mode="widthFix">
       </image>
       <view>
         退换货
@@ -64,56 +65,56 @@
   <!-- nav -->
   <view class="mynav">
     <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/like/like">
-      <image src="/images/my/mynav1.png" mode="widthFix">
+      <image src="/images/mynav1.png" mode="widthFix">
       </image>
       <view>
         喜欢
       </view>
     </view>
-    <view class="mynav_item">
-      <image src="/images/my/mynav2.png" mode="widthFix">
+    <!-- <view class="mynav_item">
+      <image src="/images/mynav2.png" mode="widthFix">
       </image>
       <view>
         我的关注
       </view>
-    </view>
+    </view> -->
     <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/footmark/footmark">
-      <image src="/images/my/mynav3.png" mode="widthFix">
+      <image src="/images/mynav3.png" mode="widthFix">
       </image>
       <view>
         足迹
       </view>
     </view>
     <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/coupon/coupon">
-      <image src="/images/my/mynav4.png" mode="widthFix">
+      <image src="/images/mynav4.png" mode="widthFix">
       </image>
       <view>
         优惠
       </view>
     </view>
-    <view class="mynav_item">
-      <image src="/images/my/mynav5.png" mode="widthFix">
+    <!-- <view class="mynav_item">
+      <image src="/images/mynav5.png" mode="widthFix">
       </image>
       <view>
         意见反馈
       </view>
-    </view>
+    </view> -->
     <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/news/news">
-      <image src="/images/my/mynav6.png" mode="widthFix">
+      <image src="/images/mynav6.png" mode="widthFix">
       </image>
       <view>
         通知消息
       </view>
     </view>
-    <view class="mynav_item">
-      <image src="/images/my/mynav7.png" mode="widthFix">
+    <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/identitylist/identitylist">
+      <image src="/images/mynav7.png" mode="widthFix">
       </image>
       <view>
-        设置
+        身份认证
       </view>
     </view>
-    <view class="mynav_item" bindtap="choiceAddress">
-      <image src="/images/my/mynav8.png" mode="widthFix">
+    <view class="mynav_item" bindtap="navigateToNewApp" data-url="my/addresslist/addresslist">
+      <image src="/images/mynav8.png" mode="widthFix">
       </image>
       <view>
         地址管理
@@ -123,6 +124,6 @@
   </view>
   <!-- mycoupon -->
   <view class="mycoupon">
-    <image src="/images/my/mycoupon.png" mode="widthFix"></image>
+    <image src="/images/mycoupon.png" mode="widthFix"></image>
   </view>
 </view>

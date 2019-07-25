@@ -1,0 +1,123 @@
+/**addresslist.wxss**/
+.addresslist {
+  background-color: #F8F8F8;
+  padding: 1rpx 25rpx;
+}
+
+/* 地址信息 */
+.pay_address {
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  margin: 30rpx 0;
+  box-shadow: 0px 1rpx 13rpx 0px rgba(0, 0, 0, 0.09);
+  border-radius: 6rpx;
+}
+
+/* 未登录 */
+.hasPayAddress {
+  padding-left: 250rpx;
+  padding-top: 65rpx;
+}
+
+.hasPayAddress_left {
+  width: 26rpx;
+  height: 35rpx;
+  float: left;
+}
+
+.hasPayAddress_left image {
+  width: 100%;
+  height: 100%;
+}
+
+.hasPayAddress_right {
+  margin-left: 10rpx;
+  float: left;
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 44rpx;
+}
+
+
+/* 登录 */
+.nohasPayAddress {
+  padding: 30rpx 30rpx 0;
+}
+
+.nohasPayAddress_first {
+  overflow: hidden;
+}
+
+.nohasPayAddress_first_left {
+  float: left;
+}
+
+.nohasPayAddress_first_right {
+  float: right;
+  font-size: 31rpx;
+  margin-right: 60rpx;
+}
+
+.nohasPayAddress_second {
+  width: 100%;
+  font-size: 31rpx;
+  color: #707070;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+/* 修改地址 默认 删除 修改 */
+.editAddress {
+  width: 680rpx;
+  height: 90rpx;
+  margin: 0rpx auto;
+  border-top: 1rpx solid #d7d7d7;
+}
+
+.editAddress_first {
+  float: left;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+
+.editAddress_first image {
+  width: 31rpx;
+  height: 31rpx;
+  vertical-align: -4rpx;
+  margin-right: 10rpx;
+}
+
+.editAddress_third,
+.editAddress_second {
+  float: right;
+  padding-right: 20rpx;
+}
+.editAddress_second image{
+  width:26rpx;
+  height:26rpx;
+  vertical-align: -2rpx;
+}
+.editAddress_third image{
+  width:21rpx;
+  height:27rpx;
+  vertical-align: -1rpx;
+}
+
+
+
+/* 添加新地址 */
+.addressSuccess {
+  width: 665rpx;
+  height: 82rpx;
+  background: rgba(255, 0, 0, 1);
+  border-radius: 14rpx;
+  margin: 57rpx auto;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 82rpx;
+  text-align: center;
+}

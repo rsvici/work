@@ -1,0 +1,110 @@
+<!-- pay.wxml -->
+<view class="container pay">
+  <!-- 地址信息 -->
+  <view class="pay_address">
+    <view class="nohasPayAddress">
+      <view class="nohasPayAddress_first">
+        <view class="nohasPayAddress_first_left">
+          <view class="hasPayAddress_right">收件人 : {{orderInfo.consignee}}</view>
+        </view>
+        <view class="nohasPayAddress_first_right">{{orderInfo.mobile}}</view>
+      </view>
+      <view class="nohasPayAddress_second clamp1">寄送至 : {{orderInfo.full_address}}</view>
+    </view>
+  </view>
+  <!-- 店铺列表 -->
+  <view class="pay_shoplist">
+    <view class="pay_shoplist_shopitem">
+      <view class="pay_shoplist_shopitem_shopname">商品清单</view>
+      <!-- 商品列表 -->
+      <view class="pay_shoplist_shopitem_goodslist">
+        <view class="pay_shoplist_shopitem_goodslist_goodsitem" wx:for="{{orderInfo.order_goods}}" wx:for-item="goodsitem">
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_left" style="background-image:url('{{goodsitem.original_img}}') "></view>
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
+              {{goodsitem.goods_name}}
+            </view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1">
+              类型{{goodsitem.goods.goods_type}}
+            </view>
+            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first">
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_price">
+                ￥{{goodsitem.goods_price}}
+              </view>
+              <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_num">
+                数量 : {{goodsitem.goods_num}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="pay_remark">
+    <view class="pay_remark_title">订单备注</view>
+    <view class="pay_remark_text">
+      <textarea bindblur="bindTextAreaBlur" auto-height value="{{orderInfo.user_note}}" disabled="true" />
+    </view>
+    <view class="pay_remark_tip">提示：请勿填写有关支付、收发票方面信息</view>
+  </view>
+  <!-- 身份信息 -->
+  <view class="pay_status" bindtap="navigateToNewApp" data-url="/pages/my/identitylist/identitylist">
+    支付身份证信息
+    <text class="color_blue">请与支付宝账号一致</text>
+    <view class="pay_status_name">{{orderInfo.user_id_name}}</view>
+    <view class="pay_status_name1">{{orderInfo.user_id_card}}</view>
+  </view>
+  <!-- 优惠券 -->
+  <!-- <view class="pay_coupon">
+    使用优惠券
+    <view class="pay_right">
+      <image src="/images/right.png"></image>
+    </view>
+  </view> -->
+  <!-- 结算信息 -->
+  <view class="pay_priceinfo">
+    <!-- 商品总额 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        <text class="color_red">{{orderInfo.order_goods.length}}</text>
+        件商品，总商品金额 :
+      </view>
+      <view class="pay_priceinfo_value color_red">￥{{orderInfo.total_amount}}</view>
+    </view>
+    <!-- 税费 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        <image src="/images/question.png"></image>
+        税费 :
+      </view>
+      <view class="pay_priceinfo_value color_red">￥0.00</view>
+    </view>
+    <!-- 运费 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        <image src="/images/question.png"></image>
+        运费 :
+      </view>
+      <view class="pay_priceinfo_value color_blue">免邮券</view>
+    </view>
+    <!-- 优惠券 -->
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        <image src="/images/question.png"></image>
+        服务费 :
+      </view>
+      <view class="pay_priceinfo_value ">￥0.00</view>
+    </view>
+    <view class="pay_priceinfo_all">
+      <view class="pay_priceinfo_name">
+        应付总额 :
+      </view>
+      <view class="pay_priceinfo_value color_red">￥{{orderInfo.order_amount}}</view>
+    </view>
+  </view>
+  <!-- 提交订单 -->
+  <view class="submitpay">
+    <view class="submitpay_right1" bindtap="getPayCode" data-orderid="{{orderInfo.order_id}}">去支付</view>
+    <view class="submitpay_right" bindtap="cancelOrder" data-orderid="{{orderInfo.order_id}}">取消订单</view>
+  </view>
+</view>

@@ -13,7 +13,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.7.2",
 	"appid": "wx651dd974dd99f7f8",
 	"projectname": "youngbuyApp",
 	"debugOptions": {

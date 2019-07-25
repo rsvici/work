@@ -168,6 +168,7 @@
 .detail_fourth_right {
   float: left;
   width: 50%;
+  padding: 10rpx 50rpx 10rpx 0;
 }
 
 .detail_fourth_right_picker_text {
@@ -182,11 +183,259 @@
 .detail_fourth_right_picker_down {
   width: 30rpx;
   height: 40rpx;
-  line-height: 40rpx;
+  line-height: 25rpx;
   float: right;
 }
 
 .detail_fourth_right_picker_down image {
   width: 19rpx;
   height: 12rpx;
+}
+
+/* 第五层 */
+.detail_fifth {
+  width: 680rpx;
+  margin: 0 auto;
+}
+
+.detail_fifth_first {
+  height: 60rpx;
+  line-height: 70rpx;
+  font-size: 27rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.detail_fifth_first text {
+  display: inline-block;
+  width: 80rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: rgba(255, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  margin-right: 10rpx;
+}
+
+.detail_fifth_second {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 27rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+/* 第六层 评价 */
+.detail_sixth {
+  width: 100%;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #BCBCBC;
+  padding: 15rpx 40rpx;
+}
+
+.detail_sixth_title {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 29rpx;
+  font-weight: 600;
+  color: rgba(1, 1, 1, 1);
+}
+
+/* 评价列表 */
+.detail_sixth_list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.detail_sixth_list_item {
+  margin-top: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail_sixth_list_item_left {
+  float: left;
+  width: 80rpx;
+}
+
+.detail_sixth_list_item_left image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.detail_sixth_list_item_right {
+  float: left;
+  width: 560rpx;
+  margin-left: 23rpx;
+}
+
+.detail_sixth_list_item_right_title {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 25rpx;
+  color: #0C0C0C;
+}
+
+.detail_sixth_list_item_right_date {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.detail_sixth_list_item_right_text {
+  line-height: 40rpx;
+  font-size: 25rpx;
+  color: #0C0C0C;
+
+}
+
+.detail_sixth_list_item_right_type {
+  height: 90rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 星级 */
+.detail_sixth_list_item_star {
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  overflow: hidden;
+}
+
+.detail_sixth_list_item_star_image {
+  width: 25rpx;
+  height: 30rpx;
+  float: right;
+  margin-left: 10rpx;
+}
+
+.detail_sixth_list_item_star_image image {
+  width: 25rpx;
+  height: 25rpx;
+  display: block;
+}
+
+/* 点赞数 */
+.detail_sixth_list_item_support {
+  position: absolute;
+  right: 0rpx;
+  bottom: 20rpx;
+  overflow: hidden;
+}
+
+.detail_sixth_list_item_support_image {
+  width: 25rpx;
+  height: 30rpx;
+  float: right;
+  margin-left: 10rpx;
+}
+
+.detail_sixth_list_item_support_image image {
+  width: 25rpx;
+  height: 25rpx;
+  display: block;
+}
+
+.detail_sixth_list_item_support_num {
+  float: right;
+  height: 40rpx;
+  font-size: 27rpx;
+  font-weight: 500;
+  color: rgba(255, 0, 0, 1);
+  line-height: 25rpx;
+  margin-left: 20rpx;
+}
+
+
+/* 第七层 详情 */
+.detail_seventh {
+  width: 100%;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #BCBCBC;
+}
+
+.detail_seventh_title {
+  padding: 0rpx 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 29rpx;
+  font-weight: 600;
+  color: rgba(1, 1, 1, 1);
+}
+
+.detail_seventh_content {
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.detail_seventh_content image {
+  display:block;
+}
+
+  
+/* 底部bottom */
+.detilbottom {
+  width: 750rpx;
+  height: 104rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20rpx 2px rgba(8, 8, 8, 0.1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.detilbottom view {
+  float: left;
+  margin-left: 35rpx;
+  margin-top: 31rpx;
+}
+
+.detilbottom_shop {
+  width: 47rpx;
+  height: 42rpx;
+}
+
+.detilbottom_share {
+  width: 35rpx;
+  height: 43rpx;
+}
+
+.detilbottom_shopcar {
+  width: 52rpx;
+  height: 46rpx;
+}
+
+.detilbottom .detilbottom_joinShopcar {
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border: 1rpx solid rgba(0, 0, 0, 1);
+  border-radius: 7rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 50rpx;
+  margin-top: 24rpx;
+}
+
+.detilbottom .detilbottom_gopay {
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border: 1rpx solid rgba(255, 0, 0, 1);
+  background:rgba(255,0,0,1);
+  border-radius: 7rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+  color:rgba(255,255,255,1);
+}
+
+.detilbottom view image {
+  width: 100%;
+  height: 100%;
 }

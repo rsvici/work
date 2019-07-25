@@ -1,0 +1,6 @@
+/**login.wxss**/
+.news {
+  background-color: #F8F8F8;
+  padding: 15rpx 25rpx;
+}
+

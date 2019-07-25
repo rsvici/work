@@ -1,0 +1,39 @@
+<!-- addresslist.wxml -->
+<view class="container addresslist">
+  <!-- 地址信息 -->
+  <view class="pay_address" wx:for="{{addressList}}">
+    <view class="hasPayAddress" wx:if="{{addressList.length<1}}">
+      <view class="hasPayAddress_left">
+        <image src="/images/defaultavatar.png"></image>
+      </view>
+      <view class="hasPayAddress_right">暂无支付身份证信息</view>
+    </view>
+    <view class="nohasPayAddress" wx:if="{{addressList.length>0}}" bindtap="checkIdentity" data-item="{{item}}">
+      <view class="nohasPayAddress_first">
+        <view class="nohasPayAddress_first_left">
+          <view class="hasPayAddress_right">{{item.real_name}}</view>
+        </view>
+      </view>
+      <view class="nohasPayAddress_second clamp1">{{item.id_card}}</view>
+    </view>
+    <view class="editAddress" wx:if="{{addressList.length>0}}">
+      <view class="editAddress_first" wx:if="{{item.is_default==1}}">
+        <image src="/images/heicarcheck.png"></image>
+        默认身份信息
+      </view>
+      <view class="editAddress_first" wx:if="{{item.is_default==0}}" bindtap="setDefaultAddress" data-item="{{item}}">
+        <image src="/images/heinocarcheck.png"></image>
+        默认身份信息
+      </view>
+      <view class="editAddress_first editAddress_third" bindtap="deleteAddress" data-item="{{item}}">
+        <image src="/images/del.png"></image>
+        删除
+      </view>
+      <view class="editAddress_first editAddress_second" bindtap="updateAddress" data-addressid="{{item.identity_id}}">
+        <image src="/images/edit.png"></image>
+        编辑
+      </view>
+    </view>
+  </view>
+  <view class="addressSuccess" bindtap="addressAdd">添加支付身份证信息</view>
+</view>

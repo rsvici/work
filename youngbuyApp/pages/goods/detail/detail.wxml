@@ -2,74 +2,137 @@
 <view class="container detail">
   <!-- 商品图 -->
   <view class="detail_first_banner">
-    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true"
-      bindchange="bannerChange">
-      <block wx:for="{{imgUrls}}">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+      <block wx:for="{{1}}">
         <swiper-item>
-          <view class="detail_first_banner_item_img" style="background-image: url({{item}})">
-          </view>
+          <view class="detail_first_banner_item_img" style="background-image: url({{goodsInfo.goods.original_img}})"></view>
         </swiper-item>
       </block>
     </swiper>
   </view>
-
   <!-- 商品规格图 -->
   <view class="detail_second_banner">
     <swiper circular="true" current="{{current}}" display-multiple-items="7.5" bindchange="bannerChange">
       <block wx:for="{{bannerUrls}}">
         <swiper-item>
-          <view class="detail_second_banner_item_img" style="background-image: url({{item.url}})">
-          </view>
-          <view class="detail_second_banner_item_title">
-            {{item.title}}
-          </view>
+          <view class="detail_second_banner_item_img" style="background-image: url({{goodsInfo.goods.original_img}})"></view>
+          <view class="detail_second_banner_item_title">{{item.title}}</view>
         </swiper-item>
       </block>
     </swiper>
   </view>
-
   <!-- 第三部分价格 -->
   <view class="detail_third">
     <view class="detail_third_left">
       <view class="detail_third_left_price">
-        ￥100.00-￥159.00
+        <!-- ￥100.00-￥159.00 -->
+        ￥{{goodsInfo.goods.shop_price}}
       </view>
-      <view class="detail_third_left_pricedesc">
-        跨境免税/贸易进口 | 来源地
-      </view>
+      <view class="detail_third_left_pricedesc">跨境免税/贸易进口 | 来源地</view>
     </view>
     <view class="detail_third_right">
       <view class="detail_third_right_goodsnum">
         <view class="detail_third_right_goodsnum_add" bindtap="addGoodsNum">
-          <image src="/images/goods/add.png">
-          </image>
+          <image src="/images/add.png"></image>
         </view>
-        <view class="detail_third_right_goodsnum_num">
-          {{goodsNum}}
-        </view>
+        <view class="detail_third_right_goodsnum_num">{{goodsNum}}</view>
         <view class="detail_third_right_goodsnum_minus" bindtap="minusGoodsNum">
-          <image src="/images/goods/minus.png">
-          </image>
+          <image src="/images/minus.png"></image>
         </view>
       </view>
       <view class="detail_third_right_dec">
-        包邮<text>(特定地区除外)</text>
+        包邮
+        <text>(特定地区除外)</text>
       </view>
     </view>
   </view>
-
   <!-- 第四部分 选项框 -->
   <view class="detail_fourth">
     <view class="detail_fourth_left">
-
+      <picker bindchange="bindPickerChange" value="{{pickerIndex}}" range="{{productDate}}">
+        <view class="detail_fourth_right_picker_text">
+          <text>优惠券</text>
+          {{productDate[pickerIndex]}}
+        </view>
+        <view class="detail_fourth_right_picker_down">
+          <image src="/images/down.png"></image>
+        </view>
+      </picker>
     </view>
     <view class="detail_fourth_right">
       <picker bindchange="bindPickerChange" value="{{pickerIndex}}" range="{{productDate}}">
-        <view class="detail_fourth_right_picker_text"><text>生产日期 </text>{{productDate[pickerIndex]}}</view>
-        <view class="detail_fourth_right_picker_down"><image src="/images/goods/down.png"></image>
+        <view class="detail_fourth_right_picker_text">
+          <text>生产日期</text>
+          {{productDate[pickerIndex]}}
+        </view>
+        <view class="detail_fourth_right_picker_down">
+          <image src="/images/down.png"></image>
         </view>
       </picker>
     </view>
   </view>
-
+  <!-- 第五层 -->
+  <view class="detail_fifth">
+    <view class="detail_fifth_first clamp1">
+      <text>限购</text>
+      购买1-2件时享受单件价￥145,超出数量以结算价为准
+    </view>
+    <view class="detail_fifth_second">本商品由 自营保税仓 发货</view>
+  </view>
+  <!-- 第六层 评价 -->
+  <view class="detail_sixth">
+    <view class="detail_sixth_title">评价</view>
+    <view class="detail_sixth_list">
+      <view class="detail_sixth_list_item" wx:for="{{evaluate}}">
+        <!-- 头像 -->
+        <view class="detail_sixth_list_item_left">
+          <image src="http://www.appsun.com.cn/www/yb/goods/detail/logo.png"></image>
+        </view>
+        <!-- 评论 -->
+        <view class="detail_sixth_list_item_right">
+          <view class="detail_sixth_list_item_right_title">{{item.name}}</view>
+          <view class="detail_sixth_list_item_right_date">{{item.date}}</view>
+          <view class="detail_sixth_list_item_right_text clamp3">{{item.text}}</view>
+          <view class="detail_sixth_list_item_right_imgs"></view>
+          <view class="detail_sixth_list_item_right_type">颜色 : {{item.type}}</view>
+        </view>
+        <!-- 星级 -->
+        <view class="detail_sixth_list_item_star">
+          <view class="detail_sixth_list_item_star_image" wx:for="{{item.star}}">
+            <image src="/images/star.png"></image>
+          </view>
+        </view>
+        <!-- 点赞数 -->
+        <view class="detail_sixth_list_item_support">
+          <view class="detail_sixth_list_item_support_num">{{item.support}}</view>
+          <view class="detail_sixth_list_item_support_image">
+            <image src="/images/support.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 第七层 详情 -->
+  <view class="detail_seventh">
+    <view class="detail_seventh_title">商品详情</view>
+    <view class="detail_seventh_content">
+      <!-- <image src="http://www.appsun.com.cn/www/yb/goods/detail/text.png" mode="widthFix" lazy-load="false"></image> -->
+      <import src="/wxParse/wxParse.wxml" />
+      <!-- //这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>
+<view class="detilbottom">
+  <view class="detilbottom_shop">
+    <image src="/images/shop.png"></image>
+  </view>
+  <view class="detilbottom_share">
+    <image src="/images/share.png"></image>
+  </view>
+  <view class="detilbottom_shopcar"  bindtap="goCart">
+    <image src="/images/shopcar1.png"></image>
+  </view>
+  <view class="detilbottom_joinShopcar"  bindtap="joinCart" data-goodsid="{{goodsInfo.goods.goods_id}}">加入购物车</view>
+  <view class="detilbottom_gopay" bindtap="gopay">立即购买</view>
 </view>

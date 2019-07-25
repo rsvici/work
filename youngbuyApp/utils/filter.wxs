@@ -1,0 +1,19 @@
+var filters = {
+  toFix: function (value) {
+    return value.toFixed(2)
+  },
+  formatTime: function (date) {
+    date = getDate(date*1000);
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
+    return year+'年'+month+'月'+day+'日'
+  }
+}
+
+
+
+module.exports = {
+  toFix: filters.toFix,
+  formatTime: filters.formatTime,
+}

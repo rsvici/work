@@ -28,8 +28,8 @@ angular.module('shoplistModule', [])
 
 
         $scope.goShopInfo = function (shopItem) {
-            shopVal = shopItem;
-            $state.go('shopinfo')
+            console.log(shopItem)
+            $state.go('shopinfo',{shopItemId:shopItem.id})
         };
 
         $scope.goMap = function () {
