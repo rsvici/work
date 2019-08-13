@@ -1,181 +1,107 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: rsvici
+ * @Date: 2019-07-26 18:32:36
+ * @LastEditors: rsvici
+ * @LastEditTime: 2019-08-09 17:09:54
+ -->
 <!-- index.wxml -->
-<view class="container home">
-  <!-- 第一部分 -->
-  <view class="home_first">
-    <!-- 标题头部搜索 -->
-    <view class="home_first_title">
-      <view class="home_first_title_sort">
-        <image src="/images/sort.png"></image>
-      </view>
-      <view class="home_first_title_search">
-        <image src="/images/search.png"></image>
-      </view>
-      <view class="home_first_title_camera">
-        <image src="/images/camera.png"></image>
-      </view>
-      <view class="home_first_title_news">
-        <image src="/images/news.png"></image>
-      </view>
-    </view>
-    <view class="home_first_banner">
-      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true"
-        current="{{current}}"  >
-        <block wx:for="{{imgUrls}}">
-          <swiper-item>
-            <image src="{{item}}" class="slide-image" />
-          </swiper-item>
-        </block>
-      </swiper>
-    </view>
-  </view>
-  <!-- 第二部分 -->
-  <!-- 第二部分 -->
-  <!-- 第二部分 -->
-  <view class="home_second">
-    <!-- 限时抢购 -->
-    <view class="home_second_left">
-      <view class="home_second_left_title">限时抢购</view>
-      <view class="home_second_left_time">
-        <text>{{countdown.h}}</text> : <text>{{countdown.m}}</text> : <text>{{countdown.s}}</text>
-      </view>
-      <view class="home_second_left_timeImg">
-        <swiper autoplay="" interval="5000" duration="1000" circular="true">
-          <block wx:for="{{scalesImgUrls}}">
-            <swiper-item>
-              <view class="home_second_left_timeImg_item">
-                <view class="home_second_left_timeImg_img" style="background-image: url({{item}})">
-                </view>
-                <view class="home_second_left_timeImg_title">
-                  科尔文克雷恩(calvin klein)
-                </view>
-                <view class="home_second_left_timeImg_price">
-                  <text class="home_second_left_timeImg_price_1">￥190.00 </text><text
-                    class="home_second_left_timeImg__2">￥239.00 </text>
-                </view>
-              </view>
-            </swiper-item>
-          </block>
-        </swiper>
-      </view>
-    </view>
-    <view class="home_second_right">
-      <!-- 拼团 -->
-      <view class="home_second_right_first">
-        <swiper autoplay="" interval="5000" duration="1000" circular="true" display-multiple-items="3">
-          <block wx:for="{{pintuanImgUrls}}">
-            <swiper-item>
-              <view class="home_second_right_first_item">
-                <view class="home_second_right_first_item_img" style="background-image: url({{item}})">
-                </view>
-                <view class="home_second_right_first_item_price">
-                  ￥190.00
-                </view>
-              </view>
-            </swiper-item>
-          </block>
-        </swiper>
-        <view class="home_second_right_first_tab">
-          <image src="/images/team.png">
-          </image>
-        </view>
-      </view>
-      <!-- 预售 -->
-      <view class="home_second_right_second">
-        <swiper autoplay="" interval="5000" duration="1000" circular="true">
-          <block wx:for="{{advanceImgUrls}}">
-            <swiper-item>
-              <view class="home_second_right_second_item">
-                <view class="home_second_right_second_item_img" style="background-image: url({{item}})">
-                </view>
-                <view class="home_second_right_second_item_left">
-                  <view class="home_second_right_second_item_name">
-                    阿布纳abnr德国婴儿童安全座椅测试测试
-                  </view>
-                  <view class="home_second_right_second_item_price">
-                    ￥190.00
-                  </view>
-                </view>
-              </view>
-            </swiper-item>
-          </block>
-        </swiper>
-        <view class="home_second_right_second_tab">
-          <image src="/images/advance.png">
-          </image>
-        </view>
-      </view>
-    </view>
-  </view>
+<view id="goodIndex">
 
-  <!-- 第三部分 new -->
-  <view class="home_third">
-    <view class="home_third_title">
-      <image src="/images/new.png">
-      </image>
-    </view>
-    <view class="home_third_box">
-      <swiper autoplay="" interval="5000" duration="1000" circular="true" display-multiple-items="3.2">
-        <block wx:for="{{newsImgUrls}}">
-          <swiper-item>
-            <view class="home_third_box_item">
-              <view class="home_third_box_item_img" style="background-image: url({{item}})">
-              </view>
-              <view class="home_third_box_item_name">
-                阿布纳abnr德国婴儿童安全座椅测试测试
-              </view>
-              <view class="home_third_box_item_price">
-                ￥190.00
+  <!-- 第一部分 -->
+  <view class="search" bindtap="goGoodsList">
+    <image class="" src="/images/search.png" mode="widthFix"></image>
+    <input class="searchInput" placeholder="搜索" value="" />
+  </view>
+  <view class="home_index">
+    <view class="home_index_info" wx:for="{{shopInfo}}">
+      <!-- banner -->
+      <view class="home_first" wx:if="{{item.name=='banner'}}">
+        <!-- 标题头部搜索 -->
+        <view class="home_first_banner">
+          <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+            <block wx:for="{{item.list}}" wx:for-item="secItem">
+              <swiper-item bindtap="goGoodsDetail" data-goodsid="{{secItem.id}}">
+                <image src="{{secItem.imgUrl}}" class="slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+      <!-- 图片 -->
+      <view class="home_second" wx:if="{{item.name=='image'}}">
+        <view class="home_second_item type{{item.type}}" style="padding:{{item.gutter}}rpx"
+          data-goodsid="{{secItem.id}}" wx:for-item="secItem" wx:for="{{item.list}}" bindtap="goGoodsDetail">
+          <image mode="widthFix" style=" border-radius:{{item.angle}}px" lazy-load="false" src="{{secItem.imgUrl}}">
+          </image>
+        </view>
+      </view>
+      <!-- 文字 -->
+      <view class="home_third" wx:if="{{item.name=='text'}}">{{item.text}}</view>
+      <!-- 图文 -->
+      <view class="home_fifth" hover-class="none" hover-stop-propagation="false" wx:if="{{item.name=='imagetext'}}">
+        <view class="home_fifth_image" hover-class="none" hover-stop-propagation="false">
+          <image src="{{item.imgUrl}}" mode="widthFix" />
+        </view>
+        <view class="home_fifth_text" hover-class="none" hover-stop-propagation="false">
+          {{item.text}}
+        </view>
+      </view>
+      <!-- 商品 -->
+      <view class="home_fourth {{item.type=='1'?'active':''}}" wx:if="{{item.name=='goods'}}">
+        <view class="home_fourth_box">
+          <view class="like_item" wx:for="{{item.list}}" bindtap="goGoodsDetail" data-goodsid="{{secItem.id}}"
+            wx:for-item="secItem">
+            <view class="like_item_left" bindtap="goDetail" data-goodsid="{{secItem.id}}"
+              style="background-image: url({{secItem.imgUrl}});">
+            </view>
+            <view class="like_item_right" bindtap="goDetail" data-goodsid="{{secItem.id}}">
+              <view class="like_item_right_name clamp1">{{secItem.name}}</view>
+              <view class="like_item_right_price ">￥{{secItem.price}}</view>
+            </view>
+            <view class="like_item_btn" catchtap="joinCart" data-goodsid="{{secItem.id}}">
+              <view class="like_item_btn_shopcar">
+                <image src="/images/shopcar1.png" mode="widthFix"></image>
               </view>
             </view>
-          </swiper-item>
-        </block>
-      </swiper>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
-
-
-  <!-- 第四部分 like -->
+ 
+  <!-- 商品列表 -->
   <view class="home_fourth">
-    <view class="home_fourth_title">
-      <image src="/images/like.png">
-      </image>
-    </view>
     <view class="home_fourth_box">
-      <view class="like_item" wx:for="{{goodsList}}" >
-        <view class="like_item_left" bindtap="goDetail" data-goodsid="{{item.goods_id}}">
-          <image src="{{item.original_img}}">
-          </image>
+      <view class="like_item" wx:for="{{goodsList}}" bindtap="goGoodsDetail" data-goodsid="{{item.goods_id}}">
+        <view class="like_item_left" bindtap="goDetail" data-goodsid="{{item.goods_id}}"
+          style="background-image: url({{item.original_img}});">
           <view class="like_item_left_nav ms" wx:if="{{item.prom_type==1}}">
-            <image src="/images/ms.png" mode="widthFix">
-            </image>
+            <image src="/images/ms.png" mode="widthFix"></image>
           </view>
-           <view class="like_item_left_nav pt" wx:if="{{item.prom_type==2 || item.prom_type==6}}">
-            <image src="/images/pt.png" mode="widthFix">
-            </image>
+          <view class="like_item_left_nav pt" wx:if="{{item.prom_type==2 || item.prom_type==6}}">
+            <image src="/images/pt.png" mode="widthFix"></image>
           </view>
-           <view class="like_item_left_nav1 ys" wx:if="{{item.prom_type==4}}">
-            <image src="/images/ys.png" mode="widthFix">
-            </image>
+          <view class="like_item_left_nav1 ys" wx:if="{{item.prom_type==4}}">
+            <image src="/images/ys.png" mode="widthFix"></image>
           </view>
         </view>
         <view class="like_item_right" bindtap="goDetail" data-goodsid="{{item.goods_id}}">
-          <view class="like_item_right_name">
-            {{item.goods_name}}
-          </view>
-          <view class="like_item_right_price">
-            ￥{{item.shop_price}}
-          </view>
+          <view class="like_item_right_name clamp1">{{item.goods_name}}</view>
+          <view class="like_item_right_price">￥{{item.shop_price}}</view>
           <view class="like_item_right_specs">
-              <image src="/images/shop.png"></image> {{item.store_name}}
+            <image src="/images/shop.png"></image>
+            {{item.store_info.store_name}}
           </view>
         </view>
-        <view class="like_item_btn" bindtap="joinCart" data-goodsid="{{item.goods_id}}">
-          <view class="like_item_btn_shopcar" >
-            <image src="/images/shopcar1.png" mode="widthFix">
-            </image>
+        <view class="like_item_btn" catchtap="joinCart" data-goodsid="{{item.goods_id}}">
+          <view class="like_item_btn_shopcar">
+            <image src="/images/shopcar1.png" mode="widthFix"></image>
           </view>
         </view>
       </view>
     </view>
   </view>
+
 </view>

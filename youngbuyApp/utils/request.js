@@ -69,6 +69,11 @@ var requestPost = function (newUrl, newData, token, showlode) {
                         wx.hideLoading();
                     }, 1500)
                 } else {
+                    if (e.data.error_code == "403") {
+                        // 登录
+                        login();
+                    }
+
                     if (e.data.error_msg.msg) {
                         wx.showToast({
                             title: e.data.error_msg.msg,
@@ -91,12 +96,35 @@ var requestPost = function (newUrl, newData, token, showlode) {
                 wx.showLoading({
                     title: '网络错误'
                 })
+                setTimeout(function () {
+                    wx.hideLoading();
+                }, 1500)
             }
         });
     });
     return promise;
 };
 
+const login = function () {
+    wx.login({
+        success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            // return;
+            var that = this,
+                postUrl = `/api/user/mp_check_login`,
+                postData = {
+                    code: res.code
+                },
+                token = '';
+            requestPost(postUrl, postData, token).then(function (response) {
+                const app = getApp()
+                app.globalData.tokenInfo = response.data;
+            }, function (error) {
+                console.log(error);
+            });
+        }
+    });
+}
 
 export {
     requestGet,

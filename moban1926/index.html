@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="webthemez.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>上海数析</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/flexslider.css">
   <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -27,7 +27,7 @@
   <!-- header section -->
   <section class="banner" role="banner" id="banner">
     <header id="header">
-      <div class="header-content clearfix"> <span class="logo"><a href="index.html">YOUNGBUY</a></span>
+      <div class="header-content clearfix"> <span class="logo"><a href="index.html">上海数析</a></span>
         <nav class="navigation" role="navigation">
           <ul class="primary-nav">
             <li><a href="#banner">首页</a></li>
@@ -75,11 +75,11 @@
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-password">密码</label>
-                    <input type="password"  placeholder="密码..." class="form-password form-control"
-                      id="form-password" required>
+                    <input type="password" placeholder="密码..." class="form-password form-control" id="form-password"
+                      required>
                   </div>
 
-                  <button type="submit" class="btn" >登录</button>
+                  <button type="submit" class="btn">登录</button>
                   <button type="cancel" class="btn btn-default" data-dismiss="modal">取消</button>
                 </form>
               </div>
@@ -101,8 +101,8 @@
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-password">密码</label>
-                    <input type="password" placeholder="密码..." class="form-password form-control"
-                      id="form-password" required>
+                    <input type="password" placeholder="密码..." class="form-password form-control" id="form-password"
+                      required>
                   </div>
                   <div class="form-group">
                     <div class="checkbox-inline">
@@ -110,7 +110,7 @@
                       <a data-toggle="modal" data-target="#myModal"> 注册许可协议</a>
                     </div>
                   </div>
-                  <button  class="btn">注册</button>
+                  <button class="btn">注册</button>
                   <button type="cancel" class="btn btn-default" data-dismiss="modal">取消</button>
               </div>
             </div>
@@ -468,7 +468,7 @@
       <div id="map-row" class="row">
         <div class="col-xs-12" style="text-align: center;margin-bottom: 50px;">
           <p>Copyright © 2016-2025 上海数析信息技术有限公司 版权所有 保留一切权利 上海市黄浦区中山南路917号1号幢4楼A室 备案号:<a
-              href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备17040260-5号 </a></br> 增值电信经营许可证:<a
+              href="http://www.beian.miit.gov.cn" target="_blank" class="casenum">沪ICP备17040260-5号 </a></br> 增值电信经营许可证:<a
               href="http://www.beian.miit.gov.cn" target="_blank">沪B2-20190300</a> 出版物经营许可证:新出发沪零字第A7915号</p>
         </div>
       </div>
@@ -488,6 +488,19 @@
   <script type="text/javascript" src="jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="jPlayer-2.9.2/dist/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript">
+    var caseNum = '';
+    if (window.location.href.indexOf('koalas') != -1) {
+      caseNum = '沪ICP备17040260号-4'
+    } else if (window.location.href.indexOf('youngbuy') != -1) {
+      caseNum = '沪ICP备17040260号-8'
+    } else if (window.location.href.indexOf('61kola') != -1) {
+      caseNum = '沪ICP备17040260号-7'
+    }else{
+      caseNum = '沪ICP备17040260号'
+    }
+    $('.casenum').html(caseNum);
+
+
     //<![CDATA[
     $(document).ready(function () {
 

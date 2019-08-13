@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    var obj = {
+      "RECORDS": [{
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "125ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏高保湿面霜125ml",
+          "Partno": "ZY2019000002"
+        },
+        {
+          "HsCode": "3304200091",
+          "OriginCountry": "502",
+          "Spec": "28g\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏牛油果保湿眼霜28g",
+          "Partno": "ZY2019000005"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "75ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏丰润保湿水凝精华乳75ml",
+          "Partno": "ZY2019000017"
+        },
+        {
+          "HsCode": "3305100090",
+          "OriginCountry": "502",
+          "Spec": "1000ml\/瓶",
+          "Unit": "035",
+          "PartName": "艾凡达 AVEDA\nINVATI ADVANCED EXFOLIATING SHAMPOO 洗发露 1000ml",
+          "Partno": "ZY2019000023"
+        },
+        {
+          "HsCode": "3305900000",
+          "OriginCountry": "502",
+          "Spec": "100ml\/瓶",
+          "Unit": "035",
+          "PartName": "艾凡达 AVEDA\nLIGHT ELEMENTS SMOOTHING FLUID 轻盈顺滑精华 100ml",
+          "Partno": "ZY2019000024"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "116",
+          "Spec": "170ml\/瓶+60ml\/瓶",
+          "Unit": "035",
+          "PartName": " 黛珂保湿赋活精华露170ml+保湿美容精华液60ml套装",
+          "Partno": "ZY2019000013"
+        },
+        {
+          "HsCode": "3304990029",
+          "OriginCountry": "502",
+          "Spec": "142g\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏白泥面膜142g",
+          "Partno": "ZY2019000007"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "60ml\/支",
+          "Unit": "035",
+          "PartName": "科颜氏清爽防晒霜60ml",
+          "Partno": "ZY2019000011"
+        },
+        {
+          "HsCode": "3304990029",
+          "OriginCountry": "116",
+          "Spec": "50g\/瓶",
+          "Unit": "035",
+          "PartName": "黛珂保湿赋活精华霜50g",
+          "Partno": "ZY2019000012"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "116",
+          "Spec": "300ml\/瓶",
+          "Unit": "035",
+          "PartName": "黛珂紫苏水300ml",
+          "Partno": "ZY2019000014"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "250ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏高保湿精华爽肤水250ml",
+          "Partno": "ZY2019000015"
+        },
+        {
+          "HsCode": "3401300000",
+          "OriginCountry": "502",
+          "Spec": "150ml\/支",
+          "Unit": "035",
+          "PartName": "科颜氏高保湿洁面乳150ml",
+          "Partno": "ZY2019000016"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "100ml\/瓶",
+          "Unit": "035",
+          "PartName": "馥蕾诗红茶凝时修护面膜100ml",
+          "Partno": "ZY2019000020"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "100ml\/瓶",
+          "Unit": "035",
+          "PartName": "馥蕾诗红茶塑颜紧致修护睡眠面膜100ml",
+          "Partno": "ZY2019000021"
+        },
+        {
+          "HsCode": "9615190090",
+          "OriginCountry": "502",
+          "Spec": "0.11g\/支",
+          "Unit": "035",
+          "PartName": "艾凡达 AVEDA\nAVEDA WOODEN PADDLE BRUSH 按摩梳子",
+          "Partno": "ZY2019000025"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "30ml\/支*6",
+          "Unit": "035",
+          "PartName": "欧舒丹护手霜6件套 30ML*6支",
+          "Partno": "ZY2019000026"
+        },
+        {
+          "HsCode": "3401300000",
+          "OriginCountry": "502",
+          "Spec": "150ml\/支",
+          "Unit": "035",
+          "PartName": "科颜氏亚马逊白泥洁面乳150ml",
+          "Partno": "ZY2019000010"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "22ml\/支",
+          "Unit": "035",
+          "PartName": "贝玲妃反孔精英红粉救兵底霜",
+          "Partno": "ZY2019000019"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "22ml\/支",
+          "Unit": "035",
+          "PartName": "贝玲妃反恐精英脸部底霜",
+          "Partno": "ZY2019000018"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "50ml\/瓶+30ml\/瓶+20ml\/瓶+5ml\/瓶",
+          "Unit": "035",
+          "PartName": "馥蕾诗红茶紧致修护礼盒套装",
+          "Partno": "ZY2019000022"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "125ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏高保湿面膜125ml",
+          "Partno": "ZY2019000006"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏特效清爽保湿乳霜50ml",
+          "Partno": "ZY2019000003"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "125ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏特效清爽保湿乳霜125ml",
+          "Partno": "ZY2019000004"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "30ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏夜间修护精华液30ml",
+          "Partno": "ZY2019000008"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏夜间修护精华液50ml",
+          "Partno": "ZY2019000009"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "30ml\/支*8",
+          "Unit": "035",
+          "PartName": "欧舒丹 护手霜8件套 30ML*8支",
+          "Partno": "ZY2019000027"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "75ml\/支*3",
+          "Unit": "035",
+          "PartName": "欧舒丹护手霜3件套 75ML*3支",
+          "Partno": "ZY2019000028"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "502",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "科颜氏高保湿面霜50ml",
+          "Partno": "ZY2019000001"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "200ml\/瓶",
+          "Unit": "035",
+          "PartName": "倩碧水嫩保湿润肤霜200ml",
+          "Partno": "ZY2019000032"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "125ml\/瓶",
+          "Unit": "035",
+          "PartName": "倩碧透明黄油125ml",
+          "Partno": "ZY2019000033"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "50ml\/瓶+50ml\/瓶",
+          "Unit": "035",
+          "PartName": "雅诗兰黛鲜活亮采面霜与晚霜套装",
+          "Partno": "ZY2019000035"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "雅诗兰黛特润修护肌透精华露50ml",
+          "Partno": "ZY2019000038"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "30ml\/瓶",
+          "Unit": "035",
+          "PartName": "雅诗兰黛Double Wear 持妆粉底液30ml",
+          "Partno": "ZY2019000036"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "30ml\/瓶",
+          "Unit": "035",
+          "PartName": "娇兰金钻焕彩凝露30ml",
+          "Partno": "ZY2019000039"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "116",
+          "Spec": "450ml\/瓶",
+          "Unit": "035",
+          "PartName": "植村秀绿茶新肌洁颜油450ml",
+          "Partno": "ZY2019000040"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "欧舒丹乳木果保湿面霜50ml",
+          "Partno": "ZY2019000029"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "50ml\/瓶",
+          "Unit": "035",
+          "PartName": "欧舒丹乳木果保湿凝霜50ml",
+          "Partno": "ZY2019000030"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "305",
+          "Spec": "30ml\/支*3",
+          "Unit": "035",
+          "PartName": "欧舒丹乳木果手霜3件套 30ml*3支",
+          "Partno": "ZY2019000031"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "125ml\/瓶+30ml\/瓶+15ml\/瓶",
+          "Unit": "035",
+          "PartName": "倩碧水嫩保湿润肤套装",
+          "Partno": "ZY2019000034"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "303",
+          "Spec": "200ml\/瓶",
+          "Unit": "035",
+          "PartName": "雅诗兰黛晶透沁白淡斑精粹水 200ml",
+          "Partno": "ZY2019000037"
+        },
+        {
+          "HsCode": "3304990039",
+          "OriginCountry": "116",
+          "Spec": "450ml\/瓶",
+          "Unit": "035",
+          "PartName": "植村秀绿茶新肌洁颜油450ml",
+          "Partno": "ZY2019000041"
+        }
+      ]
+    }
+    var newArr = obj.RECORDS;
+
+
+    function compare(property) {
+      return function (a, b) {
+        var value1 = a[property].slice(-4);
+        var value2 = b[property].slice(-4);
+        return value1 - value2;
+      }
+    }
+    var newArr1=newArr.sort(compare('Partno'))
+    var num=101;
+    newArr1.forEach((val, key) => {
+      // console.log(val);
+      newArr1[key].Msgitem= num+key;
+      newArr1[key].Qty= 1;
+      newArr1[key].Currency= 142;
+    });
+    console.log(newArr1);
+    $('div').html(JSON.stringify(newArr1));
+  </script>
+</body>
+
+</html>

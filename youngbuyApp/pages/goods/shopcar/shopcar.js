@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: rsvici
+ * @Date: 2019-06-20 13:56:07
+ * @LastEditors: rsvici
+ * @LastEditTime: 2019-08-09 15:23:18
+ */
 //login.js
 //获取应用实例
 var request = require('../../../utils/request.js'); //require请求
@@ -10,7 +18,8 @@ Page({
     totalNum: 0, //商品数量
     isSpecstypeShow: false, //打开规格
     // 商品详情介绍
-    carts: []
+    carts: [],
+    goodsList: [], //商品列表
   },
   //勾选事件处理函数 1 
   switchSelect: function (e) {
@@ -55,24 +64,34 @@ Page({
   },
   // 去结算
   toBuy() {
-    var carts=this.data.carts;
-    var goBuy=[];
+    if (wx.getStorageSync('storeId') == 20 || wx.getStorageSync('storeId') == 24) {
+      wx.showToast({
+        title: '店铺升级中,商品暂时无法购买。',
+        icon: "none",
+        mask: true,
+        duration: 1000,
+        success() {}
+      });
+      return false;
+    }
+    var carts = this.data.carts;
+    var goBuy = [];
     for (let i = 0; i < carts.length; i++) {
       for (let j = 0; j < carts[i].cartList.length; j++) {
         if (carts[i].cartList[j].selected) {
           goBuy.push({
-            id:carts[i].cartList[j].id,
-            goods_num:carts[i].cartList[j].goods_num,
-            selected:1,
+            id: carts[i].cartList[j].id,
+            goods_num: carts[i].cartList[j].goods_num,
+            selected: 1,
           })
         }
       }
-    } 
-    goBuy=JSON.stringify(goBuy)
+    }
+    goBuy = JSON.stringify(goBuy)
     wx.navigateTo({
       url: `/pages/goods/pay/pay?cart=${goBuy}`
     })
-  
+
   },
   //数量变化处理1
   addGoodsNum(e) { //添加1
@@ -272,7 +291,40 @@ Page({
       console.log(error);
     });
   },
+  postGoodsList(token) { //获取商品列表
+    var that = this,
+      postUrl = `/api/goods/search`,
+      postData = {
+        store_id: wx.getStorageSync('storeId')
+      },
+      token;
+    request.requestPost(postUrl, postData, token).then(function (response) {
+      var goodsList = response.data.result.goods_list;
+      that.setData({
+        goodsList
+      })
+    }, function (error) {
+      console.log(error);
+    });
+  },
+  joinCart(e) { //加入购物车
+    var that = this;
+    var goodsid = e.currentTarget.dataset.goodsid;
+    app.joinCart(goodsid, 1).then(res => {
+      console.log(res)
+      that.getCartList();
+    })
+
+
+  },
+  goDetail(e) {
+    var goodsid = e.currentTarget.dataset.goodsid;
+    wx.navigateTo({
+      url: `/pages/goods/detail/detail?goodsid=${goodsid}`,
+    })
+  },
   onShow() {
     this.getCartList();
+    this.postGoodsList(app.globalData.tokenInfo.result.token);
   },
 })

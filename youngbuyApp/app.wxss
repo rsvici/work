@@ -1,4 +1,28 @@
 /**app.wxss**/
+.search {
+  background-color: #fff;
+  position: fixed;
+  height: 100rpx;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.searchInput {
+  position: absolute;
+  top: 30rpx;
+  left: 368rpx;
+  display: block;
+  width: 300rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  z-index: 999;
+  color: #999;
+  font-size: 27rpx;
+}
+
+
 .container {
   width: 100%;
   min-height: 100vh;
@@ -110,6 +134,9 @@
   background-position: 50%;
   background-color: #F5F5F5;
   border-radius: 7rpx;
+}
+.pay_shoplist_shopitem_goodslist_goodsitem_left image{
+  width: 100%;
 }
 
 .pay_shoplist_shopitem_goodslist_goodsitem_right {

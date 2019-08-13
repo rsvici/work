@@ -7,7 +7,9 @@ Page({
   data: {
     currentTab: 0,
     typelist: ['WAITPAY', 'WAITSEND', 'WAITRECEIVE'],
-    orderList: []
+    orderList: [],
+    commentList: [],
+
   },
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
@@ -19,13 +21,15 @@ Page({
         currentTab: cur
       });
     }
-    if (cur == 0) {
-
+    if (cur == 3) {
+      this.getCommentList();
+    } else {
+      this.postOrderList();
     }
-    this.postOrderList();
   },
+
   // 订单详情
-  goPayDetail(e){
+  goPayDetail(e) {
     var id = e.currentTarget.dataset.orderid;
     var that = this;
     wx.navigateTo({
@@ -52,9 +56,60 @@ Page({
             },
             token = app.globalData.tokenInfo.result.token;
           request.requestPost(postUrl, postData, token).then(function (response) {
-              that.postOrderList();
+            wx.showToast({
+              title: '取消成功',
+              icon: 'success',
+              duration: 1000,
+              success: (result) => {
+                setTimeout(function () {
+                  that.postOrderList();
+                }, 1000)
+              },
+              fail: () => {},
+              complete: () => {}
+            });
           })
         }
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+  },
+  // 确定收货
+  orderConfirm(e) {
+    var that = this
+    var order_id = e.currentTarget.dataset.orderid;
+    var postUrl = `/api/order/orderConfirm`,
+      postData = {
+        order_id
+      },
+      token = app.globalData.tokenInfo.result.token;
+    request.requestPost(postUrl, postData, token).then(function (response) {
+      wx.showToast({
+        title: '确定发货成功',
+        icon: 'success',
+        duration: 1000,
+        success: (result) => {
+          setTimeout(function () {
+            that.setData({
+              currentTab: 3
+            })
+            that.postOrderList();
+          }, 1000)
+        },
+        fail: () => {},
+        complete: () => {}
+      });
+    })
+  },
+  // 提醒发货
+  remindSend() {
+    wx.showToast({
+      title: '提醒发货成功',
+      icon: 'success',
+      duration: 1000,
+      success: (result) => {
+
       },
       fail: () => {},
       complete: () => {}
@@ -106,7 +161,8 @@ Page({
       console.log(error);
     });
   },
-  postOrderList() { //获取订单列表
+  //获取订单列表
+  postOrderList() {
     var currentTab = this.data.currentTab;
     var typelist = this.data.typelist;
     var type = typelist[currentTab];
@@ -127,10 +183,29 @@ Page({
       console.log(error);
     });
   },
+  //获取订单列表
+  getCommentList() {
+    var that = this,
+      getUrl = `/api/order/comment`,
+      getData = {
+        p: 1,
+        status: 0,
+      },
+      token = app.globalData.tokenInfo.result.token;
+    request.requestGet(getUrl, getData, token).then(function (response) {
+   
+      var commentList = response.data.result.comment_list;
+      that.setData({
+        commentList
+      })
+
+    }, function (error) {
+      console.log(error);
+    });
+  },
+
   onLoad: function (option) {
-
     var that = this;
-
     if (option.orderId) {
       this.setData({
         currentTab: option.orderId
@@ -140,9 +215,12 @@ Page({
         currentTab: 0
       })
     }
-    // setTimeout(function () {
+    if (this.data.currentTab == 3) {
+      that.getCommentList();
+    } else {
       that.postOrderList()
-    // }, 2000)
+    }
+
   },
 
   // onPullDownRefresh() {

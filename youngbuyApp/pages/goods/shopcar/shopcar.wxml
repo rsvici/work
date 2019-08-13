@@ -1,6 +1,16 @@
 <!-- shopcar -->
 <wxs module="filters" src="../../../utils/filter.wxs"></wxs>
 <view class="shopcar">
+  
+  <view class="shopcar_nocart" wx:if="{{carts.length<1}}">
+    <view class="shopcar_brand" bindtap="goGoods">
+      <image src="/images/nocart.png" mode="widthFix"></image>
+    </view>
+    <view class="shopcar_tishi">
+      购物车没有商品~~~
+    </view>
+  </view>
+
   <view class="pay_shoplist">
     <view class="pay_shoplist_shopitem" wx:for="{{carts}}">
       <view class="pay_shoplist_shopitem_shopname">
@@ -20,7 +30,9 @@
                 src="{{goodsitem.selected?'/images/cartcheck.png':'/images/cartnocheck.png'}}" />
             </view>
             <view class="pay_shoplist_shopitem_goodslist_goodsitem_left"
-              style="background-image:url('{{goodsitem.original_img}}') "></view>
+              style="background-image:url('{{goodsitem.original_img}}') ">
+            
+            </view>
             <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
               <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
                 {{goodsitem.goods_name}}
@@ -70,65 +82,23 @@
       <image src="/images/like.png"></image>
     </view>
     <view class="home_fourth_box">
-      <view class="like_item">
+      <view class="like_item" wx:for="{{goodsList}}" bindtap="goDetail" data-goodsid="{{item.goods_id}}">
         <view class="like_item_left">
-          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
-          <view class="like_item_left_nav ms">
+          <image src="{{item.original_img}}"></image>
+          <!-- <view class="like_item_left_nav ms">
             <image src="/images/ms.png" mode="widthFix"></image>
-          </view>
+          </view> -->
         </view>
         <view class="like_item_right">
-          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
-          <view class="like_item_right_price">￥250.00</view>
+          <view class="like_item_right_name">{{item.goods_name}}</view>
+          <view class="like_item_right_price">￥{{item.shop_price}}</view>
           <view class="like_item_right_specs">
             <image src="/images/shop.png"></image>
-            可爱多优品库
+            {{item.store_info.store_name}}
           </view>
         </view>
         <view class="like_item_btn">
-          <view class="like_item_btn_shopcar">
-            <image src="/images/shopcar1.png" mode="widthFix"></image>
-          </view>
-        </view>
-      </view>
-      <view class="like_item">
-        <view class="like_item_left">
-          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
-          <view class="like_item_left_nav pt">
-            <image src="/images/pt.png" mode="widthFix"></image>
-          </view>
-        </view>
-        <view class="like_item_right">
-          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
-          <view class="like_item_right_price">￥250.00</view>
-          <view class="like_item_right_specs">
-            <image src="/images/shop.png"></image>
-            可爱多优品库
-          </view>
-        </view>
-        <view class="like_item_btn">
-          <view class="like_item_btn_shopcar">
-            <image src="/images/shopcar1.png" mode="widthFix"></image>
-          </view>
-        </view>
-      </view>
-      <view class="like_item">
-        <view class="like_item_left">
-          <image src="http://www.appsun.com.cn/www/yb/home/goods.png"></image>
-          <view class="like_item_left_nav1 ys">
-            <image src="/images/ys.png" mode="widthFix"></image>
-          </view>
-        </view>
-        <view class="like_item_right">
-          <view class="like_item_right_name">Dior 迪奥粉漾魅惑变色唇膏测试测试</view>
-          <view class="like_item_right_price">￥250.00</view>
-          <view class="like_item_right_specs">
-            <image src="/images/shop.png"></image>
-            可爱多优品库
-          </view>
-        </view>
-        <view class="like_item_btn">
-          <view class="like_item_btn_shopcar">
+          <view class="like_item_btn_shopcar" catchtap="joinCart" data-goodsid="{{item.goods_id}}">
             <image src="/images/shopcar1.png" mode="widthFix"></image>
           </view>
         </view>

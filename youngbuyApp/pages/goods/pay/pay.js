@@ -7,7 +7,7 @@ var tips = require('../../../utils/tip.js'); //
 Page({
   data: {
     payInfo: {}, //支付信息
-    addressInfo: {}, //默认地址信息
+    addressInfo: '', //默认地址信息
     identityInfo: {}, //默认身份信息
     countPrice: {}, //价格体系
     form: {
@@ -71,17 +71,23 @@ Page({
     request.requestPost(postUrl, postData, token).then(function (response) {
       var addressList = response.data.result;
       var addressInfo = {};
-      addressList.forEach(function (value, key) {
-        if (value.is_default == 1) {
-          addressInfo = value;
-          form.address_id = value.address_id;
-        }
-      })
-      that.setData({
-        addressInfo,
-        form
-      })
-      that.countPrice();
+      if (addressList.length < 1) {
+        that.countPrice(1);
+      } else {
+        addressList.forEach(function (value, key) {
+          if (value.is_default == 1) {
+            addressInfo = value;
+            form.address_id = value.address_id;
+          }
+        })
+        that.setData({
+          addressInfo,
+          form
+        })
+        console.log(form);
+        that.countPrice();
+        that.postIdentity();
+      }
     }, function (error) {
       console.log(error);
     });
@@ -94,18 +100,27 @@ Page({
       postData = {},
       token = app.globalData.tokenInfo.result.token;
     request.requestPost(postUrl, postData, token).then(function (response) {
-      form.user_id_name = response.data.result[0].real_name;
-      form.user_id_card = response.data.result[0].id_card;
-      that.setData({
-        identityInfo: response.data.result[0],
-        form
-      })
+      if (response.data.result[0]) {
+        form.user_id_name = response.data.result[0].real_name;
+        form.user_id_card = response.data.result[0].id_card;
+        that.setData({
+          identityInfo: response.data.result[0],
+          form
+        })
+      } else {
+        form.user_id_name = '';
+        form.user_id_card = '';
+        that.setData({
+          identityInfo: {},
+          form
+        })
+      }
     }, function (error) {
       console.log(error);
     });
   },
   //计算价格
-  countPrice() {
+  countPrice(address_id) {
     var form = this.data.form;
     form.act = '';
     var that = this,
@@ -115,8 +130,12 @@ Page({
     request.requestPost(postUrl, postData, token).then(function (response) {
       console.log(response.data.result);
       var countPrice = response.data.result.result;
+      if (address_id) {
+        form.address_id = '';
+      }
       that.setData({
-        countPrice
+        countPrice,
+        form
       })
     }, function (error) {
       console.log(error);
@@ -235,35 +254,24 @@ Page({
   },
   onLoad: function (option) {
     var that = this;
-    var form = ''
-    // setTimeout(function () {
+    var form = this.data.form;
     if (option) {
-      if (option.goods_id) {
-        that.postCart2(option.action, option.goods_id, option.goods_num, app.globalData.tokenInfo.result.token)
-        form = {
-          action: option.action,
-          address_id: '',
-          prom_type: '0',
-          goods_num: option.goods_num,
-          goods_id: option.goods_id,
-        }
-      } else if (option.cart) {
-        that.AsyncUpdateCart(option.cart, app.globalData.tokenInfo.result.token)
-        form = {
-          action: 'cart',
-          address_id: '',
-          prom_type: '0',
-          goods_num: option.goods_num,
-          goods_id: option.goods_id,
-        }
-      }
+      that.postCart2(option.action, option.goods_id, option.goods_num, app.globalData.tokenInfo.result.token)
+      form.action = option.action;
+      form.prom_type = 0;
+      form.goods_num = option.goods_num;
+      form.goods_id = option.goods_id;
+    } else {
+      that.AsyncUpdateCart(app.globalData.cart, app.globalData.tokenInfo.result.token)
+      app.globalData.cart = '';
+      form.action = 'cart';
+      form.prom_type = 0;
+      form.goods_num = option.goods_num;
+      form.goods_id = option.goods_id;
     }
     that.setData({
       form
     })
-    that.postAddressList();
-    that.postIdentity();
-    // }, 2000)
   },
 
   onShow() {
@@ -280,10 +288,10 @@ Page({
     } else {
       this.postAddressList();
     }
-    if (app.globalData.checkIdentity) {
+    if (app.globalData.checkIdentity && app.globalData.checkIdentity.length > 0) {
       var identityInfo = app.globalData.checkIdentity;
-      form.user_id_name = response.data.result[0].real_name;
-      form.user_id_card = response.data.result[0].id_card;
+      form.user_id_name = app.globalData.checkIdentity.real_name;
+      form.user_id_card = app.globalData.checkIdentity.id_card;
       this.setData({
         identityInfo,
         form

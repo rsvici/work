@@ -10,7 +10,11 @@
       <!-- 商品列表 -->
       <view class="pay_shoplist_shopitem_goodslist">
         <view class="pay_shoplist_shopitem_goodslist_goodsitem" wx:for="{{item.cartList}}" wx:for-item="goodsitem">
-          <view class="pay_shoplist_shopitem_goodslist_goodsitem_left" style="background-image:url('{{goodsitem.goods.original_img}}') "></view>
+          <view class="pay_shoplist_shopitem_goodslist_goodsitem_left"
+            style="background-image:url('{{goodsitem.goods.original_img}}') ">
+            <image src="{{goodsitem.original_img}}" mode="widthFix">
+            </image>
+          </view>
           <view class="pay_shoplist_shopitem_goodslist_goodsitem_right">
             <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
               {{goodsitem.goods_name}}
@@ -84,18 +88,18 @@
       <view class="pay_priceinfo_value color_red">￥{{countPrice.goods_price}}</view>
     </view>
     <!-- 税费 -->
-    <view class="pay_priceinfo_all">
+    <!-- <view class="pay_priceinfo_all">
       <view class="pay_priceinfo_name">
         税费
         <image src="/images/question.png"></image>
       </view>
       <view class="pay_priceinfo_value color_red">￥0.00</view>
-    </view>
+    </view> -->
     <!-- 优惠券 -->
-    <view class="pay_priceinfo_all">
+    <!-- <view class="pay_priceinfo_all">
       <view class="pay_priceinfo_name">优惠券</view>
       <view class="pay_priceinfo_value">无</view>
-    </view>
+    </view> -->
     <!-- 运费 -->
     <view class="pay_priceinfo_all">
       <view class="pay_priceinfo_name">

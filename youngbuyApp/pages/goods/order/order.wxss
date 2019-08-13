@@ -60,7 +60,7 @@
   float: left;
   height: 60rpx;
   line-height: 65rpx;
-  width: 50%;
+  width: 65%;
 }
 
 .ordertab_list_item_first_right,

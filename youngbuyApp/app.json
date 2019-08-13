@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/index/index",
+    "pages/home/list/list",
     "pages/goods/shopcar/shopcar",
 
 
@@ -46,8 +47,8 @@
         "iconPath": "/images/home.png",
         "selectedIconPath": "/images/home1.png"
       },{
-        "pagePath": "pages/home/active/active",
-        "text": "活动",
+        "pagePath": "pages/home/list/list",
+        "text": "商品",
         "iconPath": "/images/active.png",
         "selectedIconPath": "/images/active1.png"
       },{

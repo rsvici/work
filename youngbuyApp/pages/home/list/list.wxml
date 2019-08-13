@@ -1,0 +1,83 @@
+<!-- index.wxml -->
+<view id="goodIndex">
+  <!-- 搜索 -->
+  <view class="search">
+    <image class="" src="/images/search.png" mode="widthFix"></image>
+    <input class="searchInput" placeholder="搜索" bindconfirm="changeSearch" focus="{{isSearch}}"/>
+  </view>
+</view>
+<view id="goods" class="container">
+  <view class="navtype">
+    <view class="navtype_item {{formData.sort=='sales_sum'?'active':''}}" bindtap="choiceSort" data-sort="sales_sum">
+      销量
+    </view>
+    <view class="navtype_item {{formData.sort=='is_new'?'active':''}}" bindtap="choiceSort" data-sort="is_new">
+      新品
+    </view>
+
+    <view class="navtype_item {{formData.sort=='shop_price'?'active':''}}" bindtap="choiceSort" data-sort="shop_price">
+      价格排序
+      <image src="/images/down2.png" wx:if="{{formData.sort=='shop_price'&&formData.sort_asc=='desc'}}"></image>
+      <image src="/images/top.png" wx:if="{{formData.sort=='shop_price'&&formData.sort_asc=='asc'}}"></image>
+      <image src="/images/down1.png" wx:if="{{formData.sort!='shop_price'}}"></image>
+    </view>
+    <view class="navtype_item {{navtypeChoicePriceShow?'active':''}}" bindtap="choicPriceRound">
+      价格筛选
+      <image src="/images/down1.png"  wx-if="{{!navtypeChoicePriceShow}}"></image>
+      <image src="/images/top.png"  wx-if="{{navtypeChoicePriceShow}}"></image>
+      <view class="navtype_item_choice" wx-if="{{navtypeChoicePriceShow}}">
+        <view class="navtype_item_choice_first">
+          <view class="navtype_item_choice_first_input">
+            <input type="number" bindinput="getInputVal" data-name="min" placeholder="最小值" value="{{choicPriceRoundObj.min}}"/>
+          </view>
+          <view class="navtype_item_choice_first_line">
+            ---
+          </view>
+          <view class="navtype_item_choice_first_input">
+            <input type="number" bindinput="getInputVal" data-name="max" placeholder="最大值" value="{{choicPriceRoundObj.max}}"/>
+          </view>
+        </view>
+        <view class="navtype_item_choice_second">
+          <view class="navtype_item_choice_second_btn1 btn2 " catchtap="confirmInputPrice">
+            确认
+          </view>
+          <view class="navtype_item_choice_second_btn1"  catchtap="cancelInputPrice">
+            取消
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="home_fourth">
+    <view class="home_fourth_title"></view>
+    <view class="home_fourth_box">
+      <view class="like_item" wx:for="{{goodsList}}" bindtap="goGoodsDetail" data-goodsid="{{item.goods_id}}">
+        <view class="like_item_left" bindtap="goDetail" data-goodsid="{{item.goods_id}}">
+          <image src="{{item.original_img}}"></image>
+          <view class="like_item_left_nav ms" wx:if="{{item.prom_type==1}}">
+            <image src="/images/ms.png" mode="widthFix"></image>
+          </view>
+          <view class="like_item_left_nav pt" wx:if="{{item.prom_type==2 || item.prom_type==6}}">
+            <image src="/images/pt.png" mode="widthFix"></image>
+          </view>
+          <view class="like_item_left_nav1 ys" wx:if="{{item.prom_type==4}}">
+            <image src="/images/ys.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="like_item_right" bindtap="goDetail" data-goodsid="{{item.goods_id}}">
+          <view class="like_item_right_name">{{item.goods_name}}</view>
+          <view class="like_item_right_price">￥{{item.shop_price}}</view>
+          <view class="like_item_right_specs">
+            <image src="/images/shop.png"></image>
+            {{item.store_info.store_name}}
+          </view>
+        </view>
+        <view class="like_item_btn" catchtap="joinCart" data-goodsid="{{item.goods_id}}">
+          <view class="like_item_btn_shopcar">
+            <image src="/images/shopcar1.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -65,7 +65,7 @@ App({
     } else {
       wx.showToast({
         title: '请登录',
-        icon: "loading",
+        icon: "none",
         mask: true,
         duration: 500,
         success() {
@@ -78,4 +78,57 @@ App({
       });
     }
   },
+  joinCart(goods_id, goods_num) {
+    var that = this;
+    if (wx.getStorageSync('storeId') == 20 || wx.getStorageSync('storeId') == 24) {
+      wx.showToast({
+        title: '店铺升级中,商品暂时无法加入购物车。',
+        icon: "none",
+        mask: true,
+        duration: 1000,
+        success() {
+         
+        }
+      });
+      return false;
+    }
+
+    var promise = new Promise(function (resolve, reject) {
+      if (that.globalData.tokenInfo.result.is_register) {
+        var postUrl = `/api/goods/addCart`,
+          postData = {
+            goods_id,
+            goods_num,
+            form: 1
+          },
+          token = that.globalData.tokenInfo.result.token;
+        request.requestPost(postUrl, postData, token, true).then(function (response) {
+          wx.showToast({
+            title: response.data.message,
+            icon: 'none'
+          })
+          resolve(response)
+        }, function (error) {
+          console.log(error);
+          reject(error)
+        });
+      } else {
+        reject()
+        wx.showToast({
+          title: '请登录',
+          icon: "none",
+          mask: true,
+          duration: 500,
+          success() {
+            setTimeout(function () {
+              wx.navigateTo({
+                url: '/pages/my/login/login',
+              })
+            }, 500)
+          }
+        });
+      }
+    });
+    return promise;
+  }
 })

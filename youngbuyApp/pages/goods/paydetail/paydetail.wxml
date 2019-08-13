@@ -24,9 +24,9 @@
             <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_title clamp1">
               {{goodsitem.goods_name}}
             </view>
-            <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1">
+            <!-- <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_type clamp1">
               类型{{goodsitem.goods.goods_type}}
-            </view>
+            </view> -->
             <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first">
               <view class="pay_shoplist_shopitem_goodslist_goodsitem_right_first_price">
                 ￥{{goodsitem.goods_price}}
@@ -45,12 +45,10 @@
     <view class="pay_remark_text">
       <textarea bindblur="bindTextAreaBlur" auto-height value="{{orderInfo.user_note}}" disabled="true" />
     </view>
-    <view class="pay_remark_tip">提示：请勿填写有关支付、收发票方面信息</view>
   </view>
   <!-- 身份信息 -->
   <view class="pay_status" bindtap="navigateToNewApp" data-url="/pages/my/identitylist/identitylist">
     支付身份证信息
-    <text class="color_blue">请与支付宝账号一致</text>
     <view class="pay_status_name">{{orderInfo.user_id_name}}</view>
     <view class="pay_status_name1">{{orderInfo.user_id_card}}</view>
   </view>
@@ -72,13 +70,13 @@
       <view class="pay_priceinfo_value color_red">￥{{orderInfo.total_amount}}</view>
     </view>
     <!-- 税费 -->
-    <view class="pay_priceinfo_all">
+    <!-- <view class="pay_priceinfo_all">
       <view class="pay_priceinfo_name">
         <image src="/images/question.png"></image>
         税费 :
       </view>
       <view class="pay_priceinfo_value color_red">￥0.00</view>
-    </view>
+    </view> -->
     <!-- 运费 -->
     <view class="pay_priceinfo_all">
       <view class="pay_priceinfo_name">

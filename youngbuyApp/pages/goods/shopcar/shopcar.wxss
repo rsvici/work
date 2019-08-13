@@ -3,6 +3,33 @@
   background-color: #F8F8F8;
   padding-bottom: 20rpx;
 }
+/**index.wxss**/
+.shopcar {
+  width: 100%;
+  font-size: 0;
+  padding-top: 1rpx;
+}
+
+.shopcar_nocart image {
+  width: 100%;
+}
+
+
+.shopcar_brand {
+  width: 197rpx;
+  height: 163rpx;
+  margin: 160rpx auto 0;
+}
+
+.shopcar_tishi {
+  text-align: center;
+  height: 80rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(232, 222, 222, 1);
+  line-height: 80rpx;
+}
+
 
 .pay_shoplist_shopitem_shopname {
   border: 0;
@@ -56,22 +83,25 @@
   max-width: 330rpx;
   font-size: 25rpx;
 }
-.pay_shoplist_shopitem_goodslist_goodsitem_right_type1{
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_type1 {
   background: rgba(245, 245, 245, 1);
   height: 25rpx;
   width: 30rpx;
   float: left;
   padding-top: 13rpx;
 }
-.pay_shoplist_shopitem_goodslist_goodsitem_right_type1 image{
-  width:19rpx;
-  height:12rpx;
+
+.pay_shoplist_shopitem_goodslist_goodsitem_right_type1 image {
+  width: 19rpx;
+  height: 12rpx;
   display: block;
 }
 
-.pay_shoplist_shopitem_goodslist_goodsitem_right_first{
+.pay_shoplist_shopitem_goodslist_goodsitem_right_first {
   margin-top: 55rpx;
 }
+
 .pay_shoplist_shopitem_goodslist_goodsitem_right_first_num {
   width: 200rpx;
 }
@@ -339,7 +369,7 @@
 .specstype_first_type {
   height: 45rpx;
   line-height: 60rpx;
-  background:transparent;
+  background: transparent;
 
 }
 
@@ -379,11 +409,11 @@
 
 /* 关闭 */
 .specstype_close {
-  position:absolute;
-  right:41rpx;
-  bottom:620rpx;
-  width:50rpx;
-  height:50rpx;
+  position: absolute;
+  right: 41rpx;
+  bottom: 620rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .specstype_close image {

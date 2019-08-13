@@ -1,5 +1,13 @@
 /* detail.wxss */
 /* banner */
+.detail_goodsNamePosition {
+  padding: 20rpx 30rpx;
+  font-size: 30rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-weight: 600;
+}
+
 /* 111111商品图 */
 .detail_first_banner {
   width: 725rpx;
@@ -28,8 +36,10 @@
 /* 2222商品规格图 */
 /* 2222商品规格图 */
 .detail_second_banner {
+
   width: 100%;
-  height: 110rpx;
+  /* height: 110rpx; */
+  height: 1rpx;
   border-bottom: 1px solid #BCBCBC;
 }
 
@@ -373,10 +383,10 @@
 }
 
 .detail_seventh_content image {
-  display:block;
+  display: block;
 }
 
-  
+
 /* 底部bottom */
 .detilbottom {
   width: 750rpx;
@@ -402,6 +412,16 @@
 .detilbottom_share {
   width: 35rpx;
   height: 43rpx;
+  position: relative;
+}
+
+.detilbottom_share button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .detilbottom_shopcar {
@@ -426,16 +446,23 @@
   height: 58rpx;
   line-height: 58rpx;
   border: 1rpx solid rgba(255, 0, 0, 1);
-  background:rgba(255,0,0,1);
+  background: rgba(255, 0, 0, 1);
   border-radius: 7rpx;
   font-size: 28rpx;
   text-align: center;
   margin-left: 24rpx;
   margin-top: 24rpx;
-  color:rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .detilbottom view image {
   width: 100%;
   height: 100%;
+}
+
+.wxParse-p{
+  width: 100%;
+}
+.wxParse-p image{
+  width: 100%!important;
 }
